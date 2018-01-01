@@ -76,8 +76,21 @@ class QRScannerViewController: UIViewController {
         }
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
+    override func viewDidLayoutSubviews() {
+        self.configureVideoOrientation()
+    }
+    
+    private func configureVideoOrientation() {
+        if let previewLayer = self.videoPreviewLayer,
+            let connection = previewLayer.connection {
+            let orientation = UIDevice.current.orientation
+            
+            if connection.isVideoOrientationSupported,
+                let videoOrientation = AVCaptureVideoOrientation(rawValue: orientation.rawValue) {
+                previewLayer.frame = self.view.bounds
+                previewLayer.connection?.videoOrientation = videoOrientation
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
