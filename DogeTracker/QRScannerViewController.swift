@@ -58,10 +58,11 @@ class QRScannerViewController: UIViewController {
         videoPreviewLayer?.frame = view.layer.bounds
         view.layer.addSublayer(videoPreviewLayer!)
         
+        
         // Start video capture.
         captureSession.startRunning()
         
-        // Move the message label and top bar to the front
+        // Move the message label
         view.bringSubview(toFront: messageLabel)
         
         // Initialize QR Code Frame to highlight the QR code
@@ -73,6 +74,10 @@ class QRScannerViewController: UIViewController {
             view.addSubview(qrCodeFrameView)
             view.bringSubview(toFront: qrCodeFrameView)
         }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
     }
     
     override func didReceiveMemoryWarning() {
