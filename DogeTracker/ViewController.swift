@@ -17,8 +17,15 @@ func print(_ items: Any...) {
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var displayLabel: UILabel!
-    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var amountCoinsLabel: UILabel!
+    @IBOutlet weak var errorAccountsLabel: UILabel!
+    
+    @IBOutlet weak var amountFIATLabel: UILabel!
+    
+    @IBOutlet weak var rateFIATLabel: UILabel!
+    @IBOutlet weak var rateBTCLabel: UILabel!
+    @IBOutlet weak var errorRatesLabel: UILabel!
+    
     
     
     var totalBalance: Double = 0
@@ -34,39 +41,94 @@ class ViewController: UIViewController {
     }
     
     @objc func loadTotal() {
-        errorLabel.isHidden = true
+        //Setup
+        errorRatesLabel.isHidden = true
+        errorAccountsLabel.isHidden = true
+        self.amountFIATLabel.text = nil
+        self.rateBTCLabel.text = nil
+        
         let model = AccountModel.shared
         
         let allAccounts = model.getAllAccount()
         if allAccounts.count > 0 {
-            self.displayLabel.text = "Pending balance"
+            self.amountCoinsLabel.text = "Pending balance"
         } else {
-            self.displayLabel.text = "0.0 Ð"
-            self.errorLabel.text = "There are no accounts"
-            self.errorLabel.isHidden = false
+            self.amountCoinsLabel.text = "0.0 Ð"
+            self.errorAccountsLabel.text = "There are no accounts"
+            self.errorAccountsLabel.isHidden = false
+            
+            let market = CoinMarketCap.shared
+            market.update() { success, error in
+                DispatchQueue.main.sync {
+                    if success {
+                        self.rateFIATLabel.text = "\(market.price) \(market.getCurrencySymbol())"
+                        self.rateBTCLabel.text = String(format: "%.8f ₿", market.priceBTC)
+                        
+                    } else {
+                        self.errorRatesLabel.text = "Failed to get rates"
+                        self.errorRatesLabel.isHidden = false
+                        market.success = false //just to be sure
+                    }
+                }
+            }
             return
         }
         
+        let group = DispatchGroup()
+        
+
+        self.rateFIATLabel.text = "Pending rates"
+        
+        //market
+        let market = CoinMarketCap.shared
+        
+        group.enter()
+        market.update() { success, error in
+            DispatchQueue.main.sync {
+                if success {
+                    self.rateFIATLabel.text = "\(market.price) \(market.getCurrencySymbol())"
+                    self.rateBTCLabel.text = String(format: "%.8f ₿", market.priceBTC)
+                    
+                } else {
+                    self.errorRatesLabel.text = "Failed to get rates"
+                    self.errorRatesLabel.isHidden = false
+                    market.success = false //just to be sure
+                }
+                group.leave()
+            }
+        }
+        
+        //accounts
         totalBalance = 0
         totalError = 0
         
         
         for account in allAccounts {
+            group.enter()
             account.updateBalance() { success, error in
                 DispatchQueue.main.sync { // sync for thread safty
                     if success {
                         self.totalBalance += account.getBalance()
-                        self.displayLabel.text = "\(self.totalBalance) Ð"
+                        self.amountCoinsLabel.text = "\(self.totalBalance) Ð"
                     } else {
                         self.totalError += 1
                         if (self.totalError > 1) {
-                            self.errorLabel.text = "Errors in \(self.totalError) accounts"
+                            self.errorAccountsLabel.text = "Errors in \(self.totalError) accounts"
                         } else {
-                            self.errorLabel.text = "Error in one account"
+                            self.errorAccountsLabel.text = "Error in one account"
                         }
-                        self.errorLabel.isHidden = false
-                        
+                        self.errorAccountsLabel.isHidden = false
                     }
+                    group.leave()
+                }
+            }
+        }
+        
+        //Final stuff
+        group.notify(queue: DispatchQueue.main) {
+            DispatchQueue.main.async {
+                if market.success {
+                    self.amountFIATLabel.text = "\(self.totalBalance * market.price) \(market.getCurrencySymbol())"
                 }
             }
         }

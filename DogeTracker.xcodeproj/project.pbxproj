@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1730371E1FFA860000C77042 /* CoinMarketCapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730371D1FFA860000C77042 /* CoinMarketCapModel.swift */; };
 		173EEAD11FF91E130020855A /* accountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173EEAD01FF91E130020855A /* accountModel.swift */; };
 		173EEAD31FF9202C0020855A /* CopyableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173EEAD21FF9202C0020855A /* CopyableLabel.swift */; };
 		173EEAD51FF933450020855A /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173EEAD41FF933450020855A /* AccountsViewController.swift */; };
@@ -19,12 +20,13 @@
 		17C1DAF91FF850BF003E0035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1DAF81FF850BF003E0035 /* AppDelegate.swift */; };
 		17C1DAFB1FF850BF003E0035 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1DAFA1FF850BF003E0035 /* ViewController.swift */; };
 		17C1DAFE1FF850BF003E0035 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C1DAFC1FF850BF003E0035 /* Main.storyboard */; };
-		17C1DB011FF850BF003E0035 /* test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17C1DAFF1FF850BF003E0035 /* test.xcdatamodeld */; };
+		17C1DB011FF850BF003E0035 /* DogeTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17C1DAFF1FF850BF003E0035 /* DogeTracker.xcdatamodeld */; };
 		17C1DB031FF850BF003E0035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17C1DB021FF850BF003E0035 /* Assets.xcassets */; };
 		17C1DB061FF850BF003E0035 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C1DB041FF850BF003E0035 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1730371D1FFA860000C77042 /* CoinMarketCapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinMarketCapModel.swift; sourceTree = "<group>"; };
 		173EEAD01FF91E130020855A /* accountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accountModel.swift; sourceTree = "<group>"; };
 		173EEAD21FF9202C0020855A /* CopyableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyableLabel.swift; sourceTree = "<group>"; };
 		173EEAD41FF933450020855A /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				173EEAD21FF9202C0020855A /* CopyableLabel.swift */,
 				173EEAD01FF91E130020855A /* accountModel.swift */,
 				17C1DAFA1FF850BF003E0035 /* ViewController.swift */,
+				1730371D1FFA860000C77042 /* CoinMarketCapModel.swift */,
 				173EEAD41FF933450020855A /* AccountsViewController.swift */,
 				173EEADE1FF945FD0020855A /* AddViewController.swift */,
 				173EEAE01FF947AB0020855A /* QRScannerViewController.swift */,
@@ -91,7 +94,7 @@
 				17C1DAFC1FF850BF003E0035 /* Main.storyboard */,
 				17C1DB041FF850BF003E0035 /* LaunchScreen.storyboard */,
 				17C1DB071FF850BF003E0035 /* Info.plist */,
-				17C1DAFF1FF850BF003E0035 /* test.xcdatamodeld */,
+				17C1DAFF1FF850BF003E0035 /* DogeTracker.xcdatamodeld */,
 			);
 			path = DogeTracker;
 			sourceTree = "<group>";
@@ -182,9 +185,10 @@
 				173EEAD11FF91E130020855A /* accountModel.swift in Sources */,
 				17C1DAF91FF850BF003E0035 /* AppDelegate.swift in Sources */,
 				173EEAE11FF947AB0020855A /* QRScannerViewController.swift in Sources */,
+				1730371E1FFA860000C77042 /* CoinMarketCapModel.swift in Sources */,
 				173EEADB1FF9392E0020855A /* QRCodeViewController.swift in Sources */,
 				173EEAD51FF933450020855A /* AccountsViewController.swift in Sources */,
-				17C1DB011FF850BF003E0035 /* test.xcdatamodeld in Sources */,
+				17C1DB011FF850BF003E0035 /* DogeTracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,13 +379,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		17C1DAFF1FF850BF003E0035 /* test.xcdatamodeld */ = {
+		17C1DAFF1FF850BF003E0035 /* DogeTracker.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				17C1DB001FF850BF003E0035 /* test.xcdatamodel */,
 			);
 			currentVersion = 17C1DB001FF850BF003E0035 /* test.xcdatamodel */;
-			path = test.xcdatamodeld;
+			path = DogeTracker.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
