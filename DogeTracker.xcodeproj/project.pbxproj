@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1730371E1FFA860000C77042 /* CoinMarketCapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730371D1FFA860000C77042 /* CoinMarketCapModel.swift */; };
-		173EEAD11FF91E130020855A /* accountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173EEAD01FF91E130020855A /* accountModel.swift */; };
+		173EEAD11FF91E130020855A /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173EEAD01FF91E130020855A /* AccountModel.swift */; };
 		173EEAD31FF9202C0020855A /* CopyableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173EEAD21FF9202C0020855A /* CopyableLabel.swift */; };
 		173EEAD51FF933450020855A /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173EEAD41FF933450020855A /* AccountsViewController.swift */; };
 		173EEAD71FF933AB0020855A /* AccountTableViewCellTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173EEAD61FF933AB0020855A /* AccountTableViewCellTwo.swift */; };
@@ -27,7 +27,7 @@
 
 /* Begin PBXFileReference section */
 		1730371D1FFA860000C77042 /* CoinMarketCapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinMarketCapModel.swift; sourceTree = "<group>"; };
-		173EEAD01FF91E130020855A /* accountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accountModel.swift; sourceTree = "<group>"; };
+		173EEAD01FF91E130020855A /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		173EEAD21FF9202C0020855A /* CopyableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyableLabel.swift; sourceTree = "<group>"; };
 		173EEAD41FF933450020855A /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
 		173EEAD61FF933AB0020855A /* AccountTableViewCellTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCellTwo.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 				17862CCC1FF99D6700EC6CA4 /* DogeTracker.entitlements */,
 				17C1DAF81FF850BF003E0035 /* AppDelegate.swift */,
 				173EEAD21FF9202C0020855A /* CopyableLabel.swift */,
-				173EEAD01FF91E130020855A /* accountModel.swift */,
+				173EEAD01FF91E130020855A /* AccountModel.swift */,
 				17C1DAFA1FF850BF003E0035 /* ViewController.swift */,
 				1730371D1FFA860000C77042 /* CoinMarketCapModel.swift */,
 				173EEAD41FF933450020855A /* AccountsViewController.swift */,
@@ -182,7 +182,7 @@
 				173EEADF1FF945FD0020855A /* AddViewController.swift in Sources */,
 				173EEAD31FF9202C0020855A /* CopyableLabel.swift in Sources */,
 				17C1DAFB1FF850BF003E0035 /* ViewController.swift in Sources */,
-				173EEAD11FF91E130020855A /* accountModel.swift in Sources */,
+				173EEAD11FF91E130020855A /* AccountModel.swift in Sources */,
 				17C1DAF91FF850BF003E0035 /* AppDelegate.swift in Sources */,
 				173EEAE11FF947AB0020855A /* QRScannerViewController.swift in Sources */,
 				1730371E1FFA860000C77042 /* CoinMarketCapModel.swift in Sources */,
