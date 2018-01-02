@@ -123,7 +123,18 @@ extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             
             if metadataObj.stringValue != nil { //found QR Code
                 
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "addressQR"), object: nil, userInfo: ["address" : metadataObj.stringValue ?? ""])
+                let readString: String = metadataObj.stringValue ?? ""
+                let split = readString.split(separator: ":")
+                
+                let out: String
+                if split.count > 1 {
+                    out = String(split[1])
+                } else {
+                    out = String(split[0])
+                }
+                
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "addressQR"), object: nil, userInfo: ["address" : out])
                 //messageLabel.text = metadataObj.stringValue
                 navigationController?.popViewController(animated: true)
             }
