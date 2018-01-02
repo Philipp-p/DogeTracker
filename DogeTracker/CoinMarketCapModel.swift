@@ -89,7 +89,11 @@ class CoinMarketCap {
                         self.marketCap = Double(json["market_cap_\(self.currency.rawValue.lowercased())"] as! String)!
                         self.availableSupply = u_long(json["available_supply"] as! String)!
                         self.totalSupply = u_long(json["total_supply"] as! String)!
-                        self.maxSupply = u_long(json["total_supply"] as! String)
+                        if (json["max_supply"] is NSNull) {
+                            self.maxSupply = nil
+                        } else {
+                            self.maxSupply = u_long(json["max_supply"] as! String)!
+                        }
                         self.percentChange1h = Float(json["percent_change_1h"] as! String)!
                         self.percentChange24h = Float(json["percent_change_24h"] as! String)!
                         self.percentChange7d = Float(json["percent_change_7d"] as! String)!
