@@ -9,7 +9,13 @@
 import UIKit
 import AVFoundation
 
+protocol QRScannerDelegate {
+    func setAddress(address: String)
+}
+
 class QRScannerViewController: UIViewController {
+    
+    var delegate: QRScannerDelegate?
     
     @IBOutlet var messageLabel:UILabel!
     
@@ -133,8 +139,7 @@ extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                     out = String(split[0])
                 }
                 
-                
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "addressQR"), object: nil, userInfo: ["address" : out])
+                delegate?.setAddress(address: out)
                 //messageLabel.text = metadataObj.stringValue
                 navigationController?.popViewController(animated: true)
             }

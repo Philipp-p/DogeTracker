@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 
-class AddViewController: UIViewController, UITextFieldDelegate {
+class AddViewController: UIViewController, UITextFieldDelegate, QRScannerDelegate {
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var addressField: UITextField!
@@ -21,13 +21,11 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         self.nameField.delegate = self
         self.addressField.delegate = self
         
-        NotificationCenter.default.addObserver(self, selector: #selector(setAddress), name: Notification.Name(rawValue: "addressQR"), object: nil)
-        
         // Do any additional setup after loading the view.
     }
     
-    @objc func setAddress(notification: Notification) {
-        self.addressField.text = notification.userInfo?["address"] as? String
+    func setAddress(address: String) {
+        self.addressField.text = address
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,10 +52,8 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         switch authStatus {
         case .authorized:
             performSegue(withIdentifier: "cameraView", sender: self)
-            break
         case .denied:
             alertPromptToAllowCameraAccessViaSetting()
-            break
         case .notDetermined:
             AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
                 if granted {
@@ -66,8 +62,6 @@ class AddViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
             })
-            break
-            
         case .restricted:
             let alert = UIAlertController(
                 title: "Sorry",
@@ -75,7 +69,6 @@ class AddViewController: UIViewController, UITextFieldDelegate {
                 preferredStyle: UIAlertControllerStyle.alert
             )
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            break
             
         }
         
@@ -134,15 +127,14 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    /*
-     // MARK: - Navigation
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? QRScannerViewController {
+            destination.delegate = self
+        }
+    }
      
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
     
 }
 
