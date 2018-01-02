@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1730371E1FFA860000C77042 /* CoinMarketCapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730371D1FFA860000C77042 /* CoinMarketCapModel.swift */; };
+		173037201FFB183A00C77042 /* CoinMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730371F1FFB183A00C77042 /* CoinMarketViewController.swift */; };
 		173EEAD11FF91E130020855A /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173EEAD01FF91E130020855A /* AccountModel.swift */; };
 		173EEAD31FF9202C0020855A /* CopyableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173EEAD21FF9202C0020855A /* CopyableLabel.swift */; };
 		173EEAD51FF933450020855A /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173EEAD41FF933450020855A /* AccountsViewController.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		1730371D1FFA860000C77042 /* CoinMarketCapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinMarketCapModel.swift; sourceTree = "<group>"; };
+		1730371F1FFB183A00C77042 /* CoinMarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinMarketViewController.swift; sourceTree = "<group>"; };
 		173EEAD01FF91E130020855A /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		173EEAD21FF9202C0020855A /* CopyableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyableLabel.swift; sourceTree = "<group>"; };
 		173EEAD41FF933450020855A /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
@@ -81,8 +83,9 @@
 				17C1DAF81FF850BF003E0035 /* AppDelegate.swift */,
 				173EEAD21FF9202C0020855A /* CopyableLabel.swift */,
 				173EEAD01FF91E130020855A /* AccountModel.swift */,
-				17C1DAFA1FF850BF003E0035 /* ViewController.swift */,
 				1730371D1FFA860000C77042 /* CoinMarketCapModel.swift */,
+				17C1DAFA1FF850BF003E0035 /* ViewController.swift */,
+				1730371F1FFB183A00C77042 /* CoinMarketViewController.swift */,
 				173EEAD41FF933450020855A /* AccountsViewController.swift */,
 				173EEADE1FF945FD0020855A /* AddViewController.swift */,
 				173EEAE01FF947AB0020855A /* QRScannerViewController.swift */,
@@ -189,6 +192,7 @@
 				173EEADB1FF9392E0020855A /* QRCodeViewController.swift in Sources */,
 				173EEAD51FF933450020855A /* AccountsViewController.swift in Sources */,
 				17C1DB011FF850BF003E0035 /* DogeTracker.xcdatamodeld in Sources */,
+				173037201FFB183A00C77042 /* CoinMarketViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

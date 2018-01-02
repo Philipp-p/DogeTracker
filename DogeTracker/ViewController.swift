@@ -9,9 +9,9 @@
 import UIKit
 
 //Global to disable print if not in DEBUG
-func print(_ items: Any...) {
+func print(_ item: @autoclosure () -> Any, separator: String = " ", terminator: String = "\n") {
     #if DEBUG
-        Swift.print(items[0])
+        Swift.print(item(), separator:separator, terminator: terminator)
     #endif
 }
 
