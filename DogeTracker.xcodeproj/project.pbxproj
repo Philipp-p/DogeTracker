@@ -18,6 +18,8 @@
 		173EEADD1FF93A840020855A /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173EEADC1FF93A840020855A /* EditViewController.swift */; };
 		173EEADF1FF945FD0020855A /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173EEADE1FF945FD0020855A /* AddViewController.swift */; };
 		173EEAE11FF947AB0020855A /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173EEAE01FF947AB0020855A /* QRScannerViewController.swift */; };
+		177E718F1FFC45FB003A3103 /* CurrencySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E718E1FFC45FB003A3103 /* CurrencySelectViewController.swift */; };
+		177E71911FFC4660003A3103 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E71901FFC4660003A3103 /* SettingsViewController.swift */; };
 		17C1DAF91FF850BF003E0035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1DAF81FF850BF003E0035 /* AppDelegate.swift */; };
 		17C1DAFB1FF850BF003E0035 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1DAFA1FF850BF003E0035 /* ViewController.swift */; };
 		17C1DAFE1FF850BF003E0035 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C1DAFC1FF850BF003E0035 /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 		173EEADC1FF93A840020855A /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		173EEADE1FF945FD0020855A /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		173EEAE01FF947AB0020855A /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		177E718E1FFC45FB003A3103 /* CurrencySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectViewController.swift; sourceTree = "<group>"; };
+		177E71901FFC4660003A3103 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		17862CCC1FF99D6700EC6CA4 /* DogeTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DogeTracker.entitlements; sourceTree = "<group>"; };
 		17C1DAF51FF850BF003E0035 /* DogeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C1DAF81FF850BF003E0035 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 				173EEAD01FF91E130020855A /* AccountModel.swift */,
 				1730371D1FFA860000C77042 /* CoinMarketCapModel.swift */,
 				17C1DAFA1FF850BF003E0035 /* ViewController.swift */,
+				177E71901FFC4660003A3103 /* SettingsViewController.swift */,
+				177E718E1FFC45FB003A3103 /* CurrencySelectViewController.swift */,
 				1730371F1FFB183A00C77042 /* CoinMarketViewController.swift */,
 				173EEAD41FF933450020855A /* AccountsViewController.swift */,
 				173EEADE1FF945FD0020855A /* AddViewController.swift */,
@@ -186,8 +192,10 @@
 				173EEAD31FF9202C0020855A /* CopyableLabel.swift in Sources */,
 				17C1DAFB1FF850BF003E0035 /* ViewController.swift in Sources */,
 				173EEAD11FF91E130020855A /* AccountModel.swift in Sources */,
+				177E71911FFC4660003A3103 /* SettingsViewController.swift in Sources */,
 				17C1DAF91FF850BF003E0035 /* AppDelegate.swift in Sources */,
 				173EEAE11FF947AB0020855A /* QRScannerViewController.swift in Sources */,
+				177E718F1FFC45FB003A3103 /* CurrencySelectViewController.swift in Sources */,
 				1730371E1FFA860000C77042 /* CoinMarketCapModel.swift in Sources */,
 				173EEADB1FF9392E0020855A /* QRCodeViewController.swift in Sources */,
 				173EEAD51FF933450020855A /* AccountsViewController.swift in Sources */,

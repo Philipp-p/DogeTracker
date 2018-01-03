@@ -41,32 +41,35 @@ class CoinMarketViewController: UIViewController {
         self.fiatRateLabel.text = "\(self.market.price) \(self.market.getCurrencySymbol())"
         self.btcRateLabel.text = String(format: "%.8f ₿", self.market.priceBTC)
         
+        let red = UIColor(red: 215/255, green: 25/255, blue: 28/255, alpha: 1)
+        let green = UIColor(red: 26/255, green: 150/255, blue: 65/255, alpha: 1)
+        
         let oneHourPer = self.market.percentChange1h
         if oneHourPer > 0 {
-            self.oneHourPerLabel.textColor = UIColor.green
+            self.oneHourPerLabel.textColor = green
         } else {
-            self.oneHourPerLabel.textColor = UIColor.red
+            self.oneHourPerLabel.textColor = red
         }
         oneHourPerLabel.text = "1 Hour: \(oneHourPer) %"
         
         let oneDayPer = self.market.percentChange24h
         if oneDayPer > 0 {
-            self.oneDayPerLabel.textColor = UIColor.green
+            self.oneDayPerLabel.textColor = green
         } else {
-            self.oneDayPerLabel.textColor = UIColor.red
+            self.oneDayPerLabel.textColor = red
         }
         oneDayPerLabel.text = "1 Day: \(oneDayPer) %"
         
         let sevenDayPer = self.market.percentChange7d
         if sevenDayPer > 0 {
-            self.sevenDayPerLabel.textColor = UIColor.green
+            self.sevenDayPerLabel.textColor = green
         } else {
-            self.sevenDayPerLabel.textColor = UIColor.red
+            self.sevenDayPerLabel.textColor = red
         }
         sevenDayPerLabel.text = "7 Days: \(sevenDayPer) %"
         
-        self.marketCapLabel.text = "Market cap: \(self.market.marketCap) \(self.market.getCurrencySymbol())"
-        self.volume24hLabel.text = "Volume 24h: \(self.market.Volume24h) \(self.market.getCurrencySymbol())"
+        self.marketCapLabel.text = String(format: "Market cap: %.0f \(self.market.getCurrencySymbol())",self.market.marketCap)
+        self.volume24hLabel.text = String(format: "Volume 24h: %.0f \(self.market.getCurrencySymbol())",self.market.Volume24h)
         self.totalSupplyLabel.text = "Total supply: \(self.market.totalSupply)"
         let maxSupply: String
         if self.market.maxSupply != nil {

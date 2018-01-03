@@ -32,15 +32,15 @@ class ViewController: UIViewController {
     var totalError: Int = 0
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        let reloadButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(loadTotal))
-        self.navigationItem.rightBarButtonItem = reloadButton
-        
+        super.viewWillAppear(animated)        
         loadTotal()
     }
     
-    @objc func loadTotal() {
+    @objc func settings() {
+        
+    }
+    
+    @IBAction func loadTotal() {
         //Setup
         errorRatesLabel.isHidden = true
         errorAccountsLabel.isHidden = true
@@ -138,6 +138,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let defaults = UserDefaults.standard
+        let currency = defaults.object(forKey: "currency") as? String ?? "USD"
+        CoinMarketCap.shared.setCurrency(currency: Currency(rawValue: currency) ?? Currency.USD)
     }
     
     

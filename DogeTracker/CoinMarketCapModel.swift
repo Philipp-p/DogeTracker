@@ -17,8 +17,8 @@ class CoinMarketCap {
     var success = false
     var price: Double
     var priceBTC: Double
-    var Volume24h: Double
-    var marketCap: Double
+    var Volume24h: Float
+    var marketCap: Float
     var availableSupply: u_long
     var totalSupply: u_long
     var maxSupply: u_long?
@@ -54,7 +54,7 @@ class CoinMarketCap {
     
     //TODO get currencies symbol
     func getCurrencySymbol() -> String{
-       return currency.rawValue
+       return currency.getSymbol()
     }
     
     private func getApiUrl () -> String {
@@ -85,8 +85,8 @@ class CoinMarketCap {
                         
                         self.price = Double(json["price_\(self.currency.rawValue.lowercased())"] as! String)!
                         self.priceBTC = Double(json["price_btc"] as! String)!
-                        self.Volume24h = Double(json["24h_volume_\(self.currency.rawValue.lowercased())"] as! String)!
-                        self.marketCap = Double(json["market_cap_\(self.currency.rawValue.lowercased())"] as! String)!
+                        self.Volume24h = Float(json["24h_volume_\(self.currency.rawValue.lowercased())"] as! String)!
+                        self.marketCap = Float(json["market_cap_\(self.currency.rawValue.lowercased())"] as! String)!
                         self.availableSupply = u_long(json["available_supply"] as! String)!
                         self.totalSupply = u_long(json["total_supply"] as! String)!
                         if (json["max_supply"] is NSNull) {
@@ -128,5 +128,74 @@ class CoinMarketCap {
 
 
 enum Currency: String {
-    case AUD, BRL, CAD, CHF, CLP, CNY, CZK, DKK, EUR, GBP, HKD, HUF, IDR, ILS, INR, JPY, KRW, MXN, MYR, NOK, NZD, PHP, PKR, PLN, RUB, SEK, SGD, THB, TRY, TWD, ZAR, USD
+    case AUD, BRL, CAD, CHF, CLP, CNY, CZK, DKK, EUR, GBP, HKD, HUF, IDR, ILS, INR, JPY, KRW, MXN, MYR, NOK, NZD, PHP, PKR, PLN, RUB, SEK, SGD, THB, TRY, TWD, USD, ZAR
+    
+    func getSymbol() -> String {
+        switch self {
+        case .AUD:
+            return "A$"
+        case .BRL:
+            return "R$"
+        case .CAD:
+            return "C$"
+        case .CHF:
+            return "CHF"
+        case .CLP:
+            return "$"
+        case .CNY:
+            return "￥"
+        case .CZK:
+            return "Kč"
+        case .DKK:
+            return "kr."
+        case .EUR:
+            return "€"
+        case .GBP:
+            return "£"
+        case .HKD:
+            return "HK$"
+        case .HUF:
+            return "Ft"
+        case .IDR:
+            return "Rp"
+        case .ILS:
+            return "₪"
+        case .INR:
+            return "₹"
+        case .JPY:
+            return "¥"
+        case .KRW:
+            return "₩"
+        case .MXN:
+            return "Mex$"
+        case .MYR:
+            return "RM"
+        case .NOK:
+            return "kr"
+        case .NZD:
+            return "NZ$"
+        case .PHP:
+            return "₱"
+        case .PKR:
+            return "₨"
+        case .PLN:
+            return "zł"
+        case .RUB:
+            return "₽"
+        case .SEK:
+            return "kr"
+        case .SGD:
+            return "S$"
+        case .THB:
+            return "฿"
+        case .TRY:
+            return "₺"
+        case .TWD:
+            return "NT$"
+        case .USD:
+            return "$"
+        case .ZAR:
+            return "R"
+        }
+    }
 }
