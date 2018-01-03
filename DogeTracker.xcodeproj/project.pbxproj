@@ -43,6 +43,7 @@
 		177E718E1FFC45FB003A3103 /* CurrencySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectViewController.swift; sourceTree = "<group>"; };
 		177E71901FFC4660003A3103 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		17862CCC1FF99D6700EC6CA4 /* DogeTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DogeTracker.entitlements; sourceTree = "<group>"; };
+		17B2E5341FFD3187006C36DA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = DogeTracker/README.md; sourceTree = "<group>"; };
 		17C1DAF51FF850BF003E0035 /* DogeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C1DAF81FF850BF003E0035 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17C1DAFA1FF850BF003E0035 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +68,7 @@
 		17C1DAEC1FF850BF003E0035 = {
 			isa = PBXGroup;
 			children = (
+				17B2E5341FFD3187006C36DA /* README.md */,
 				17C1DAF71FF850BF003E0035 /* DogeTracker */,
 				17C1DAF61FF850BF003E0035 /* Products */,
 			);
@@ -343,7 +345,7 @@
 				INFOPLIST_FILE = DogeTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = at.DogeTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.philipp-p.DogeTracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -360,7 +362,7 @@
 				INFOPLIST_FILE = DogeTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = at.DogeTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.philipp-p.DogeTracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
