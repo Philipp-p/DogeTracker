@@ -50,14 +50,14 @@ class AccountDetailViewController: UIViewController {
             account?.updateBalance() { success, error in
                 DispatchQueue.main.async {
                     if success {
-                        self.balance.text = "\(self.account?.getBalance() ?? 0) Ð"
+                        self.balance.text = "\(FormatUtil.shared.formatDoubleWithMinPrecision(toFormat: (self.account?.getBalance() ?? 0))) Ð"
                     } else {
                         self.balance.text = error
                     }
                 }
             }
         } else {
-            self.balance.text = "\(account?.getBalance() ?? 0) Ð"
+            self.balance.text = "\(FormatUtil.shared.formatDoubleWithMinPrecision(toFormat: (self.account?.getBalance() ?? 0))) Ð"
         }
     }
     

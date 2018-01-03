@@ -24,6 +24,7 @@ class CoinMarketViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     
     let market = CoinMarketCap.shared
+    let util = FormatUtil.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,9 +69,9 @@ class CoinMarketViewController: UIViewController {
         }
         sevenDayPerLabel.text = "7 Days: \(sevenDayPer) %"
         
-        self.marketCapLabel.text = String(format: "Market cap: %.0f \(self.market.getCurrencySymbol())",self.market.marketCap)
-        self.volume24hLabel.text = String(format: "Volume 24h: %.0f \(self.market.getCurrencySymbol())",self.market.Volume24h)
-        self.totalSupplyLabel.text = "Total supply: \(self.market.totalSupply)"
+        self.marketCapLabel.text = "Market cap: \(self.util.formatToInt(toFormat: self.market.marketCap)) \(self.market.getCurrencySymbol())"
+        self.volume24hLabel.text = "Volume 24h: \(self.util.formatToInt(toFormat: self.market.Volume24h)) \(self.market.getCurrencySymbol())"
+        self.totalSupplyLabel.text = "Total supply: \(self.util.formatULong(toFormat: self.market.totalSupply))"
         let maxSupply: String
         if self.market.maxSupply != nil {
             maxSupply = String(self.market.maxSupply!)

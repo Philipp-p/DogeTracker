@@ -203,3 +203,86 @@ enum Currency: String {
         }
     }
 }
+
+class FormatUtil {
+    var styleGrouping = ","
+    var styleDecimal = "."
+    let minPrecision = 8
+    
+    let allFormats = ["1,000.00", "1.000,00", "1 000.00", "1 000,00", "1000.00", "1000,0"]
+    
+    private init() {
+    }
+    
+    static let shared = FormatUtil()
+    
+    func getAllFormats() -> [String] {
+        return allFormats
+    }
+    
+    func setFormat(style: Int) {
+        switch style {
+        case 0:
+            self.styleGrouping = ","
+            self.styleDecimal = "."
+        case 1:
+            self.styleGrouping = "."
+            self.styleDecimal = ","
+        case 2:
+            self.styleGrouping = " "
+            self.styleDecimal = "."
+        case 3:
+            self.styleGrouping = " "
+            self.styleDecimal = ","            
+        case 4:
+            self.styleGrouping = ""
+            self.styleDecimal = "."
+        case 5:
+            self.styleGrouping = ""
+            self.styleDecimal = ","
+        default:
+            self.styleGrouping = ","
+            self.styleDecimal = "."
+        }
+    }
+    
+    func formatToInt(toFormat: Double) -> String {
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = styleGrouping
+        formatter.numberStyle = .decimal
+        
+        let testConvert = Int64(toFormat)
+        return formatter.string(from: (NSNumber(value: testConvert))) ?? ""
+    }
+    
+    func formatULong(toFormat: u_long) -> String {
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = styleGrouping
+        formatter.numberStyle = .decimal
+        
+        return formatter.string(from: (NSNumber(value: toFormat))) ?? ""
+    }
+    
+    func format(toFormat: Double) -> String {
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = styleGrouping
+        formatter.decimalSeparator = styleDecimal
+        formatter.numberStyle = .decimal
+        
+        return formatter.string(from: (NSNumber(value: toFormat))) ?? ""
+    }
+    
+    func formatDoubleWithMinPrecision(toFormat: Double) -> String {
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = styleGrouping
+        formatter.decimalSeparator = styleDecimal
+        formatter.numberStyle = .decimal
+        
+        formatter.minimumFractionDigits = minPrecision
+        
+        return formatter.string(from: (NSNumber(value: toFormat))) ?? ""
+        
+    }
+    
+}
+

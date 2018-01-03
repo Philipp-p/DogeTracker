@@ -7,18 +7,18 @@ A simplistic approach to keep track of your Dogecoins and Dogecoin in general
 
 ## Features:
 
-	* Multiple accounts (addresses)
-		+ Addable via QR code
-		+ Nameable
-		+ Show your own QR code
-	* Dogecoin exchange rates form CoinMarketCap
-		+ 32 FIAT currencies
-		+ Bitcoin
-	* General overview about Dogecoin
-	* Data is protected by Apple's Data Protection
-	* It's free
-	* No ads or in app purchase
-	* Open source
+* Multiple accounts (addresses)
+    + Addable via QR code
+    + Nameable
+    + Show your own QR code
+* Dogecoin exchange rates form CoinMarketCap
+    + 32 FIAT currencies
+    + Bitcoin
+* General overview about Dogecoin
+* Data is protected by Apple's Data Protection
+* It's free
+* No ads or in app purchase
+* Open source
 
 ## Support, ideas, pull request and more
 

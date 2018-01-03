@@ -11,7 +11,6 @@ import UIKit
 class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var table: UITableView!
-    //let model = AccountModel.shared
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -69,14 +68,14 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             account.updateBalance() { success, error in
                 DispatchQueue.main.async {
                     if success {
-                        cell.balanceLabel.text = "\(account.getBalance()) Ð"
+                        cell.balanceLabel.text = "\(FormatUtil.shared.formatDoubleWithMinPrecision(toFormat: account.getBalance())) Ð"
                     } else {
                         cell.balanceLabel.text = error
                     }
                 }
             }
         } else {
-            cell.balanceLabel.text = "\(account.getBalance()) Ð"
+            cell.balanceLabel.text = "\(FormatUtil.shared.formatDoubleWithMinPrecision(toFormat: account.getBalance())) Ð"
         }
         
         return cell

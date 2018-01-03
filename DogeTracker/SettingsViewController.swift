@@ -11,11 +11,18 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var currencyButton: UIButton!
+    @IBOutlet weak var formatButton: UIButton!
     
     fileprivate func setButton() {
         let defaults = UserDefaults.standard
+        
         let currency = defaults.object(forKey: "currency") as? String ?? "USD"
         self.currencyButton.setTitle(currency, for: .normal)
+        
+        let format = defaults.object(forKey: "format") as? Int ?? 0
+        self.formatButton.setTitle(FormatUtil.shared.getAllFormats()[format], for: .normal)
+        
+        
     }
     
     override func viewDidLoad() {

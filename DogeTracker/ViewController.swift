@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     //Singeltons init to keep them always in memory
     let model = AccountModel.shared
     let market = CoinMarketCap.shared
+    let util = FormatUtil.shared
     
     
     
@@ -102,7 +103,7 @@ class ViewController: UIViewController {
                 DispatchQueue.main.sync { // sync for thread safty
                     if success {
                         self.totalBalance += account.getBalance()
-                        self.amountCoinsLabel.text = "\(self.totalBalance) Ð"
+                        self.amountCoinsLabel.text = "\(self.util.formatDoubleWithMinPrecision(toFormat: self.totalBalance)) Ð"
                     } else {
                         self.totalError += 1
                         if (self.totalError > 1) {
@@ -121,7 +122,7 @@ class ViewController: UIViewController {
         group.notify(queue: DispatchQueue.main) {
             DispatchQueue.main.async {
                 if self.market.success {
-                    self.amountFIATLabel.text = "\(self.totalBalance * self.market.price) \(self.market.getCurrencySymbol())"
+                    self.amountFIATLabel.text = "\(self.util.format(toFormat: self.totalBalance * self.market.price)) \(self.market.getCurrencySymbol())"
                 }
             }
         }
@@ -134,8 +135,13 @@ class ViewController: UIViewController {
         
         //Load user settings for config
         let defaults = UserDefaults.standard
+        
         let currency = defaults.object(forKey: "currency") as? String ?? "USD"
         market.setCurrency(currency: Currency(rawValue: currency) ?? Currency.USD)
+        let format = defaults.object(forKey: "format") as? Int ?? 0
+        util.setFormat(style: format)
+        
+        //TODO USEFULL
         
         
     }
