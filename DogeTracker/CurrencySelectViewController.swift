@@ -34,6 +34,7 @@ class CurrencySelectViewController: UIViewController, UITableViewDelegate, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "currencyCell")
         
         cell?.textLabel?.text = allCurrencies[indexPath.row]
+        cell?.textLabel?.textAlignment = .center
         
         return cell ?? UITableViewCell()
         

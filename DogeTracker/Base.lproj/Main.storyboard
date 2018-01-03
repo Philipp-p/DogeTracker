@@ -205,10 +205,10 @@
             </objects>
             <point key="canvasLocation" x="739" y="-610"/>
         </scene>
-        <!--Currency Select View Controller-->
+        <!--Currency-->
         <scene sceneID="AiE-pH-Toa">
             <objects>
-                <viewController id="IXs-lR-woY" customClass="CurrencySelectViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Currency" id="IXs-lR-woY" customClass="CurrencySelectViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fPb-Cg-PIT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
