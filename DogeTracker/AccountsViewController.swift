@@ -85,7 +85,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     var valueToPass: DogeAccount!
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Get Cell Label
+        // Get Cell row
         let indexPath = tableView.indexPathForSelectedRow!
         valueToPass = AccountModel.shared.getAllAccount()[indexPath.row]
         

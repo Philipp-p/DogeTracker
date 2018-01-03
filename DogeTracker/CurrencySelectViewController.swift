@@ -8,50 +8,50 @@
 
 import UIKit
 
-class CurrencySelectViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class CurrencySelectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var currencyPicker: UIPickerView!
+    @IBOutlet weak var currencyTableView: UITableView!
+    
     let allCurrencies = ["AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK", "EUR", "GBP", "HKD", "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PKR", "PLN", "RUB", "SEK", "SGD", "THB", "TRY", "TWD", "USD", "ZAR"]
     
-    var selectedCurrency:String = "AUD" //Needs this init since AUD is start value and slection doesn't trigger at start
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.currencyPicker.dataSource = self;
-        self.currencyPicker.delegate = self;
-        
-        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(save))
-        self.navigationItem.setRightBarButton(saveButton, animated: true)
-        
 
         // Do any additional setup after loading the view.
-    }
-    
-    @objc func save () {
-        let defaults = UserDefaults.standard
-        defaults.set(self.selectedCurrency, forKey: "currency")
-        CoinMarketCap.shared.setCurrency(currency: Currency(rawValue: self.selectedCurrency) ?? Currency.USD)
         
-        navigationController?.popViewController(animated: true)
+        self.currencyTableView.delegate = self
+        self.currencyTableView.dataSource = self
+        
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.selectedCurrency = self.allCurrencies[row]
-    }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allCurrencies.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return allCurrencies[row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "currencyCell")
+        
+        cell?.textLabel?.text = allCurrencies[indexPath.row]
+        
+        return cell ?? UITableViewCell()
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Get Cell row
+        let indexPath = tableView.indexPathForSelectedRow!
+        
+        let selectedCurrency: String = allCurrencies[indexPath.row]
+        let defaults = UserDefaults.standard
+        defaults.set(selectedCurrency, forKey: "currency")
+        CoinMarketCap.shared.setCurrency(currency: Currency(rawValue: selectedCurrency) ?? Currency.USD)
+        
+        navigationController?.popViewController(animated: true)
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
