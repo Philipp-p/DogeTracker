@@ -26,6 +26,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var rateBTCLabel: UILabel!
     @IBOutlet weak var errorRatesLabel: UILabel!
     
+    //Singeltons init to keep them always in memory
+    let model = AccountModel.shared
+    let market = CoinMarketCap.shared
+    
     
     
     var totalBalance: Double = 0
@@ -36,8 +40,18 @@ class ViewController: UIViewController {
         loadTotal()
     }
     
-    @objc func settings() {
-        
+    fileprivate func updateMarketLabel(_ success: Bool) {
+        DispatchQueue.main.async {
+            if success {
+                self.rateFIATLabel.text = "\(self.market.price) \(self.market.getCurrencySymbol())"
+                self.rateBTCLabel.text = String(format: "%.8f ₿", self.market.priceBTC)
+                
+            } else {
+                self.errorRatesLabel.text = "Failed to get rates"
+                self.errorRatesLabel.isHidden = false
+                self.market.success = false //just to be sure
+            }
+        }
     }
     
     @IBAction func loadTotal() {
@@ -46,8 +60,6 @@ class ViewController: UIViewController {
         errorAccountsLabel.isHidden = true
         self.amountFIATLabel.text = nil
         self.rateBTCLabel.text = nil
-        
-        let model = AccountModel.shared
         
         let allAccounts = model.getAllAccount()
         if allAccounts.count > 0 {
@@ -59,17 +71,7 @@ class ViewController: UIViewController {
             
             let market = CoinMarketCap.shared
             market.update() { success, error in
-                DispatchQueue.main.sync {
-                    if success {
-                        self.rateFIATLabel.text = "\(market.price) \(market.getCurrencySymbol())"
-                        self.rateBTCLabel.text = String(format: "%.8f ₿", market.priceBTC)
-                        
-                    } else {
-                        self.errorRatesLabel.text = "Failed to get rates"
-                        self.errorRatesLabel.isHidden = false
-                        market.success = false //just to be sure
-                    }
-                }
+                self.updateMarketLabel(success)
             }
             return
         }
@@ -80,20 +82,11 @@ class ViewController: UIViewController {
         self.rateFIATLabel.text = "Pending rates"
         
         //market
-        let market = CoinMarketCap.shared
         
         group.enter()
         market.update() { success, error in
             DispatchQueue.main.sync {
-                if success {
-                    self.rateFIATLabel.text = "\(market.price) \(market.getCurrencySymbol())"
-                    self.rateBTCLabel.text = String(format: "%.8f ₿", market.priceBTC)
-                    
-                } else {
-                    self.errorRatesLabel.text = "Failed to get rates"
-                    self.errorRatesLabel.isHidden = false
-                    market.success = false //just to be sure
-                }
+                self.updateMarketLabel(success)
                 group.leave()
             }
         }
@@ -127,8 +120,8 @@ class ViewController: UIViewController {
         //Final stuff
         group.notify(queue: DispatchQueue.main) {
             DispatchQueue.main.async {
-                if market.success {
-                    self.amountFIATLabel.text = "\(self.totalBalance * market.price) \(market.getCurrencySymbol())"
+                if self.market.success {
+                    self.amountFIATLabel.text = "\(self.totalBalance * self.market.price) \(self.market.getCurrencySymbol())"
                 }
             }
         }
@@ -138,9 +131,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //Load user settings for config
         let defaults = UserDefaults.standard
         let currency = defaults.object(forKey: "currency") as? String ?? "USD"
-        CoinMarketCap.shared.setCurrency(currency: Currency(rawValue: currency) ?? Currency.USD)
+        market.setCurrency(currency: Currency(rawValue: currency) ?? Currency.USD)
+        
+        
     }
     
     
