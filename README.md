@@ -1,6 +1,8 @@
 #  DogeTracker
 ![DogeTracker Logo](./DogeTracker/Assets.xcassets/AppIcon.appiconset/Icon-60@2x.png)
 
+The app is currently under review for the iOS store
+
 ## Keep track of your Dogecoin
 
 A simplistic approach to keep track of your Dogecoins and Dogecoin in general. Just keep track of all your addresses, without handing over your private keys. Check the current exchange rates for your Dogecoins and be ready to reach the moon.
