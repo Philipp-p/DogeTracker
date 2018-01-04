@@ -1,7 +1,7 @@
 #  DogeTracker
 ![DogeTracker Logo](./DogeTracker/Assets.xcassets/AppIcon.appiconset/Icon-60@2x.png)
 
-App store links: https://itunes.apple.com/app/dogetracker/id1331221523
+App store link: https://itunes.apple.com/app/dogetracker/id1331221523
 
 ## Keep track of your Dogecoin
 
