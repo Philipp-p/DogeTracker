@@ -21,6 +21,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="YrN-qu-jwO">
+                                <rect key="frame" x="32" y="156" width="256" height="256"/>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRH-l0-TLp">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
@@ -165,9 +168,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="nRH-l0-TLp" firstAttribute="leading" secondItem="383-Ym-XEE" secondAttribute="leading" id="9zx-Hr-IGl"/>
+                            <constraint firstItem="YrN-qu-jwO" firstAttribute="centerX" secondItem="383-Ym-XEE" secondAttribute="centerX" id="M5u-TL-3dw"/>
                             <constraint firstAttribute="trailing" secondItem="nRH-l0-TLp" secondAttribute="trailing" id="Mux-aY-HoJ"/>
+                            <constraint firstItem="YrN-qu-jwO" firstAttribute="width" secondItem="YrN-qu-jwO" secondAttribute="height" multiplier="1:1" id="OBu-US-yhc"/>
                             <constraint firstItem="nRH-l0-TLp" firstAttribute="top" secondItem="lE6-ks-iKk" secondAttribute="top" id="Prf-Ca-BNL"/>
                             <constraint firstItem="nRH-l0-TLp" firstAttribute="bottom" secondItem="lE6-ks-iKk" secondAttribute="bottom" id="Wkq-gQ-m0K"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YrN-qu-jwO" secondAttribute="trailing" constant="16" id="rKk-2S-qIV"/>
+                            <constraint firstItem="YrN-qu-jwO" firstAttribute="centerY" secondItem="383-Ym-XEE" secondAttribute="centerY" id="t3S-i8-0F6"/>
+                            <constraint firstItem="YrN-qu-jwO" firstAttribute="leading" secondItem="383-Ym-XEE" secondAttribute="leadingMargin" constant="16" id="upD-fH-idV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lE6-ks-iKk"/>
                     </view>
