@@ -3,7 +3,7 @@
 
 ## Keep track of your Dogecoin
 
-A simplistic approach to keep track of your Dogecoins and Dogecoin in general
+A simplistic approach to keep track of your Dogecoins and Dogecoin in general. Just keep track of all your addresses, without handing over your private keys. Check the current exchange rates for your Dogecoins and be ready to reach the moon.
 
 ## Features:
 
