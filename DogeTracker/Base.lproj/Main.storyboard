@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -198,13 +197,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioh-bo-TDb">
-                                <rect key="frame" x="16" y="70" width="85" height="24"/>
+                                <rect key="frame" x="16" y="76" width="85" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjE-9u-T8e" userLabel="Currency Button">
-                                <rect key="frame" x="109" y="67" width="35" height="33"/>
+                                <rect key="frame" x="109" y="67" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="1OR-nb-iR9"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Pdv-nE-z1K"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="USD"/>
                                 <connections>
@@ -212,14 +215,28 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2d-NF-rFH">
-                                <rect key="frame" x="93" y="111" width="60" height="30"/>
+                                <rect key="frame" x="101" y="119" width="60" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="07N-mB-I8f"/>
+                                </constraints>
                                 <state key="normal" title="1,000.00"/>
                                 <connections>
                                     <segue destination="fbT-o8-fxe" kind="show" id="bl6-kn-3YU"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U9A-7j-cq8">
+                                <rect key="frame" x="16" y="182" width="288" height="87"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="87" id="NxL-oG-etM"/>
+                                </constraints>
+                                <string key="text">For support, ideas and everything else please visit https://www.reddit.com/r/DogeTracker/. For the source code head to https://github.com/Philipp-p/DogeTracker</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Format:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xz-Pg-XLF">
-                                <rect key="frame" x="16" y="112" width="67" height="24"/>
+                                <rect key="frame" x="16" y="127.5" width="67" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -227,17 +244,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TjE-9u-T8e" firstAttribute="leading" secondItem="ioh-bo-TDb" secondAttribute="trailing" constant="8" symbolic="YES" id="2dr-1z-lh3"/>
-                            <constraint firstItem="aOI-Xp-KaY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W2d-NF-rFH" secondAttribute="trailing" constant="167" id="74p-Nk-rAc"/>
+                            <constraint firstItem="W2d-NF-rFH" firstAttribute="leading" secondItem="8xz-Pg-XLF" secondAttribute="trailing" constant="18" id="0i8-mB-sHx"/>
+                            <constraint firstItem="W2d-NF-rFH" firstAttribute="top" secondItem="TjE-9u-T8e" secondAttribute="bottom" constant="8" id="2Ly-rb-Zyd"/>
+                            <constraint firstItem="aOI-Xp-KaY" firstAttribute="trailing" secondItem="U9A-7j-cq8" secondAttribute="trailing" constant="16" id="3PT-dq-aUK"/>
+                            <constraint firstItem="aOI-Xp-KaY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W2d-NF-rFH" secondAttribute="trailing" constant="159" id="9Qs-HE-hT2"/>
                             <constraint firstItem="TjE-9u-T8e" firstAttribute="top" secondItem="aOI-Xp-KaY" secondAttribute="top" constant="3" id="DRa-CC-Zdl"/>
-                            <constraint firstItem="aOI-Xp-KaY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TjE-9u-T8e" secondAttribute="trailing" constant="176" id="G0O-ov-YDi"/>
-                            <constraint firstItem="W2d-NF-rFH" firstAttribute="baseline" secondItem="8xz-Pg-XLF" secondAttribute="baseline" id="Jjy-k0-akg"/>
-                            <constraint firstItem="W2d-NF-rFH" firstAttribute="leading" secondItem="8xz-Pg-XLF" secondAttribute="trailing" constant="10" id="K0Q-ku-tNh"/>
+                            <constraint firstItem="TjE-9u-T8e" firstAttribute="leading" secondItem="ioh-bo-TDb" secondAttribute="trailing" constant="8" id="E0r-r6-U0I"/>
+                            <constraint firstItem="W2d-NF-rFH" firstAttribute="baseline" secondItem="8xz-Pg-XLF" secondAttribute="baseline" id="EFg-JI-ypZ"/>
                             <constraint firstItem="ioh-bo-TDb" firstAttribute="leading" secondItem="aOI-Xp-KaY" secondAttribute="leading" constant="16" id="PhS-FI-o7l"/>
-                            <constraint firstItem="ioh-bo-TDb" firstAttribute="baseline" secondItem="TjE-9u-T8e" secondAttribute="firstBaseline" id="cX3-gz-7Pa"/>
-                            <constraint firstItem="8xz-Pg-XLF" firstAttribute="top" secondItem="ioh-bo-TDb" secondAttribute="bottom" constant="18" id="nhf-J7-gA2"/>
+                            <constraint firstItem="TjE-9u-T8e" firstAttribute="baseline" secondItem="ioh-bo-TDb" secondAttribute="baseline" id="bl8-aI-bRa"/>
+                            <constraint firstItem="U9A-7j-cq8" firstAttribute="leading" secondItem="aOI-Xp-KaY" secondAttribute="leading" constant="16" id="fx7-92-FlA"/>
+                            <constraint firstItem="U9A-7j-cq8" firstAttribute="top" secondItem="W2d-NF-rFH" secondAttribute="bottom" constant="19" id="jvd-RN-rcL"/>
+                            <constraint firstItem="aOI-Xp-KaY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TjE-9u-T8e" secondAttribute="trailing" constant="167" id="kXa-q9-8kg"/>
                             <constraint firstItem="8xz-Pg-XLF" firstAttribute="leading" secondItem="aOI-Xp-KaY" secondAttribute="leading" constant="16" id="uf3-sK-aow"/>
-                            <constraint firstItem="ioh-bo-TDb" firstAttribute="baseline" secondItem="TjE-9u-T8e" secondAttribute="baseline" id="vOo-O5-Ogj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aOI-Xp-KaY"/>
                     </view>
@@ -640,7 +659,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFT-8r-8De">
-                                <rect key="frame" x="131" y="480" width="58" height="30"/>
+                                <rect key="frame" x="131" y="452" width="58" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="rs6-XH-YhS"/>
+                                </constraints>
                                 <state key="normal" title="View QR"/>
                                 <connections>
                                     <action selector="viewQRWithSender:" destination="Kad-Pt-wn1" eventType="touchUpInside" id="afg-XM-Yjv"/>
@@ -653,7 +675,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HyS-Yp-DxK">
-                                <rect key="frame" x="107.5" y="518" width="105" height="30"/>
+                                <rect key="frame" x="107.5" y="504" width="105" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="9YB-VR-U9H"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <state key="normal" title="Delete Account">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
