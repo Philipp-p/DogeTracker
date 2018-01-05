@@ -84,7 +84,11 @@ class AddViewController: UIViewController, UITextFieldDelegate, QRScannerDelegat
         )
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Allow Camera", style: .default, handler: { (alert) -> Void in
-            UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!, options: [:], completionHandler: nil)
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(NSURL(string: "prefs:root=Settings")! as URL)
+            }
         }))
         present(alert, animated: true, completion: nil)
     }

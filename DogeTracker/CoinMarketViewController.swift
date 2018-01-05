@@ -71,7 +71,7 @@ class CoinMarketViewController: UIViewController {
         
         self.marketCapLabel.text = "Market cap: \(self.util.formatToInt(toFormat: self.market.marketCap)) \(self.market.getCurrencySymbol())"
         self.volume24hLabel.text = "Volume 24h: \(self.util.formatToInt(toFormat: self.market.Volume24h)) \(self.market.getCurrencySymbol())"
-        self.totalSupplyLabel.text = "Total supply: \(self.util.formatULong(toFormat: self.market.totalSupply))"
+        self.totalSupplyLabel.text = "Total supply: \(self.util.formatToInt(toFormat: self.market.totalSupply))"
         let maxSupply: String
         if self.market.maxSupply != nil {
             maxSupply = String(self.market.maxSupply!)

@@ -19,9 +19,9 @@ class CoinMarketCap {
     var priceBTC: Double
     var Volume24h: Double
     var marketCap: Double
-    var availableSupply: u_long
-    var totalSupply: u_long
-    var maxSupply: u_long?
+    var availableSupply: Double
+    var totalSupply: Double
+    var maxSupply: Double?
     var percentChange1h: Float
     var percentChange24h: Float
     var percentChange7d: Float
@@ -87,12 +87,12 @@ class CoinMarketCap {
                         self.priceBTC = Double(json["price_btc"] as! String)!
                         self.Volume24h = Double(json["24h_volume_\(self.currency.rawValue.lowercased())"] as! String)!
                         self.marketCap = Double(json["market_cap_\(self.currency.rawValue.lowercased())"] as! String)!
-                        self.availableSupply = u_long(json["available_supply"] as! String)!
-                        self.totalSupply = u_long(json["total_supply"] as! String)!
+                        self.availableSupply = Double(json["available_supply"] as! String)!
+                        self.totalSupply = Double(json["total_supply"] as! String)!
                         if (json["max_supply"] is NSNull) {
                             self.maxSupply = nil
                         } else {
-                            self.maxSupply = u_long(json["max_supply"] as! String)!
+                            self.maxSupply = Double(json["max_supply"] as! String)!
                         }
                         self.percentChange1h = Float(json["percent_change_1h"] as! String)!
                         self.percentChange24h = Float(json["percent_change_24h"] as! String)!

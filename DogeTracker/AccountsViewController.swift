@@ -34,10 +34,15 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         //NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "load"), object: nil, queue: nil, using: loadList)
         
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
         
-        table.refreshControl = refreshControl
+        
+        if #available(iOS 10.0, *) {
+            let refreshControl = UIRefreshControl()
+            refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
+            table.refreshControl = refreshControl
+        } else {
+            // Sorry this feature is minor so will be left out
+        }
     }
     
     @objc func add() {
