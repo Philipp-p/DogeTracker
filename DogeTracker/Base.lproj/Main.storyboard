@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sEf-3z-Ipj">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,14 +18,14 @@
             <objects>
                 <viewController title="Dogecoin" id="2eU-OX-9bL" customClass="CoinMarketViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="383-Ym-XEE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="YrN-qu-jwO">
-                                <rect key="frame" x="32" y="156" width="256" height="256"/>
+                                <rect key="frame" x="32" y="112" width="256" height="256"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRH-l0-TLp">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max supply:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QGq-Sz-5Oi">
                                         <rect key="frame" x="107.5" y="348" width="105" height="24"/>
@@ -36,7 +36,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1H %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qaK-LF-oeL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1H %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qaK-LF-oeL" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
                                         <rect key="frame" x="141" y="93" width="38" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="J7L-eg-mdf"/>
@@ -54,7 +54,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24h%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6jh-e2-QiI">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24h%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6jh-e2-QiI" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
                                         <rect key="frame" x="138.5" y="122" width="43" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="ZUG-HS-xht"/>
@@ -81,7 +81,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIAT Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MkU-UR-fBQ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIAT Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MkU-UR-fBQ" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
                                         <rect key="frame" x="118.5" y="61" width="83" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="THJ-pQ-pPR"/>
@@ -90,7 +90,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9bK-IX-3fj">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9bK-IX-3fj" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
                                         <rect key="frame" x="119" y="180" width="82" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="prh-e4-Sy6"/>
@@ -99,7 +99,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7d%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l0n-IH-jRP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7d%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l0n-IH-jRP" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
                                         <rect key="frame" x="144" y="151" width="32" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="IrJ-9t-FU6"/>
@@ -201,11 +201,14 @@
             <objects>
                 <viewController title="Settings" id="m6R-cu-YLX" customClass="SettingsViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rXT-SA-18x">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioh-bo-TDb">
                                 <rect key="frame" x="16" y="76" width="85" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="AMe-3I-958"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -245,6 +248,9 @@
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Format:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xz-Pg-XLF">
                                 <rect key="frame" x="16" y="127.5" width="67" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="67" id="Ak1-69-bw1"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -255,16 +261,16 @@
                             <constraint firstItem="W2d-NF-rFH" firstAttribute="leading" secondItem="8xz-Pg-XLF" secondAttribute="trailing" constant="18" id="0i8-mB-sHx"/>
                             <constraint firstItem="W2d-NF-rFH" firstAttribute="top" secondItem="TjE-9u-T8e" secondAttribute="bottom" constant="8" id="2Ly-rb-Zyd"/>
                             <constraint firstItem="aOI-Xp-KaY" firstAttribute="trailing" secondItem="U9A-7j-cq8" secondAttribute="trailing" constant="16" id="3PT-dq-aUK"/>
-                            <constraint firstItem="aOI-Xp-KaY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W2d-NF-rFH" secondAttribute="trailing" constant="159" id="9Qs-HE-hT2"/>
+                            <constraint firstItem="TjE-9u-T8e" firstAttribute="baseline" secondItem="ioh-bo-TDb" secondAttribute="baseline" id="6Q1-tr-6hE"/>
                             <constraint firstItem="TjE-9u-T8e" firstAttribute="top" secondItem="aOI-Xp-KaY" secondAttribute="top" constant="3" id="DRa-CC-Zdl"/>
                             <constraint firstItem="TjE-9u-T8e" firstAttribute="leading" secondItem="ioh-bo-TDb" secondAttribute="trailing" constant="8" id="E0r-r6-U0I"/>
-                            <constraint firstItem="W2d-NF-rFH" firstAttribute="baseline" secondItem="8xz-Pg-XLF" secondAttribute="baseline" id="EFg-JI-ypZ"/>
                             <constraint firstItem="ioh-bo-TDb" firstAttribute="leading" secondItem="aOI-Xp-KaY" secondAttribute="leading" constant="16" id="PhS-FI-o7l"/>
-                            <constraint firstItem="TjE-9u-T8e" firstAttribute="baseline" secondItem="ioh-bo-TDb" secondAttribute="baseline" id="bl8-aI-bRa"/>
+                            <constraint firstItem="W2d-NF-rFH" firstAttribute="baseline" secondItem="8xz-Pg-XLF" secondAttribute="baseline" id="aRa-GB-oDZ"/>
                             <constraint firstItem="U9A-7j-cq8" firstAttribute="leading" secondItem="aOI-Xp-KaY" secondAttribute="leading" constant="16" id="fx7-92-FlA"/>
                             <constraint firstItem="U9A-7j-cq8" firstAttribute="top" secondItem="W2d-NF-rFH" secondAttribute="bottom" constant="19" id="jvd-RN-rcL"/>
-                            <constraint firstItem="aOI-Xp-KaY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TjE-9u-T8e" secondAttribute="trailing" constant="167" id="kXa-q9-8kg"/>
+                            <constraint firstItem="aOI-Xp-KaY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W2d-NF-rFH" secondAttribute="trailing" constant="19" id="tsR-Ct-qeO"/>
                             <constraint firstItem="8xz-Pg-XLF" firstAttribute="leading" secondItem="aOI-Xp-KaY" secondAttribute="leading" constant="16" id="uf3-sK-aow"/>
+                            <constraint firstItem="aOI-Xp-KaY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TjE-9u-T8e" secondAttribute="trailing" constant="19" id="y1h-6V-2di"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aOI-Xp-KaY"/>
                     </view>
@@ -282,11 +288,11 @@
             <objects>
                 <viewController title="Format" id="fbT-o8-fxe" customClass="FormatSelectViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nng-Pd-ytL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oaC-Qa-Qev">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="formatCell" id="mtf-h3-WXf">
@@ -302,10 +308,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="oaC-Qa-Qev" firstAttribute="leading" secondItem="J6l-YG-VzT" secondAttribute="leading" id="DvL-2Z-ML2"/>
-                            <constraint firstItem="J6l-YG-VzT" firstAttribute="bottom" secondItem="oaC-Qa-Qev" secondAttribute="bottom" id="fyc-nY-tNc"/>
-                            <constraint firstItem="J6l-YG-VzT" firstAttribute="trailing" secondItem="oaC-Qa-Qev" secondAttribute="trailing" id="kod-vA-rpD"/>
-                            <constraint firstItem="oaC-Qa-Qev" firstAttribute="top" secondItem="J6l-YG-VzT" secondAttribute="top" id="zFr-Jd-7ap"/>
+                            <constraint firstItem="oaC-Qa-Qev" firstAttribute="bottom" secondItem="J6l-YG-VzT" secondAttribute="bottom" id="OUT-lE-Uxs"/>
+                            <constraint firstItem="oaC-Qa-Qev" firstAttribute="leading" secondItem="J6l-YG-VzT" secondAttribute="leading" id="XfN-Xv-4aD"/>
+                            <constraint firstItem="oaC-Qa-Qev" firstAttribute="top" secondItem="Nng-Pd-ytL" secondAttribute="top" id="rbg-My-Z3c"/>
+                            <constraint firstItem="oaC-Qa-Qev" firstAttribute="trailing" secondItem="J6l-YG-VzT" secondAttribute="trailing" id="sk5-QL-l8w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="J6l-YG-VzT"/>
                     </view>
@@ -315,18 +321,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J33-38-sCX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1881" y="-1008"/>
+            <point key="canvasLocation" x="1880.625" y="-1008.75"/>
         </scene>
         <!--Currency-->
         <scene sceneID="AiE-pH-Toa">
             <objects>
                 <viewController title="Currency" id="IXs-lR-woY" customClass="CurrencySelectViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fPb-Cg-PIT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xpJ-NT-lQC">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="currencyCell" id="xAn-m3-U5l">
@@ -342,7 +348,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xpJ-NT-lQC" firstAttribute="top" secondItem="Bi2-Vv-nX7" secondAttribute="top" id="QO5-ff-6a2"/>
+                            <constraint firstItem="xpJ-NT-lQC" firstAttribute="top" secondItem="fPb-Cg-PIT" secondAttribute="topMargin" id="2T8-4C-9Nc"/>
                             <constraint firstItem="Bi2-Vv-nX7" firstAttribute="bottom" secondItem="xpJ-NT-lQC" secondAttribute="bottom" id="Qgq-oq-fAo"/>
                             <constraint firstItem="Bi2-Vv-nX7" firstAttribute="trailing" secondItem="xpJ-NT-lQC" secondAttribute="trailing" id="a3G-JP-k82"/>
                             <constraint firstItem="xpJ-NT-lQC" firstAttribute="leading" secondItem="Bi2-Vv-nX7" secondAttribute="leading" id="wDy-DU-ob4"/>
@@ -355,27 +361,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87k-dS-tXg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1881" y="-1732"/>
+            <point key="canvasLocation" x="1880.625" y="-1732.5"/>
         </scene>
         <!--Overview-->
         <scene sceneID="GAH-eo-QVc">
             <objects>
                 <viewController title="Overview" id="ZZV-ym-M7J" customClass="ViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PXO-RY-Eaa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="Ovf-la-l1D">
-                                <rect key="frame" x="16" y="140" width="288" height="288"/>
+                                <rect key="frame" x="16" y="96" width="288" height="288"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ovf-la-l1D" secondAttribute="height" multiplier="1:1" id="yVM-j1-cVY"/>
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jpu-2G-gw5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Coins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jta-Sn-SFL">
-                                        <rect key="frame" x="98.5" y="113" width="123.5" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Coins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jta-Sn-SFL" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
+                                        <rect key="frame" x="98.5" y="49" width="123.5" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="FCp-95-nWz"/>
                                         </constraints>
@@ -384,7 +390,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Accounts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXF-cR-FNe">
-                                        <rect key="frame" x="103" y="177" width="114" height="20.5"/>
+                                        <rect key="frame" x="103" y="113" width="114" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20.5" id="oe1-Xk-ogR"/>
                                         </constraints>
@@ -392,8 +398,8 @@
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount FIAT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YwG-a1-Tjk">
-                                        <rect key="frame" x="104" y="145" width="112" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount FIAT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YwG-a1-Tjk" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
+                                        <rect key="frame" x="104" y="81" width="112" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="QXM-O2-IKj"/>
                                         </constraints>
@@ -402,13 +408,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exchange Rates:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ez-vQ-LiZ">
-                                        <rect key="frame" x="16" y="238.5" width="187" height="32"/>
+                                        <rect key="frame" x="16" y="174.5" width="187" height="32"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIAT Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7h7-ud-TM4">
-                                        <rect key="frame" x="118.5" y="279.5" width="83" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIAT Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7h7-ud-TM4" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
+                                        <rect key="frame" x="118.5" y="215.5" width="83" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="9TV-0x-d2l"/>
                                         </constraints>
@@ -416,8 +422,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQW-P5-mRq">
-                                        <rect key="frame" x="119.5" y="311.5" width="82" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQW-P5-mRq" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
+                                        <rect key="frame" x="119.5" y="247.5" width="82" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="0x2-31-ROf"/>
                                         </constraints>
@@ -426,7 +432,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Rates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqD-9w-klg">
-                                        <rect key="frame" x="117.5" y="343.5" width="85.5" height="20.5"/>
+                                        <rect key="frame" x="117.5" y="279.5" width="85.5" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20.5" id="af6-tJ-Cik"/>
                                         </constraints>
@@ -435,7 +441,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSH-k4-XdQ">
-                                        <rect key="frame" x="211" y="243.5" width="22" height="22"/>
+                                        <rect key="frame" x="211" y="179.5" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ZSH-k4-XdQ" secondAttribute="height" multiplier="1:1" id="2RM-jc-1E0"/>
                                         </constraints>
@@ -444,7 +450,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQb-w1-tcy">
-                                        <rect key="frame" x="16" y="72" width="65" height="32"/>
+                                        <rect key="frame" x="16" y="8" width="65" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="Mso-F8-YSf"/>
                                         </constraints>
@@ -481,8 +487,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ovf-la-l1D" firstAttribute="centerY" secondItem="PXO-RY-Eaa" secondAttribute="centerY" id="1Cg-Rj-KNc"/>
-                            <constraint firstItem="jpu-2G-gw5" firstAttribute="top" secondItem="PXO-RY-Eaa" secondAttribute="top" id="4by-Ig-GdJ"/>
                             <constraint firstItem="Ovf-la-l1D" firstAttribute="leading" secondItem="i3m-jp-RiL" secondAttribute="leading" constant="16" id="Ycg-Lf-waE"/>
+                            <constraint firstItem="jpu-2G-gw5" firstAttribute="top" secondItem="i3m-jp-RiL" secondAttribute="top" id="Zks-5b-uWb"/>
                             <constraint firstItem="jpu-2G-gw5" firstAttribute="leading" secondItem="i3m-jp-RiL" secondAttribute="leading" id="dZ7-tl-M3i"/>
                             <constraint firstItem="i3m-jp-RiL" firstAttribute="trailing" secondItem="Ovf-la-l1D" secondAttribute="trailing" constant="16" id="fq9-KT-X6y"/>
                             <constraint firstItem="jpu-2G-gw5" firstAttribute="bottom" secondItem="i3m-jp-RiL" secondAttribute="bottom" id="oFL-hM-QnL"/>
@@ -530,18 +536,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Hj-h7-rsG" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-73.125" y="128.87323943661971"/>
+            <point key="canvasLocation" x="-73.125" y="128.75"/>
         </scene>
         <!--Accounts-->
         <scene sceneID="b9z-fa-hkp">
             <objects>
                 <viewController title="Accounts" id="Gby-ZE-lcB" customClass="AccountsViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rV7-Kz-0gE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="2Qv-6i-ymU">
+                                <rect key="frame" x="16" y="96" width="288" height="288"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2Qv-6i-ymU" secondAttribute="height" multiplier="1:1" id="3Im-Pq-zc3"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qys-xS-KQS">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="accountCellTwo" rowHeight="92" id="QY6-tV-RzG" customClass="AccountTableViewCellTwo" customModule="DogeTracker" customModuleProvider="target">
@@ -585,12 +597,6 @@
                                     <outlet property="delegate" destination="Gby-ZE-lcB" id="sHJ-bD-JhL"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="2Qv-6i-ymU">
-                                <rect key="frame" x="16" y="140" width="288" height="288"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="2Qv-6i-ymU" secondAttribute="height" multiplier="1:1" id="3Im-Pq-zc3"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -599,7 +605,7 @@
                             <constraint firstItem="2Qv-6i-ymU" firstAttribute="leading" secondItem="rV7-Kz-0gE" secondAttribute="leading" constant="16" id="X5H-b7-lRY"/>
                             <constraint firstItem="2Qv-6i-ymU" firstAttribute="centerY" secondItem="rV7-Kz-0gE" secondAttribute="centerY" id="bJ5-ns-mJo"/>
                             <constraint firstItem="2Qv-6i-ymU" firstAttribute="centerX" secondItem="rV7-Kz-0gE" secondAttribute="centerX" id="e3j-ei-Q1n"/>
-                            <constraint firstItem="Qys-xS-KQS" firstAttribute="top" secondItem="a9A-bp-RSe" secondAttribute="top" id="hdM-BW-Ccx"/>
+                            <constraint firstItem="Qys-xS-KQS" firstAttribute="top" secondItem="a9A-bp-RSe" secondAttribute="top" id="fvg-vy-e3B"/>
                             <constraint firstItem="Qys-xS-KQS" firstAttribute="bottom" secondItem="a9A-bp-RSe" secondAttribute="bottom" id="iVP-EV-qie"/>
                             <constraint firstAttribute="trailing" secondItem="2Qv-6i-ymU" secondAttribute="trailing" constant="16" id="wU0-SM-IYk"/>
                         </constraints>
@@ -614,7 +620,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJf-h5-awd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738.75" y="128.87323943661971"/>
+            <point key="canvasLocation" x="738.75" y="128.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MPT-Wu-LSJ">
@@ -639,11 +645,11 @@
             <objects>
                 <viewController title="Account" id="Kad-Pt-wn1" customClass="AccountDetailViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u88-W4-9Ul">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="jX2-wq-FWN">
-                                <rect key="frame" x="32" y="156" width="256" height="256"/>
+                                <rect key="frame" x="32" y="112" width="256" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jX2-wq-FWN" secondAttribute="height" multiplier="1:1" id="hzs-Oj-7mi"/>
                                 </constraints>
@@ -667,7 +673,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFT-8r-8De">
-                                <rect key="frame" x="131" y="452" width="58" height="44"/>
+                                <rect key="frame" x="131" y="364" width="58" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="rs6-XH-YhS"/>
                                 </constraints>
@@ -683,7 +689,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HyS-Yp-DxK">
-                                <rect key="frame" x="107.5" y="504" width="105" height="44"/>
+                                <rect key="frame" x="107.5" y="416" width="105" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="9YB-VR-U9H"/>
                                 </constraints>
@@ -717,7 +723,7 @@
                             <constraint firstItem="PZK-qZ-X1d" firstAttribute="top" secondItem="Mpq-47-h45" secondAttribute="top" constant="9" id="r58-J4-rug"/>
                             <constraint firstItem="Mpq-47-h45" firstAttribute="trailing" secondItem="qKZ-1R-vsj" secondAttribute="trailing" constant="16" id="sL1-RZ-cXH"/>
                             <constraint firstItem="1Ql-y6-4t8" firstAttribute="leading" secondItem="Mpq-47-h45" secondAttribute="leading" constant="16" id="wcd-q3-QV2"/>
-                            <constraint firstItem="Mpq-47-h45" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TRj-G5-OSl" secondAttribute="trailing" constant="228.5" id="xyn-sd-Mj5"/>
+                            <constraint firstItem="Mpq-47-h45" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TRj-G5-OSl" secondAttribute="trailing" constant="16" id="xyn-sd-Mj5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mpq-47-h45"/>
                     </view>
@@ -739,11 +745,11 @@
             <objects>
                 <viewController title="QRCodeView" id="FZr-uE-Vsg" customClass="QRCodeViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lmw-I0-ETv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nrd-p0-jRF">
-                                <rect key="frame" x="35" y="159" width="250" height="250"/>
+                                <rect key="frame" x="35" y="115" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Nrd-p0-jRF" secondAttribute="height" multiplier="1:1" id="2Oh-fP-4eE"/>
                                     <constraint firstAttribute="height" constant="250" id="qHG-cF-FWP"/>
@@ -772,11 +778,11 @@
             <objects>
                 <viewController title="Edit" id="pLf-bu-mfv" customClass="EditViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VIm-bt-TaM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="SaC-w2-6Gc">
-                                <rect key="frame" x="16" y="140" width="288" height="288"/>
+                                <rect key="frame" x="16" y="96" width="288" height="288"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SaC-w2-6Gc" secondAttribute="height" multiplier="1:1" id="2jX-9c-GUV"/>
                                 </constraints>
@@ -835,11 +841,11 @@
             <objects>
                 <viewController title="Add" id="8pv-2g-ccU" customClass="AddViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jaY-3t-MlG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="SIk-ZZ-wZ8">
-                                <rect key="frame" x="16" y="140" width="288" height="288"/>
+                                <rect key="frame" x="16" y="96" width="288" height="288"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SIk-ZZ-wZ8" secondAttribute="height" multiplier="1:1" id="Y1K-zz-3ZJ"/>
                                 </constraints>
@@ -894,11 +900,11 @@
             <objects>
                 <viewController title="QR Scanner" id="SW8-85-WZy" customClass="QRScannerViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZrK-eC-dyx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcm-ar-fxt">
-                                <rect key="frame" x="139" y="527" width="42" height="21"/>
+                                <rect key="frame" x="139" y="439" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

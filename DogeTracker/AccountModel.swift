@@ -18,7 +18,11 @@ class AccountModel {
     
     
     private init() {
-        context = appDelegate.persistentContainer.viewContext
+        if #available(iOS 10.0, *) {
+            context = appDelegate.persistentContainer.viewContext
+        } else {
+            context = appDelegate.managedObjectContext
+        }
         context.undoManager = nil // undo functionallity not needed
         self.allAccounts = AccountModel.getAllAccountFromCoreData(context: context)
     }

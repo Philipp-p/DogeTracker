@@ -40,7 +40,11 @@ class CoinMarketViewController: UIViewController {
     
     fileprivate func updateLabels () {
         self.fiatRateLabel.text = "\(self.market.price) \(self.market.getCurrencySymbol())"
-        self.btcRateLabel.text = String(format: "%.8f ₿", self.market.priceBTC)
+        if #available(iOS 10.0, *) {
+            self.btcRateLabel.text = String(format: "%.8f ₿", self.market.priceBTC)
+        } else {
+            self.btcRateLabel.text = String(format: "%.8f BTC", self.market.priceBTC)
+        }
         
         let red = UIColor(red: 215/255, green: 25/255, blue: 28/255, alpha: 1)
         let green = UIColor(red: 26/255, green: 150/255, blue: 65/255, alpha: 1)
@@ -71,7 +75,7 @@ class CoinMarketViewController: UIViewController {
         
         self.marketCapLabel.text = "Market cap: \(self.util.formatToInt(toFormat: self.market.marketCap)) \(self.market.getCurrencySymbol())"
         self.volume24hLabel.text = "Volume 24h: \(self.util.formatToInt(toFormat: self.market.Volume24h)) \(self.market.getCurrencySymbol())"
-        self.totalSupplyLabel.text = "Total supply: \(self.util.formatULong(toFormat: self.market.totalSupply))"
+        self.totalSupplyLabel.text = "Total supply: \(self.util.formatToInt(toFormat: self.market.totalSupply))"
         let maxSupply: String
         if self.market.maxSupply != nil {
             maxSupply = String(self.market.maxSupply!)
