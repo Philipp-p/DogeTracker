@@ -648,89 +648,143 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LpC-bD-GHK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance Doge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qKZ-1R-vsj" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
+                                        <rect key="frame" x="107" y="155" width="106" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="FK1-HO-rgo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRj-G5-OSl">
+                                        <rect key="frame" x="24" y="123" width="76" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFT-8r-8De">
+                                        <rect key="frame" x="131" y="311" width="58" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="rs6-XH-YhS"/>
+                                        </constraints>
+                                        <state key="normal" title="View QR"/>
+                                        <connections>
+                                            <action selector="viewQRWithSender:" destination="Kad-Pt-wn1" eventType="touchUpInside" id="afg-XM-Yjv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HyS-Yp-DxK">
+                                        <rect key="frame" x="108" y="363" width="105" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="9YB-VR-U9H"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                        <state key="normal" title="Delete Account">
+                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteWithSender:" destination="Kad-Pt-wn1" eventType="touchUpInside" id="zXG-I7-elK"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount FIAT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2n5-V5-0ZS" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
+                                        <rect key="frame" x="111" y="184" width="98" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20.5" id="mGG-vw-jVE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nC-2a-Wyp" userLabel="Addres View">
+                                        <rect key="frame" x="0.0" y="60" width="320" height="21"/>
+                                        <subviews>
+                                            <label hidden="YES" opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ql-y6-4t8" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="0.0" width="288" height="21"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="1Ql-y6-4t8" secondAttribute="trailing" constant="16" id="Ch6-IH-c9V"/>
+                                            <constraint firstAttribute="bottom" secondItem="1Ql-y6-4t8" secondAttribute="bottom" id="Gya-c7-uzf"/>
+                                            <constraint firstItem="1Ql-y6-4t8" firstAttribute="top" secondItem="3nC-2a-Wyp" secondAttribute="top" id="W1h-Fb-s4g"/>
+                                            <constraint firstItem="1Ql-y6-4t8" firstAttribute="leading" secondItem="3nC-2a-Wyp" secondAttribute="leading" constant="16" id="Wxn-AI-UNz"/>
+                                            <constraint firstAttribute="height" constant="21" id="yBE-na-izu"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYJ-Yr-3fi">
+                                        <rect key="frame" x="0.0" y="20" width="320" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name or Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PZK-qZ-X1d" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="0.0" width="288" height="32"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="PZK-qZ-X1d" secondAttribute="trailing" constant="16" id="QgA-c7-OBJ"/>
+                                            <constraint firstItem="PZK-qZ-X1d" firstAttribute="leading" secondItem="NYJ-Yr-3fi" secondAttribute="leading" constant="16" id="Yzf-NZ-bDD"/>
+                                            <constraint firstAttribute="bottom" secondItem="PZK-qZ-X1d" secondAttribute="bottom" id="jdj-Tv-yM8"/>
+                                            <constraint firstItem="PZK-qZ-X1d" firstAttribute="top" secondItem="NYJ-Yr-3fi" secondAttribute="top" id="lTv-xV-XtN"/>
+                                            <constraint firstAttribute="height" constant="32" id="sZX-DB-Nae"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="qKZ-1R-vsj" firstAttribute="centerX" secondItem="LpC-bD-GHK" secondAttribute="centerX" id="5FR-uD-P9J"/>
+                                    <constraint firstAttribute="trailing" secondItem="NYJ-Yr-3fi" secondAttribute="trailing" id="9MI-Vm-duO"/>
+                                    <constraint firstAttribute="bottom" secondItem="HyS-Yp-DxK" secondAttribute="bottom" constant="9" id="DCc-e2-BYG"/>
+                                    <constraint firstItem="2n5-V5-0ZS" firstAttribute="top" secondItem="qKZ-1R-vsj" secondAttribute="bottom" constant="8" id="G52-hM-B2D"/>
+                                    <constraint firstItem="2n5-V5-0ZS" firstAttribute="centerX" secondItem="LpC-bD-GHK" secondAttribute="centerX" id="L5f-NP-yuR"/>
+                                    <constraint firstItem="YFT-8r-8De" firstAttribute="top" secondItem="LpC-bD-GHK" secondAttribute="top" constant="311" id="N89-Uk-EJi"/>
+                                    <constraint firstItem="3nC-2a-Wyp" firstAttribute="width" secondItem="LpC-bD-GHK" secondAttribute="width" id="Qrq-Gl-f2T"/>
+                                    <constraint firstItem="TRj-G5-OSl" firstAttribute="top" secondItem="3nC-2a-Wyp" secondAttribute="bottom" constant="42" id="SVm-fg-dxW"/>
+                                    <constraint firstItem="HyS-Yp-DxK" firstAttribute="top" secondItem="YFT-8r-8De" secondAttribute="bottom" constant="8" id="VgU-On-qrv"/>
+                                    <constraint firstItem="3nC-2a-Wyp" firstAttribute="leading" secondItem="LpC-bD-GHK" secondAttribute="leading" id="Wpi-Ws-QA3"/>
+                                    <constraint firstAttribute="trailing" secondItem="3nC-2a-Wyp" secondAttribute="trailing" id="YrM-PT-6NZ"/>
+                                    <constraint firstItem="NYJ-Yr-3fi" firstAttribute="leading" secondItem="LpC-bD-GHK" secondAttribute="leading" id="Z6d-8Z-ZZ1"/>
+                                    <constraint firstItem="qKZ-1R-vsj" firstAttribute="top" secondItem="TRj-G5-OSl" secondAttribute="bottom" constant="8" id="brW-Gs-Fcc"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TRj-G5-OSl" secondAttribute="trailing" constant="16" id="dHN-GC-6mm"/>
+                                    <constraint firstItem="HyS-Yp-DxK" firstAttribute="centerX" secondItem="LpC-bD-GHK" secondAttribute="centerX" id="hWg-wq-92Y"/>
+                                    <constraint firstItem="TRj-G5-OSl" firstAttribute="leading" secondItem="LpC-bD-GHK" secondAttribute="leadingMargin" constant="16" id="oOl-CF-Xv7"/>
+                                    <constraint firstItem="YFT-8r-8De" firstAttribute="centerX" secondItem="LpC-bD-GHK" secondAttribute="centerX" id="oc9-9E-A2C"/>
+                                    <constraint firstItem="YFT-8r-8De" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2n5-V5-0ZS" secondAttribute="bottom" constant="8" id="p7c-Ei-6wv"/>
+                                    <constraint firstItem="NYJ-Yr-3fi" firstAttribute="top" secondItem="LpC-bD-GHK" secondAttribute="top" constant="20" id="pU4-SX-ami"/>
+                                    <constraint firstItem="3nC-2a-Wyp" firstAttribute="top" secondItem="NYJ-Yr-3fi" secondAttribute="bottom" constant="8" id="r9n-hf-KXK"/>
+                                </constraints>
+                            </scrollView>
                             <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="jX2-wq-FWN">
                                 <rect key="frame" x="32" y="112" width="256" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jX2-wq-FWN" secondAttribute="height" multiplier="1:1" id="hzs-Oj-7mi"/>
                                 </constraints>
                             </imageView>
-                            <label hidden="YES" opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ql-y6-4t8" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
-                                <rect key="frame" x="16" y="112" width="288" height="20.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qKZ-1R-vsj" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
-                                <rect key="frame" x="16" y="206.5" width="288" height="21"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRj-G5-OSl">
-                                <rect key="frame" x="16" y="174.5" width="75.5" height="24"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFT-8r-8De">
-                                <rect key="frame" x="131" y="364" width="58" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="rs6-XH-YhS"/>
-                                </constraints>
-                                <state key="normal" title="View QR"/>
-                                <connections>
-                                    <action selector="viewQRWithSender:" destination="Kad-Pt-wn1" eventType="touchUpInside" id="afg-XM-Yjv"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name or Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PZK-qZ-X1d" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
-                                <rect key="frame" x="16" y="73" width="288" height="31.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HyS-Yp-DxK">
-                                <rect key="frame" x="107.5" y="416" width="105" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="9YB-VR-U9H"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                <state key="normal" title="Delete Account">
-                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="deleteWithSender:" destination="Kad-Pt-wn1" eventType="touchUpInside" id="zXG-I7-elK"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Mpq-47-h45" firstAttribute="bottom" secondItem="HyS-Yp-DxK" secondAttribute="bottom" constant="20" id="2Dm-Mr-SoW"/>
-                            <constraint firstItem="PZK-qZ-X1d" firstAttribute="leading" secondItem="Mpq-47-h45" secondAttribute="leading" constant="16" id="417-ZU-Cc1"/>
-                            <constraint firstItem="1Ql-y6-4t8" firstAttribute="top" secondItem="PZK-qZ-X1d" secondAttribute="bottom" constant="8" id="4so-kt-Lcv"/>
-                            <constraint firstItem="Mpq-47-h45" firstAttribute="trailing" secondItem="1Ql-y6-4t8" secondAttribute="trailing" constant="16" id="88H-4r-jpF"/>
-                            <constraint firstItem="HyS-Yp-DxK" firstAttribute="top" secondItem="YFT-8r-8De" secondAttribute="bottom" constant="8" id="Cz2-mv-zFr"/>
-                            <constraint firstItem="Mpq-47-h45" firstAttribute="trailing" secondItem="PZK-qZ-X1d" secondAttribute="trailing" constant="16" id="JbS-za-4vp"/>
+                            <constraint firstItem="LpC-bD-GHK" firstAttribute="bottom" secondItem="Mpq-47-h45" secondAttribute="bottom" id="GYc-dJ-nj9"/>
+                            <constraint firstItem="LpC-bD-GHK" firstAttribute="trailing" secondItem="Mpq-47-h45" secondAttribute="trailing" id="GgX-PK-jBF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jX2-wq-FWN" secondAttribute="trailing" constant="16" id="M2g-SO-zB3"/>
-                            <constraint firstItem="qKZ-1R-vsj" firstAttribute="leading" secondItem="Mpq-47-h45" secondAttribute="leading" constant="16" id="QG8-rG-pD6"/>
-                            <constraint firstItem="YFT-8r-8De" firstAttribute="centerX" secondItem="u88-W4-9Ul" secondAttribute="centerX" id="QhZ-h4-hUo"/>
                             <constraint firstItem="jX2-wq-FWN" firstAttribute="leading" secondItem="u88-W4-9Ul" secondAttribute="leadingMargin" constant="16" id="WNk-fl-IZS"/>
-                            <constraint firstItem="TRj-G5-OSl" firstAttribute="top" secondItem="1Ql-y6-4t8" secondAttribute="bottom" constant="42" id="c2z-Of-53V"/>
-                            <constraint firstItem="HyS-Yp-DxK" firstAttribute="centerX" secondItem="u88-W4-9Ul" secondAttribute="centerX" id="f0Q-FJ-4AL"/>
+                            <constraint firstItem="LpC-bD-GHK" firstAttribute="top" secondItem="u88-W4-9Ul" secondAttribute="top" id="aVB-WF-PlV"/>
                             <constraint firstItem="jX2-wq-FWN" firstAttribute="centerY" secondItem="u88-W4-9Ul" secondAttribute="centerY" id="fjb-vv-pf1"/>
-                            <constraint firstItem="qKZ-1R-vsj" firstAttribute="top" secondItem="TRj-G5-OSl" secondAttribute="bottom" constant="8" id="iXu-qj-vAV"/>
-                            <constraint firstItem="TRj-G5-OSl" firstAttribute="leading" secondItem="Mpq-47-h45" secondAttribute="leading" constant="16" id="j9v-Ct-41J"/>
+                            <constraint firstItem="LpC-bD-GHK" firstAttribute="leading" secondItem="Mpq-47-h45" secondAttribute="leading" id="pC4-ZZ-cuy"/>
                             <constraint firstItem="jX2-wq-FWN" firstAttribute="centerX" secondItem="u88-W4-9Ul" secondAttribute="centerX" id="phM-Xu-WAw"/>
-                            <constraint firstItem="PZK-qZ-X1d" firstAttribute="top" secondItem="Mpq-47-h45" secondAttribute="top" constant="9" id="r58-J4-rug"/>
-                            <constraint firstItem="Mpq-47-h45" firstAttribute="trailing" secondItem="qKZ-1R-vsj" secondAttribute="trailing" constant="16" id="sL1-RZ-cXH"/>
-                            <constraint firstItem="1Ql-y6-4t8" firstAttribute="leading" secondItem="Mpq-47-h45" secondAttribute="leading" constant="16" id="wcd-q3-QV2"/>
-                            <constraint firstItem="Mpq-47-h45" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TRj-G5-OSl" secondAttribute="trailing" constant="16" id="xyn-sd-Mj5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mpq-47-h45"/>
                     </view>
                     <connections>
-                        <outlet property="address" destination="1Ql-y6-4t8" id="Red-ns-dkE"/>
-                        <outlet property="balance" destination="qKZ-1R-vsj" id="FbU-tA-b0l"/>
-                        <outlet property="name" destination="PZK-qZ-X1d" id="zd7-9c-Cj0"/>
+                        <outlet property="addressLabel" destination="1Ql-y6-4t8" id="PY2-92-NN1"/>
+                        <outlet property="balanceLabel" destination="qKZ-1R-vsj" id="5v8-S0-Cl1"/>
+                        <outlet property="fiatBalanceLabel" destination="2n5-V5-0ZS" id="UdE-zo-u7f"/>
+                        <outlet property="nameLabel" destination="PZK-qZ-X1d" id="jAt-Fi-Os0"/>
                         <outlet property="qrButton" destination="YFT-8r-8De" id="v8U-zr-0Cw"/>
                         <segue destination="FZr-uE-Vsg" kind="show" identifier="viewQRCode" id="m6e-23-Bac"/>
                         <segue destination="pLf-bu-mfv" kind="show" identifier="edit" id="SFm-FW-MPD"/>
@@ -738,7 +792,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MeC-EQ-0sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1881" y="500"/>
+            <point key="canvasLocation" x="1880.625" y="500"/>
         </scene>
         <!--QRCodeView-->
         <scene sceneID="AHD-c9-FbS">
