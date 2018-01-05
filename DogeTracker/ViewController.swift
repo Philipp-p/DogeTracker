@@ -45,7 +45,11 @@ class ViewController: UIViewController {
         DispatchQueue.main.async {
             if success {
                 self.rateFIATLabel.text = "\(self.market.price) \(self.market.getCurrencySymbol())"
-                self.rateBTCLabel.text = String(format: "%.8f ₿", self.market.priceBTC)
+                if #available(iOS 10.0, *) {
+                    self.rateBTCLabel.text = String(format: "%.8f ₿", self.market.priceBTC)
+                } else {
+                    self.rateBTCLabel.text = String(format: "%.8f BTC", self.market.priceBTC)
+                }
                 
             } else {
                 self.errorRatesLabel.text = "Failed to get rates"

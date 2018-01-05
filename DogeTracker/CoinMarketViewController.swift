@@ -40,7 +40,11 @@ class CoinMarketViewController: UIViewController {
     
     fileprivate func updateLabels () {
         self.fiatRateLabel.text = "\(self.market.price) \(self.market.getCurrencySymbol())"
-        self.btcRateLabel.text = String(format: "%.8f ₿", self.market.priceBTC)
+        if #available(iOS 10.0, *) {
+            self.btcRateLabel.text = String(format: "%.8f ₿", self.market.priceBTC)
+        } else {
+            self.btcRateLabel.text = String(format: "%.8f BTC", self.market.priceBTC)
+        }
         
         let red = UIColor(red: 215/255, green: 25/255, blue: 28/255, alpha: 1)
         let green = UIColor(red: 26/255, green: 150/255, blue: 65/255, alpha: 1)
