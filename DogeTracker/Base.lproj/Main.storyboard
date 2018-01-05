@@ -36,7 +36,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1H %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qaK-LF-oeL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1H %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qaK-LF-oeL" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
                                         <rect key="frame" x="141" y="93" width="38" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="J7L-eg-mdf"/>
@@ -54,7 +54,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24h%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6jh-e2-QiI">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24h%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6jh-e2-QiI" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
                                         <rect key="frame" x="138.5" y="122" width="43" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="ZUG-HS-xht"/>
@@ -81,7 +81,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIAT Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MkU-UR-fBQ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIAT Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MkU-UR-fBQ" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
                                         <rect key="frame" x="118.5" y="61" width="83" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="THJ-pQ-pPR"/>
@@ -90,7 +90,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9bK-IX-3fj">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9bK-IX-3fj" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
                                         <rect key="frame" x="119" y="180" width="82" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="prh-e4-Sy6"/>
@@ -99,7 +99,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7d%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l0n-IH-jRP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7d%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l0n-IH-jRP" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
                                         <rect key="frame" x="144" y="151" width="32" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="IrJ-9t-FU6"/>
@@ -261,11 +261,11 @@
                             <constraint firstItem="W2d-NF-rFH" firstAttribute="leading" secondItem="8xz-Pg-XLF" secondAttribute="trailing" constant="18" id="0i8-mB-sHx"/>
                             <constraint firstItem="W2d-NF-rFH" firstAttribute="top" secondItem="TjE-9u-T8e" secondAttribute="bottom" constant="8" id="2Ly-rb-Zyd"/>
                             <constraint firstItem="aOI-Xp-KaY" firstAttribute="trailing" secondItem="U9A-7j-cq8" secondAttribute="trailing" constant="16" id="3PT-dq-aUK"/>
-                            <constraint firstItem="8xz-Pg-XLF" firstAttribute="top" secondItem="ioh-bo-TDb" secondAttribute="bottom" constant="27.5" id="D8L-f1-nvu"/>
+                            <constraint firstItem="TjE-9u-T8e" firstAttribute="baseline" secondItem="ioh-bo-TDb" secondAttribute="baseline" id="6Q1-tr-6hE"/>
                             <constraint firstItem="TjE-9u-T8e" firstAttribute="top" secondItem="aOI-Xp-KaY" secondAttribute="top" constant="3" id="DRa-CC-Zdl"/>
                             <constraint firstItem="TjE-9u-T8e" firstAttribute="leading" secondItem="ioh-bo-TDb" secondAttribute="trailing" constant="8" id="E0r-r6-U0I"/>
                             <constraint firstItem="ioh-bo-TDb" firstAttribute="leading" secondItem="aOI-Xp-KaY" secondAttribute="leading" constant="16" id="PhS-FI-o7l"/>
-                            <constraint firstItem="ioh-bo-TDb" firstAttribute="top" secondItem="aOI-Xp-KaY" secondAttribute="top" constant="12" id="QAc-T1-EE1"/>
+                            <constraint firstItem="W2d-NF-rFH" firstAttribute="baseline" secondItem="8xz-Pg-XLF" secondAttribute="baseline" id="aRa-GB-oDZ"/>
                             <constraint firstItem="U9A-7j-cq8" firstAttribute="leading" secondItem="aOI-Xp-KaY" secondAttribute="leading" constant="16" id="fx7-92-FlA"/>
                             <constraint firstItem="U9A-7j-cq8" firstAttribute="top" secondItem="W2d-NF-rFH" secondAttribute="bottom" constant="19" id="jvd-RN-rcL"/>
                             <constraint firstItem="aOI-Xp-KaY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W2d-NF-rFH" secondAttribute="trailing" constant="19" id="tsR-Ct-qeO"/>
@@ -380,7 +380,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jpu-2G-gw5">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Coins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jta-Sn-SFL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Coins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jta-Sn-SFL" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
                                         <rect key="frame" x="98.5" y="49" width="123.5" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="FCp-95-nWz"/>
@@ -398,7 +398,7 @@
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount FIAT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YwG-a1-Tjk">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount FIAT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YwG-a1-Tjk" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
                                         <rect key="frame" x="104" y="81" width="112" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="QXM-O2-IKj"/>
@@ -413,7 +413,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIAT Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7h7-ud-TM4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIAT Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7h7-ud-TM4" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
                                         <rect key="frame" x="118.5" y="215.5" width="83" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="9TV-0x-d2l"/>
@@ -422,7 +422,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQW-P5-mRq">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQW-P5-mRq" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
                                         <rect key="frame" x="119.5" y="247.5" width="82" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="0x2-31-ROf"/>
