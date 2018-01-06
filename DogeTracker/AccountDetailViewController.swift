@@ -44,7 +44,7 @@ class AccountDetailViewController: UIViewController {
     fileprivate func setFiatWithDispatch() { //set amout of fiat
         DispatchQueue.main.async {
             let util = FormatUtil.shared
-            self.fiatBalanceLabel.text = "\(util.format(toFormat: ((self.account?.getBalance() ?? 0)  * self.market.price))) \(self.market.getCurrencySymbol())"
+            self.fiatBalanceLabel.text = "\(util.format(toFormat: ((self.account?.getBalance() ?? 0)  * self.market.getPrice()))) \(self.market.getCurrencySymbol())"
             self.refreshButton.isEnabled = true
         }
     }
@@ -81,7 +81,7 @@ class AccountDetailViewController: UIViewController {
             self.nameLabel.text = self.account?.getAddress()
         }
         
-        if (account?.getBalance() ?? 0 == -1 || account?.getSuccess() ?? true != true) { //not account succesful
+        if (account?.getBalance() ?? 0 == -1 || account?.getSuccess() ?? true != true) { //account not succesful
             self.balanceLabel.text = "Pending balance"
             account?.updateBalance() { success, error in
                 DispatchQueue.main.async {

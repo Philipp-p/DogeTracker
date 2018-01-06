@@ -41,7 +41,7 @@ class ViewController: UIViewController {
     fileprivate func updateMarketLabel(_ success: Bool) {
         DispatchQueue.main.async {
             if success {
-                self.rateFIATLabel.text = "\(self.market.price) \(self.market.getCurrencySymbol())"
+                self.rateFIATLabel.text = "\(self.market.getPrice()) \(self.market.getCurrencySymbol())"
                 if #available(iOS 10.0, *) {
                     self.rateBTCLabel.text = String(format: "%.8f ₿", self.market.priceBTC)
                 } else {
@@ -128,7 +128,7 @@ class ViewController: UIViewController {
         group.notify(queue: DispatchQueue.main) {
             DispatchQueue.main.async {
                 if self.market.success {
-                    self.amountFIATLabel.text = "\(self.util.format(toFormat: totalBalance * self.market.price)) \(self.market.getCurrencySymbol())"
+                    self.amountFIATLabel.text = "\(self.util.format(toFormat: totalBalance * self.market.getPrice())) \(self.market.getCurrencySymbol())"
                 }
                 self.reloadButton.isEnabled = true
             }

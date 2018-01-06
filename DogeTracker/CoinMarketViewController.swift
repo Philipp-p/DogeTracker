@@ -39,7 +39,7 @@ class CoinMarketViewController: UIViewController {
     }
     
     fileprivate func updateLabels () {
-        self.fiatRateLabel.text = "\(self.market.price) \(self.market.getCurrencySymbol())"
+        self.fiatRateLabel.text = "\(self.market.getPrice()) \(self.market.getCurrencySymbol())"
         if #available(iOS 10.0, *) {
             self.btcRateLabel.text = String(format: "%.8f ₿", self.market.priceBTC)
         } else {

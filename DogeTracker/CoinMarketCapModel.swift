@@ -15,7 +15,7 @@ class CoinMarketCap {
     
     //response mapping
     var success = false
-    var price: Double
+    private var price: Double //private as setup for future upate for more currencies
     var priceBTC: Double
     var Volume24h: Double
     var marketCap: Double
@@ -43,6 +43,10 @@ class CoinMarketCap {
          self.percentChange24h = 0
          self.percentChange7d = 0
          self.lastUpdate = time_t()
+    }
+    
+    func getPrice() -> Double {
+        return self.price
     }
     
     static let shared = CoinMarketCap()
