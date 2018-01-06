@@ -15,10 +15,13 @@ class AccountDetailViewController: UIViewController {
     @IBOutlet weak var balanceLabel: CopyableLabel!
     @IBOutlet weak var fiatBalanceLabel: CopyableLabel!
     
+    
+    
     @IBOutlet weak var qrButton: UIButton!
     
     weak var account: DogeAccount?
     
+    weak var refreshButton: UIBarButtonItem!
     let market = CoinMarketCap.shared
     
     
@@ -31,6 +34,7 @@ class AccountDetailViewController: UIViewController {
         super.viewWillAppear(animated)
         
         let refreshButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(reload))
+        self.refreshButton = refreshButton
         let editButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.edit, target: self, action: #selector(edit))
         self.navigationItem.setRightBarButtonItems([refreshButton, editButton], animated: true)
         
@@ -41,16 +45,20 @@ class AccountDetailViewController: UIViewController {
         DispatchQueue.main.async {
             let util = FormatUtil.shared
             self.fiatBalanceLabel.text = "\(util.format(toFormat: ((self.account?.getBalance() ?? 0)  * self.market.price))) \(self.market.getCurrencySymbol())"
+            self.refreshButton.isEnabled = true
         }
     }
     
     fileprivate func checkForMarket() {
         if !self.market.success { //check for market
             self.market.update() { success, error in
-                if !success {
+                if success {
                     self.setFiatWithDispatch()
                 } else {
-                    self.fiatBalanceLabel.text = " Error retrieving rates, but 1 Ð = 1 Ð"
+                    DispatchQueue.main.async {
+                        self.fiatBalanceLabel.text = " Error retrieving rates, but 1 Ð = 1 Ð"
+                        self.refreshButton.isEnabled = true
+                    }
                 }
             }
         } else {
@@ -60,6 +68,7 @@ class AccountDetailViewController: UIViewController {
     
     fileprivate func prepareView() { //initial setup of the view
         let name = self.account?.getName()
+        self.refreshButton.isEnabled = false
         
         self.fiatBalanceLabel.text = ""
         
@@ -82,6 +91,7 @@ class AccountDetailViewController: UIViewController {
                         
                     } else {
                         self.balanceLabel.text = error
+                        self.refreshButton.isEnabled = true
                     }
                 }
             }
@@ -126,6 +136,7 @@ class AccountDetailViewController: UIViewController {
     }
     
     @objc func reload() {
+        self.refreshButton.isEnabled = false
         self.fiatBalanceLabel.text = ""
         if self.account != nil {
             self.balanceLabel.text = "Pending balance"
