@@ -31,11 +31,6 @@ class ViewController: UIViewController {
     let market = CoinMarketCap.shared
     let util = FormatUtil.shared
     
-    
-    
-    var totalBalance: Double = 0
-    var totalError: Int = 0
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)        
         loadTotal()
@@ -97,8 +92,8 @@ class ViewController: UIViewController {
         }
         
         //accounts
-        totalBalance = 0
-        totalError = 0
+        var totalBalance: Double = 0
+        var totalError: Int = 0
         
         
         for account in allAccounts {
@@ -106,12 +101,12 @@ class ViewController: UIViewController {
             account.updateBalance() { success, error in
                 DispatchQueue.main.sync { // sync for thread safty
                     if success {
-                        self.totalBalance += account.getBalance()
-                        self.amountCoinsLabel.text = "\(self.util.formatDoubleWithMinPrecision(toFormat: self.totalBalance)) Ð"
+                        totalBalance += account.getBalance()
+                        self.amountCoinsLabel.text = "\(self.util.formatDoubleWithMinPrecision(toFormat: totalBalance)) Ð"
                     } else {
-                        self.totalError += 1
-                        if (self.totalError > 1) {
-                            self.errorAccountsLabel.text = "Errors in \(self.totalError) accounts"
+                        totalError += 1
+                        if (totalError > 1) {
+                            self.errorAccountsLabel.text = "Errors in \(totalError) accounts"
                         } else {
                             self.errorAccountsLabel.text = "Error in one account"
                         }
@@ -126,7 +121,7 @@ class ViewController: UIViewController {
         group.notify(queue: DispatchQueue.main) {
             DispatchQueue.main.async {
                 if self.market.success {
-                    self.amountFIATLabel.text = "\(self.util.format(toFormat: self.totalBalance * self.market.price)) \(self.market.getCurrencySymbol())"
+                    self.amountFIATLabel.text = "\(self.util.format(toFormat: totalBalance * self.market.price)) \(self.market.getCurrencySymbol())"
                 }
             }
         }
