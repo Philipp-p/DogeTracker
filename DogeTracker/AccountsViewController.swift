@@ -40,9 +40,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             let refreshControl = UIRefreshControl()
             refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
             table.refreshControl = refreshControl
-        } else {
-            // Sorry this feature is minor so will be left out
-        }
+        } // Sorry this feature is minor so will be left out
     }
     
     @objc func add() {
