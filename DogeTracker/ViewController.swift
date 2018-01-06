@@ -26,6 +26,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var rateBTCLabel: UILabel!
     @IBOutlet weak var errorRatesLabel: UILabel!
     
+    @IBOutlet weak var reloadButton: UIBarButtonItem!
+    
     //Singeltons init to keep them always in memory
     let model = AccountModel.shared
     let market = CoinMarketCap.shared
@@ -55,6 +57,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loadTotal() {
+        reloadButton.isEnabled = false
         //Setup
         errorRatesLabel.isHidden = true
         errorAccountsLabel.isHidden = true
@@ -64,7 +67,7 @@ class ViewController: UIViewController {
         let allAccounts = model.getAllAccount()
         if allAccounts.count > 0 {
             self.amountCoinsLabel.text = "Pending balance"
-        } else {
+        } else { //no addresses case
             self.amountCoinsLabel.text = "0.0 Ð"
             self.errorAccountsLabel.text = "There are no accounts"
             self.errorAccountsLabel.isHidden = false
@@ -72,6 +75,10 @@ class ViewController: UIViewController {
             let market = CoinMarketCap.shared
             market.update() { success, error in
                 self.updateMarketLabel(success)
+                DispatchQueue.main.async {
+                    self.reloadButton.isEnabled = true
+                }
+
             }
             return
         }
@@ -123,6 +130,7 @@ class ViewController: UIViewController {
                 if self.market.success {
                     self.amountFIATLabel.text = "\(self.util.format(toFormat: totalBalance * self.market.price)) \(self.market.getCurrencySymbol())"
                 }
+                self.reloadButton.isEnabled = true
             }
         }
         

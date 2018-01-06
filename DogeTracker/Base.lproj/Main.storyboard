@@ -529,6 +529,7 @@
                         <outlet property="errorRatesLabel" destination="mqD-9w-klg" id="LmY-ya-Wdi"/>
                         <outlet property="rateBTCLabel" destination="VQW-P5-mRq" id="ACe-5M-E3k"/>
                         <outlet property="rateFIATLabel" destination="7h7-ud-TM4" id="OD5-ar-aYZ"/>
+                        <outlet property="reloadButton" destination="LRH-qj-5Pa" id="T2C-lq-LYB"/>
                         <segue destination="Gby-ZE-lcB" kind="show" identifier="accounts" id="7QM-Q4-Jxc">
                             <nil key="action"/>
                         </segue>
