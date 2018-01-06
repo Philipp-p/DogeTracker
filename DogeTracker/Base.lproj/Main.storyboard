@@ -740,9 +740,10 @@
                         <viewLayoutGuide key="safeArea" id="Mpq-47-h45"/>
                     </view>
                     <connections>
-                        <outlet property="address" destination="1Ql-y6-4t8" id="Red-ns-dkE"/>
-                        <outlet property="balance" destination="qKZ-1R-vsj" id="FbU-tA-b0l"/>
-                        <outlet property="name" destination="PZK-qZ-X1d" id="zd7-9c-Cj0"/>
+                        <outlet property="addressLabel" destination="1Ql-y6-4t8" id="STC-Eh-Ha5"/>
+                        <outlet property="balanceLabel" destination="qKZ-1R-vsj" id="GAe-AB-4nL"/>
+                        <outlet property="fiatBalanceLabel" destination="2n5-V5-0ZS" id="09i-FS-mdW"/>
+                        <outlet property="nameLabel" destination="PZK-qZ-X1d" id="B60-TS-sJD"/>
                         <outlet property="qrButton" destination="YFT-8r-8De" id="v8U-zr-0Cw"/>
                         <segue destination="FZr-uE-Vsg" kind="show" identifier="viewQRCode" id="m6e-23-Bac"/>
                         <segue destination="pLf-bu-mfv" kind="show" identifier="edit" id="SFm-FW-MPD"/>
