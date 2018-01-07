@@ -10,7 +10,7 @@ import UIKit
 
 class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var accountsTable: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -24,9 +24,9 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidAppear(animated)
         
         // deselect the selected row
-        let selectedRow: IndexPath? = table.indexPathForSelectedRow
+        let selectedRow: IndexPath? = accountsTable.indexPathForSelectedRow
         if let selectedRowNotNill = selectedRow {
-            table.deselectRow(at: selectedRowNotNill, animated: true)
+            accountsTable.deselectRow(at: selectedRowNotNill, animated: true)
         }
     }
     
@@ -39,10 +39,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         if #available(iOS 10.0, *) {
             let refreshControl = UIRefreshControl()
             refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
-            table.refreshControl = refreshControl
-        } else {
-            // Sorry this feature is minor so will be left out
-        }
+            accountsTable.refreshControl = refreshControl
+        } // Sorry this feature is minor so will be left out
     }
     
     @objc func add() {
@@ -57,7 +55,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let allAccounts = AccountModel.shared.getAllAccount()
         
-        let cell = table.dequeueReusableCell(withIdentifier: "accountCellTwo", for: indexPath) as! AccountTableViewCellTwo
+        let cell = accountsTable.dequeueReusableCell(withIdentifier: "accountCellTwo", for: indexPath) as! AccountTableViewCellTwo
         
         let account = allAccounts[indexPath.row]
         
@@ -109,7 +107,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             account.setSuccess(success: false)
         }
         
-        self.table.reloadData()
+        self.accountsTable.reloadData()
     }
     
     @objc func refresh(refreshControl: UIRefreshControl) {
@@ -119,7 +117,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func loadList(){
-        self.table.reloadData()
+        self.accountsTable.reloadData()
     }
     
     

@@ -10,12 +10,19 @@ import UIKit
 
 class AccountDetailViewController: UIViewController {
     
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var address: UILabel!
-    @IBOutlet weak var balance: UILabel!
+    @IBOutlet weak var nameLabel: CopyableLabel!
+    @IBOutlet weak var addressLabel: CopyableLabel!
+    @IBOutlet weak var balanceLabel: CopyableLabel!
+    @IBOutlet weak var fiatBalanceLabel: CopyableLabel!
+    
+    
+    
     @IBOutlet weak var qrButton: UIButton!
     
     weak var account: DogeAccount?
+    
+    weak var refreshButton: UIBarButtonItem!
+    let market = CoinMarketCap.shared
     
     
     override func viewDidLoad() {
@@ -27,49 +34,84 @@ class AccountDetailViewController: UIViewController {
         super.viewWillAppear(animated)
         
         let refreshButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(reload))
+        self.refreshButton = refreshButton
         let editButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.edit, target: self, action: #selector(edit))
         self.navigationItem.setRightBarButtonItems([refreshButton, editButton], animated: true)
         
         prepareView()
     }
     
-    fileprivate func prepareView() {
-        let name = self.account?.getName()
-        
-        if name != nil {
-            self.name.text = name
-            self.address.text = self.account?.getAddress()
-            self.address.isHidden = false
-        } else {
-            self.address.isHidden = true
-            self.name.text = self.account?.getAddress()
+    fileprivate func setFiatWithDispatch() { //set amout of fiat
+        DispatchQueue.main.async {
+            let util = FormatUtil.shared
+            self.fiatBalanceLabel.text = "\(util.format(toFormat: ((self.account?.getBalance() ?? 0)  * self.market.getPrice()))) \(self.market.getCurrencySymbol())"
+            self.refreshButton.isEnabled = true
         }
-        
-        if (account?.getBalance() ?? 0 == -1 || account?.getSuccess() ?? true != true) {
-            self.balance.text = "Pending balance"
-            account?.updateBalance() { success, error in
-                DispatchQueue.main.async {
-                    if success {
-                        self.balance.text = "\(FormatUtil.shared.formatDoubleWithMinPrecision(toFormat: (self.account?.getBalance() ?? 0))) Ð"
-                    } else {
-                        self.balance.text = error
+    }
+    
+    fileprivate func checkForMarket() {
+        if !self.market.success { //check for market
+            self.market.update() { success, error in
+                if success {
+                    self.setFiatWithDispatch()
+                } else {
+                    DispatchQueue.main.async {
+                        self.fiatBalanceLabel.text = " Error retrieving rates, but 1 Ð = 1 Ð"
+                        self.refreshButton.isEnabled = true
                     }
                 }
             }
         } else {
-            self.balance.text = "\(FormatUtil.shared.formatDoubleWithMinPrecision(toFormat: (self.account?.getBalance() ?? 0))) Ð"
+            self.setFiatWithDispatch()
         }
     }
     
-    @IBAction func delete (sender: UIButton) {
+    fileprivate func prepareView() { //initial setup of the view
+        let name = self.account?.getName()
+        self.refreshButton.isEnabled = false
+        
+        self.fiatBalanceLabel.text = ""
+        
+        if name != nil {
+            self.nameLabel.text = name
+            self.addressLabel.text = self.account?.getAddress()
+            self.addressLabel.isHidden = false
+        } else {
+            self.addressLabel.isHidden = true
+            self.nameLabel.text = self.account?.getAddress()
+        }
+        
+        if (account?.getBalance() ?? 0 == -1 || account?.getSuccess() ?? true != true) { //account not succesful
+            self.balanceLabel.text = "Pending balance"
+            account?.updateBalance() { success, error in
+                DispatchQueue.main.async {
+                    if success {
+                        self.balanceLabel.text = "\(FormatUtil.shared.formatDoubleWithMinPrecision(toFormat: (self.account?.getBalance() ?? 0))) Ð"
+                        self.checkForMarket()
+                        
+                    } else {
+                        self.balanceLabel.text = error
+                        self.refreshButton.isEnabled = true
+                    }
+                }
+            }
+        } else { //acount successful
+            self.balanceLabel.text = "\(FormatUtil.shared.formatDoubleWithMinPrecision(toFormat: (self.account?.getBalance() ?? 0))) Ð"
+            
+            checkForMarket()
+            
+        }
+    }
+    
+    @IBAction func delete (sender: UIButton) { //delete current account
         if self.account != nil {
-            let refreshAlert = UIAlertController(
+            let deleteAlert = UIAlertController(
                 title: "Delete",
                 message: "Are you sure you want to delete this account?",
                 preferredStyle: UIAlertControllerStyle.alert
             )
             
-            refreshAlert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action: UIAlertAction!) in
+            deleteAlert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action: UIAlertAction!) in
                 AccountModel.shared.removeAccount(account: self.account!)
                 //dissmis view
                 self.navigationController?.popViewController(animated: true)
@@ -78,10 +120,10 @@ class AccountDetailViewController: UIViewController {
                 
             }))
             
-            refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
             }))
             
-            present(refreshAlert, animated: true, completion: nil)
+            present(deleteAlert, animated: true, completion: nil)
         }
         
     }
@@ -94,14 +136,18 @@ class AccountDetailViewController: UIViewController {
     }
     
     @objc func reload() {
+        self.refreshButton.isEnabled = false
+        self.fiatBalanceLabel.text = ""
         if self.account != nil {
-            self.balance.text = "Pending balance"
+            self.balanceLabel.text = "Pending balance"
+            self.market.success = false
             account!.updateBalance() { success, error in
                 DispatchQueue.main.async {
                     if success {
-                        self.balance.text = "\(self.account!.getBalance()) Ð"
+                        self.balanceLabel.text = "\(self.account!.getBalance()) Ð"
+                        self.checkForMarket()
                     } else {
-                        self.balance.text = error
+                        self.balanceLabel.text = error
                     }
                 }
             }

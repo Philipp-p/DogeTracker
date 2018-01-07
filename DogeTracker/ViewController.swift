@@ -26,15 +26,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var rateBTCLabel: UILabel!
     @IBOutlet weak var errorRatesLabel: UILabel!
     
+    @IBOutlet weak var reloadButton: UIBarButtonItem!
+    
     //Singeltons init to keep them always in memory
     let model = AccountModel.shared
     let market = CoinMarketCap.shared
     let util = FormatUtil.shared
-    
-    
-    
-    var totalBalance: Double = 0
-    var totalError: Int = 0
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)        
@@ -44,7 +41,7 @@ class ViewController: UIViewController {
     fileprivate func updateMarketLabel(_ success: Bool) {
         DispatchQueue.main.async {
             if success {
-                self.rateFIATLabel.text = "\(self.market.price) \(self.market.getCurrencySymbol())"
+                self.rateFIATLabel.text = "\(self.market.getPrice()) \(self.market.getCurrencySymbol())"
                 if #available(iOS 10.0, *) {
                     self.rateBTCLabel.text = String(format: "%.8f ₿", self.market.priceBTC)
                 } else {
@@ -60,6 +57,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loadTotal() {
+        reloadButton.isEnabled = false
         //Setup
         errorRatesLabel.isHidden = true
         errorAccountsLabel.isHidden = true
@@ -69,7 +67,7 @@ class ViewController: UIViewController {
         let allAccounts = model.getAllAccount()
         if allAccounts.count > 0 {
             self.amountCoinsLabel.text = "Pending balance"
-        } else {
+        } else { //no addresses case
             self.amountCoinsLabel.text = "0.0 Ð"
             self.errorAccountsLabel.text = "There are no accounts"
             self.errorAccountsLabel.isHidden = false
@@ -77,6 +75,10 @@ class ViewController: UIViewController {
             let market = CoinMarketCap.shared
             market.update() { success, error in
                 self.updateMarketLabel(success)
+                DispatchQueue.main.async {
+                    self.reloadButton.isEnabled = true
+                }
+
             }
             return
         }
@@ -97,8 +99,8 @@ class ViewController: UIViewController {
         }
         
         //accounts
-        totalBalance = 0
-        totalError = 0
+        var totalBalance: Double = 0
+        var totalError: Int = 0
         
         
         for account in allAccounts {
@@ -106,12 +108,12 @@ class ViewController: UIViewController {
             account.updateBalance() { success, error in
                 DispatchQueue.main.sync { // sync for thread safty
                     if success {
-                        self.totalBalance += account.getBalance()
-                        self.amountCoinsLabel.text = "\(self.util.formatDoubleWithMinPrecision(toFormat: self.totalBalance)) Ð"
+                        totalBalance += account.getBalance()
+                        self.amountCoinsLabel.text = "\(self.util.formatDoubleWithMinPrecision(toFormat: totalBalance)) Ð"
                     } else {
-                        self.totalError += 1
-                        if (self.totalError > 1) {
-                            self.errorAccountsLabel.text = "Errors in \(self.totalError) accounts"
+                        totalError += 1
+                        if (totalError > 1) {
+                            self.errorAccountsLabel.text = "Errors in \(totalError) accounts"
                         } else {
                             self.errorAccountsLabel.text = "Error in one account"
                         }
@@ -126,8 +128,9 @@ class ViewController: UIViewController {
         group.notify(queue: DispatchQueue.main) {
             DispatchQueue.main.async {
                 if self.market.success {
-                    self.amountFIATLabel.text = "\(self.util.format(toFormat: self.totalBalance * self.market.price)) \(self.market.getCurrencySymbol())"
+                    self.amountFIATLabel.text = "\(self.util.format(toFormat: totalBalance * self.market.getPrice())) \(self.market.getCurrencySymbol())"
                 }
+                self.reloadButton.isEnabled = true
             }
         }
         
