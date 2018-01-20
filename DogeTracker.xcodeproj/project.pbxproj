@@ -22,6 +22,7 @@
 		177E718F1FFC45FB003A3103 /* CurrencySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E718E1FFC45FB003A3103 /* CurrencySelectViewController.swift */; };
 		17BD0108201285A500AEF626 /* SettingsTabelTabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BD0107201285A500AEF626 /* SettingsTabelTabelViewController.swift */; };
 		17BD010A20129AF400AEF626 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BD010920129AF400AEF626 /* CalculatorViewController.swift */; };
+		17BD010C2012D4A300AEF626 /* StoreReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BD010B2012D4A300AEF626 /* StoreReviewHelper.swift */; };
 		17C1DAF91FF850BF003E0035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1DAF81FF850BF003E0035 /* AppDelegate.swift */; };
 		17C1DAFB1FF850BF003E0035 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1DAFA1FF850BF003E0035 /* ViewController.swift */; };
 		17C1DAFE1FF850BF003E0035 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C1DAFC1FF850BF003E0035 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		17862CCC1FF99D6700EC6CA4 /* DogeTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DogeTracker.entitlements; sourceTree = "<group>"; };
 		17BD0107201285A500AEF626 /* SettingsTabelTabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabelTabelViewController.swift; sourceTree = "<group>"; };
 		17BD010920129AF400AEF626 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		17BD010B2012D4A300AEF626 /* StoreReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewHelper.swift; sourceTree = "<group>"; };
 		17C1DAF51FF850BF003E0035 /* DogeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C1DAF81FF850BF003E0035 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17C1DAFA1FF850BF003E0035 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,9 +91,6 @@
 			children = (
 				17862CCC1FF99D6700EC6CA4 /* DogeTracker.entitlements */,
 				17C1DAF81FF850BF003E0035 /* AppDelegate.swift */,
-				173EEAD21FF9202C0020855A /* CopyableLabel.swift */,
-				173EEAD01FF91E130020855A /* AccountModel.swift */,
-				1730371D1FFA860000C77042 /* CoinMarketCapModel.swift */,
 				17C1DAFA1FF850BF003E0035 /* ViewController.swift */,
 				17BD010920129AF400AEF626 /* CalculatorViewController.swift */,
 				17BD0107201285A500AEF626 /* SettingsTabelTabelViewController.swift */,
@@ -110,6 +109,10 @@
 				17C1DB041FF850BF003E0035 /* LaunchScreen.storyboard */,
 				17C1DB071FF850BF003E0035 /* Info.plist */,
 				17C1DAFF1FF850BF003E0035 /* DogeTracker.xcdatamodeld */,
+				173EEAD21FF9202C0020855A /* CopyableLabel.swift */,
+				1730371D1FFA860000C77042 /* CoinMarketCapModel.swift */,
+				173EEAD01FF91E130020855A /* AccountModel.swift */,
+				17BD010B2012D4A300AEF626 /* StoreReviewHelper.swift */,
 			);
 			path = DogeTracker;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				173EEAD91FF937A10020855A /* AccountDetailViewController.swift in Sources */,
 				17BD0108201285A500AEF626 /* SettingsTabelTabelViewController.swift in Sources */,
 				173EEADF1FF945FD0020855A /* AddViewController.swift in Sources */,
+				17BD010C2012D4A300AEF626 /* StoreReviewHelper.swift in Sources */,
 				173EEAD31FF9202C0020855A /* CopyableLabel.swift in Sources */,
 				17C1DAFB1FF850BF003E0035 /* ViewController.swift in Sources */,
 				173EEAD11FF91E130020855A /* AccountModel.swift in Sources */,

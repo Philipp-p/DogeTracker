@@ -69,6 +69,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, QRScannerDelegat
                 preferredStyle: UIAlertControllerStyle.alert
             )
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
             
         }
         

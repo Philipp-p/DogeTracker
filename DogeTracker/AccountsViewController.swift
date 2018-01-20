@@ -34,7 +34,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         //NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "load"), object: nil, queue: nil, using: loadList)
         
-        
+        StoreReviewHelper.checkAndAskForReview(viewController: self)
         
         if #available(iOS 10.0, *) {
             let refreshControl = UIRefreshControl()

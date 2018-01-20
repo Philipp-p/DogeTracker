@@ -115,9 +115,6 @@ class AccountDetailViewController: UIViewController {
                 AccountModel.shared.removeAccount(account: self.account!)
                 //dissmis view
                 self.navigationController?.popViewController(animated: true)
-                //refresh tabel view in accounts
-                NotificationCenter.default.post(name: Notification.Name(rawValue: "load"), object: nil)
-                
             }))
             
             deleteAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
