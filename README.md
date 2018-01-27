@@ -27,6 +27,12 @@ A simplistic approach to keep track of your Dogecoins and Dogecoin in general. J
 
 Head over to https://www.reddit.com/r/DogeTracker/ for if you seek support or have an idea. Here on Github you can also create an issue or make a pull request
 
+## Android
+
+DogeTracker was ported to Android!
+
+https://github.com/avrland/DogeTracker_Android
+
 ## Hey, you have been a good boy!
 
 Well, thank you! 
