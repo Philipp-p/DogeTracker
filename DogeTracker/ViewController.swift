@@ -15,6 +15,32 @@ func print(_ item: @autoclosure () -> Any, separator: String = " ", terminator: 
     #endif
 }
 
+extension UIViewController {
+    func addBackground() {
+        let someImageView: UIImageView = {
+            let theImageView = UIImageView()
+            theImageView.image = UIImage(named: "Background")
+            theImageView.translatesAutoresizingMaskIntoConstraints = false //You need to call this property so the image is added to your view
+            theImageView.alpha = CGFloat.init(0.0500000007450581)
+            return theImageView
+        }()
+        
+        self.view.addSubview(someImageView)
+        
+        let aspectRatioConstraint = NSLayoutConstraint(item: someImageView, attribute: .height,relatedBy: .equal, toItem: someImageView, attribute: .width, multiplier: 1, constant: 0)
+        someImageView.addConstraint(aspectRatioConstraint)
+
+        //view.addConstraint(NSLayoutConstraint(item: someImageView, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: 16))
+        view.addConstraint(NSLayoutConstraint(item: someImageView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 16))
+
+        someImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        someImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+    }
+}
+
+
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var amountCoinsLabel: UILabel!
@@ -33,8 +59,26 @@ class ViewController: UIViewController {
     let market = CoinMarketCap.shared
     let util = FormatUtil.shared
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        addBackground()
+        
+        //Load user settings for config
+        let defaults = UserDefaults.standard
+        
+        let currency = defaults.object(forKey: "currency") as? String ?? "USD"
+        market.setCurrency(currency: Currency(rawValue: currency) ?? Currency.USD)
+        let format = defaults.object(forKey: "format") as? Int ?? 0
+        util.setFormat(style: format)
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)        
+        super.viewWillAppear(animated)
+        
         loadTotal()
     }
     
@@ -136,22 +180,6 @@ class ViewController: UIViewController {
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        //Load user settings for config
-        let defaults = UserDefaults.standard
-        
-        let currency = defaults.object(forKey: "currency") as? String ?? "USD"
-        market.setCurrency(currency: Currency(rawValue: currency) ?? Currency.USD)
-        let format = defaults.object(forKey: "format") as? Int ?? 0
-        util.setFormat(style: format)
-        
-        //TODO USEFULL
-        
-        
-    }
     
     
     @IBAction func showAccounts(sender: UIButton) {

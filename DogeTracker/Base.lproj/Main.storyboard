@@ -407,12 +407,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="Ovf-la-l1D">
-                                <rect key="frame" x="16" y="96" width="288" height="288"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Ovf-la-l1D" secondAttribute="height" multiplier="1:1" id="yVM-j1-cVY"/>
-                                </constraints>
-                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jpu-2G-gw5">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <subviews>
@@ -522,14 +516,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Ovf-la-l1D" firstAttribute="centerY" secondItem="PXO-RY-Eaa" secondAttribute="centerY" id="1Cg-Rj-KNc"/>
-                            <constraint firstItem="Ovf-la-l1D" firstAttribute="leading" secondItem="i3m-jp-RiL" secondAttribute="leading" constant="16" id="Ycg-Lf-waE"/>
                             <constraint firstItem="jpu-2G-gw5" firstAttribute="top" secondItem="i3m-jp-RiL" secondAttribute="top" id="Zks-5b-uWb"/>
                             <constraint firstItem="jpu-2G-gw5" firstAttribute="leading" secondItem="i3m-jp-RiL" secondAttribute="leading" id="dZ7-tl-M3i"/>
-                            <constraint firstItem="i3m-jp-RiL" firstAttribute="trailing" secondItem="Ovf-la-l1D" secondAttribute="trailing" constant="16" id="fq9-KT-X6y"/>
                             <constraint firstItem="jpu-2G-gw5" firstAttribute="bottom" secondItem="i3m-jp-RiL" secondAttribute="bottom" id="oFL-hM-QnL"/>
                             <constraint firstItem="jpu-2G-gw5" firstAttribute="trailing" secondItem="i3m-jp-RiL" secondAttribute="trailing" id="rAp-Ey-1TO"/>
-                            <constraint firstItem="Ovf-la-l1D" firstAttribute="centerX" secondItem="PXO-RY-Eaa" secondAttribute="centerX" id="sna-rU-IlH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i3m-jp-RiL"/>
                     </view>
