@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CoinMarketViewController: UIViewController {
+class CoinMarketViewController: SameBackgroundViewController {
     
     @IBOutlet weak var fiatRateLabel: UILabel!
     @IBOutlet weak var btcRateLabel: UILabel!

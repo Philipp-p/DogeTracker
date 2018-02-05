@@ -29,6 +29,7 @@
 		17C1DB011FF850BF003E0035 /* DogeTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17C1DAFF1FF850BF003E0035 /* DogeTracker.xcdatamodeld */; };
 		17C1DB031FF850BF003E0035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17C1DB021FF850BF003E0035 /* Assets.xcassets */; };
 		17C1DB061FF850BF003E0035 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C1DB041FF850BF003E0035 /* LaunchScreen.storyboard */; };
+		17D58B012028E212001A99AB /* BackgroundPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D58B002028E212001A99AB /* BackgroundPictureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		17C1DB021FF850BF003E0035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17C1DB051FF850BF003E0035 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17C1DB071FF850BF003E0035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17D58B002028E212001A99AB /* BackgroundPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundPictureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				17C1DB041FF850BF003E0035 /* LaunchScreen.storyboard */,
 				17C1DB071FF850BF003E0035 /* Info.plist */,
 				17C1DAFF1FF850BF003E0035 /* DogeTracker.xcdatamodeld */,
+				17D58B002028E212001A99AB /* BackgroundPictureViewController.swift */,
 				173EEAD21FF9202C0020855A /* CopyableLabel.swift */,
 				1730371D1FFA860000C77042 /* CoinMarketCapModel.swift */,
 				173EEAD01FF91E130020855A /* AccountModel.swift */,
@@ -197,6 +200,7 @@
 				173EEADD1FF93A840020855A /* EditViewController.swift in Sources */,
 				173EEAD71FF933AB0020855A /* AccountTableViewCellTwo.swift in Sources */,
 				173EEAD91FF937A10020855A /* AccountDetailViewController.swift in Sources */,
+				17D58B012028E212001A99AB /* BackgroundPictureViewController.swift in Sources */,
 				17BD0108201285A500AEF626 /* SettingsTabelTabelViewController.swift in Sources */,
 				173EEADF1FF945FD0020855A /* AddViewController.swift in Sources */,
 				17BD010C2012D4A300AEF626 /* StoreReviewHelper.swift in Sources */,

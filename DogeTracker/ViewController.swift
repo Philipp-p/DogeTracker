@@ -15,33 +15,8 @@ func print(_ item: @autoclosure () -> Any, separator: String = " ", terminator: 
     #endif
 }
 
-extension UIViewController {
-    func addBackground() {
-        let someImageView: UIImageView = {
-            let theImageView = UIImageView()
-            theImageView.image = UIImage(named: "Background")
-            theImageView.translatesAutoresizingMaskIntoConstraints = false //You need to call this property so the image is added to your view
-            theImageView.alpha = CGFloat.init(0.0500000007450581)
-            return theImageView
-        }()
-        
-        self.view.addSubview(someImageView)
-        
-        let aspectRatioConstraint = NSLayoutConstraint(item: someImageView, attribute: .height,relatedBy: .equal, toItem: someImageView, attribute: .width, multiplier: 1, constant: 0)
-        someImageView.addConstraint(aspectRatioConstraint)
 
-        //view.addConstraint(NSLayoutConstraint(item: someImageView, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: 16))
-        view.addConstraint(NSLayoutConstraint(item: someImageView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 16))
-
-        someImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        someImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        
-    }
-}
-
-
-
-class ViewController: UIViewController {
+class ViewController: SameBackgroundWithCheckViewController {
     
     @IBOutlet weak var amountCoinsLabel: UILabel!
     @IBOutlet weak var errorAccountsLabel: UILabel!
@@ -64,7 +39,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        addBackground()
         
         //Load user settings for config
         let defaults = UserDefaults.standard

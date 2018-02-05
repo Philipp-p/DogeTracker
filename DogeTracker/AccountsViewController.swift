@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AccountsViewController: SameBackgroundViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var accountsTable: UITableView!
     

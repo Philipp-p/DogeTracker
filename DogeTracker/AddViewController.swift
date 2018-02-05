@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 
-class AddViewController: UIViewController, UITextFieldDelegate, QRScannerDelegate {
+class AddViewController: SameBackgroundViewController, UITextFieldDelegate, QRScannerDelegate {
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var addressField: UITextField!
