@@ -213,7 +213,7 @@ class FormatUtil {
     var styleDecimal = "."
     let minPrecision = 8
     
-    let allFormats = ["1,000.00", "1.000,00", "1 000.00", "1 000,00", "1000.00", "1000,0"]
+    let allFormats = ["1,000.00", "1.000,00", "1 000.00", "1 000,00", "1000.00", "1000,00"]
     
     private init() {
     }
