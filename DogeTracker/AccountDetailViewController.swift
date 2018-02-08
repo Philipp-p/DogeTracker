@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountDetailViewController: UIViewController {
+class AccountDetailViewController: SameBackgroundViewController {
     
     @IBOutlet weak var nameLabel: CopyableLabel!
     @IBOutlet weak var addressLabel: CopyableLabel!

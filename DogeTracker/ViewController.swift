@@ -15,7 +15,8 @@ func print(_ item: @autoclosure () -> Any, separator: String = " ", terminator: 
     #endif
 }
 
-class ViewController: UIViewController {
+
+class ViewController: SameBackgroundWithCheckViewController {
     
     @IBOutlet weak var amountCoinsLabel: UILabel!
     @IBOutlet weak var errorAccountsLabel: UILabel!
@@ -33,8 +34,25 @@ class ViewController: UIViewController {
     let market = CoinMarketCap.shared
     let util = FormatUtil.shared
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        //Load user settings for config
+        let defaults = UserDefaults.standard
+        
+        let currency = defaults.object(forKey: "currency") as? String ?? "USD"
+        market.setCurrency(currency: Currency(rawValue: currency) ?? Currency.USD)
+        let format = defaults.object(forKey: "format") as? Int ?? 0
+        util.setFormat(style: format)
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)        
+        super.viewWillAppear(animated)
+        
         loadTotal()
     }
     
@@ -136,22 +154,6 @@ class ViewController: UIViewController {
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        //Load user settings for config
-        let defaults = UserDefaults.standard
-        
-        let currency = defaults.object(forKey: "currency") as? String ?? "USD"
-        market.setCurrency(currency: Currency(rawValue: currency) ?? Currency.USD)
-        let format = defaults.object(forKey: "format") as? Int ?? 0
-        util.setFormat(style: format)
-        
-        //TODO USEFULL
-        
-        
-    }
     
     
     @IBAction func showAccounts(sender: UIButton) {

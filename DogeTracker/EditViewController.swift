@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditViewController: UIViewController, UITextFieldDelegate {
+class EditViewController: SameBackgroundViewController, UITextFieldDelegate {
     
     @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var nameField: UITextField!

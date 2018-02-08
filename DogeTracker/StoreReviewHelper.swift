@@ -39,11 +39,11 @@ class StoreReviewHelper {
         }
         
         switch appOpenCount {
-        case _ where appOpenCount >= 15 && appOpenCount <= 25:
+        case _ where appOpenCount >= 15 && appOpenCount < 25:
             StoreReviewHelper.requestReview(viewController: viewController)
-        case _ where appOpenCount >= 40 && appOpenCount <= 50:
+        case _ where appOpenCount >= 40 && appOpenCount < 50:
             StoreReviewHelper.requestReview(viewController: viewController)
-        case _ where appOpenCount >= 90 && appOpenCount <= 100:
+        case _ where appOpenCount >= 90 && appOpenCount < 100:
             StoreReviewHelper.requestReview(viewController: viewController)
         case _ where appOpenCount >= 150:
             UserDefaults.standard.set(1, forKey: "APP_OPENED_COUNT")

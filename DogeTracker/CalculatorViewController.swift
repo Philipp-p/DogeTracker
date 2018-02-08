@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalculatorViewController: UIViewController, UITextFieldDelegate {
+class CalculatorViewController: SameBackgroundWithCheckViewController, UITextFieldDelegate {
 
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
