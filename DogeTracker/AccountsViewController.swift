@@ -40,7 +40,7 @@ class AccountsViewController: SameBackgroundViewController, UITableViewDelegate,
             let refreshControl = UIRefreshControl()
             refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
             accountsTable.refreshControl = refreshControl
-        } // Sorry this feature is minor so will be left out
+        } // Sorry this feature is minor, so it will be left out prior to iOS 10.0
     }
     
     @objc func add() {
@@ -73,7 +73,7 @@ class AccountsViewController: SameBackgroundViewController, UITableViewDelegate,
                     if success {
                         cell.balanceLabel.text = "\(FormatUtil.shared.formatDoubleWithMinPrecision(toFormat: account.getBalance())) Ð"
                     } else {
-                        cell.balanceLabel.text = error
+                        cell.balanceLabel.text = "Failed to get balance"
                     }
                 }
             }
