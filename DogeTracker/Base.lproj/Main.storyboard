@@ -295,12 +295,42 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="5aT-nt-aLy">
+                                        <rect key="frame" x="0.0" y="187.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5aT-nt-aLy" id="YiH-4X-BCe">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cou-I8-CWT">
+                                                    <rect key="frame" x="16" y="11.5" width="57" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWs-Lc-t2s">
+                                                    <rect key="frame" x="282.5" y="12" width="21.5" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" red="0.67721003290000004" green="0.72206860780000004" blue="0.70564419030000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="nWs-Lc-t2s" secondAttribute="trailing" constant="16" id="8oL-aw-38T"/>
+                                                <constraint firstItem="cou-I8-CWT" firstAttribute="leading" secondItem="YiH-4X-BCe" secondAttribute="leading" constant="16" id="Bid-He-dPh"/>
+                                                <constraint firstItem="nWs-Lc-t2s" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cou-I8-CWT" secondAttribute="trailing" constant="100" id="MLY-fw-gVe"/>
+                                                <constraint firstItem="cou-I8-CWT" firstAttribute="top" secondItem="YiH-4X-BCe" secondAttribute="top" constant="11.5" id="gaw-Ra-TR8"/>
+                                                <constraint firstAttribute="bottom" secondItem="cou-I8-CWT" secondAttribute="bottom" constant="11.5" id="oUg-Hz-Mqe"/>
+                                                <constraint firstItem="nWs-Lc-t2s" firstAttribute="baseline" secondItem="cou-I8-CWT" secondAttribute="baseline" id="q6F-dz-pVZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="About" id="BtC-tR-BTN">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Bdo-Or-v7a">
-                                        <rect key="frame" x="0.0" y="243.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="287.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bdo-Or-v7a" id="92c-qh-JGU">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -336,6 +366,7 @@
                         <outlet property="currencyLabel" destination="ocF-aq-4n2" id="C7g-nL-mMk"/>
                         <outlet property="formatLabel" destination="sAj-3D-YjJ" id="qSD-6e-1uM"/>
                         <outlet property="logoSwitch" destination="WKX-lY-tx3" id="2x5-nO-Gcp"/>
+                        <outlet property="versionLabel" destination="nWs-Lc-t2s" id="vSy-vL-XZ7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ITb-mC-TB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
