@@ -269,9 +269,9 @@ class DogeAccount : Equatable {
                     print(error)
                     // Something went wrong
                 }
-            }
-            else if error != nil {
+            } else if error != nil {
                 print(error!)
+                out = "Error"
             }
             
             let success = (error == nil) && self.success

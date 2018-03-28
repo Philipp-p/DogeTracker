@@ -56,7 +56,7 @@ class AccountDetailViewController: SameBackgroundViewController {
                     self.setFiatWithDispatch()
                 } else {
                     DispatchQueue.main.async {
-                        self.fiatBalanceLabel.text = " Error retrieving rates, but 1 Ð = 1 Ð"
+                        self.fiatBalanceLabel.text = "Error retrieving rates, but 1 Ð = 1 Ð"
                         self.refreshButton.isEnabled = true
                     }
                 }
@@ -90,7 +90,7 @@ class AccountDetailViewController: SameBackgroundViewController {
                         self.checkForMarket()
                         
                     } else {
-                        self.balanceLabel.text = error
+                        self.balanceLabel.text = "Failed to get balance"
                         self.refreshButton.isEnabled = true
                     }
                 }
@@ -141,10 +141,11 @@ class AccountDetailViewController: SameBackgroundViewController {
             account!.updateBalance() { success, error in
                 DispatchQueue.main.async {
                     if success {
-                        self.balanceLabel.text = "\(self.account!.getBalance()) Ð"
+                        self.balanceLabel.text = "\(FormatUtil.shared.formatDoubleWithMinPrecision(toFormat: (self.account?.getBalance() ?? 0))) Ð"
                         self.checkForMarket()
                     } else {
-                        self.balanceLabel.text = error
+                        self.balanceLabel.text = "Failed to get balance"
+                        self.refreshButton.isEnabled = true
                     }
                 }
             }

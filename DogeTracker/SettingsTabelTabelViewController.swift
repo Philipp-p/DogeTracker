@@ -13,6 +13,7 @@ class SettingsTabelTabelViewController: UITableViewController {
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var formatLabel: UILabel!
     @IBOutlet weak var logoSwitch: UISwitch!
+    @IBOutlet weak var versionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +28,19 @@ class SettingsTabelTabelViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         displayCurrentSettings()
+        versionLabel.text = version()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func version() -> String {
+        let dictionary = Bundle.main.infoDictionary!
+        let version = dictionary["CFBundleShortVersionString"] as! String
+        let build = dictionary["CFBundleVersion"] as! String
+        return "\(version) build \(build)"
     }
     
     func displayCurrentSettings() {
