@@ -16,7 +16,7 @@ func print(_ item: @autoclosure () -> Any, separator: String = " ", terminator: 
 }
 
 
-class ViewController: SameBackgroundWithCheckViewController {
+class MainViewController: SameBackgroundWithCheckViewController {
     
     @IBOutlet weak var amountCoinsLabel: UILabel!
     @IBOutlet weak var errorAccountsLabel: UILabel!

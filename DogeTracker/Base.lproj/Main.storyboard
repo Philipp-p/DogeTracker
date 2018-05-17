@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sEf-3z-Ipj">
-    <device id="retina3_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sEf-3z-Ipj">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -18,14 +14,14 @@
             <objects>
                 <viewController title="Dogecoin" id="2eU-OX-9bL" customClass="CoinMarketViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="383-Ym-XEE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRH-l0-TLp">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max supply:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QGq-Sz-5Oi">
-                                        <rect key="frame" x="107.5" y="337" width="105" height="24"/>
+                                        <rect key="frame" x="247.5" y="337" width="105" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="SOd-ii-DJw"/>
                                         </constraints>
@@ -34,7 +30,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1H %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qaK-LF-oeL" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
-                                        <rect key="frame" x="141" y="82" width="38" height="21"/>
+                                        <rect key="frame" x="281" y="82" width="38" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="J7L-eg-mdf"/>
                                         </constraints>
@@ -43,7 +39,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Market cap:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xIz-JX-jsN">
-                                        <rect key="frame" x="108.5" y="241" width="103" height="24"/>
+                                        <rect key="frame" x="248.5" y="241" width="103" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="ket-QB-YA9"/>
                                         </constraints>
@@ -52,7 +48,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24h%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6jh-e2-QiI" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
-                                        <rect key="frame" x="138.5" y="111" width="43" height="21"/>
+                                        <rect key="frame" x="278" y="111" width="44" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="ZUG-HS-xht"/>
                                         </constraints>
@@ -61,7 +57,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total supply:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zz4-62-Pae">
-                                        <rect key="frame" x="105" y="305" width="110" height="24"/>
+                                        <rect key="frame" x="245" y="305" width="110" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="mqV-Rt-tuS"/>
                                         </constraints>
@@ -79,7 +75,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIAT Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MkU-UR-fBQ" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
-                                        <rect key="frame" x="118.5" y="50" width="83" height="24"/>
+                                        <rect key="frame" x="258.5" y="50" width="83" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="THJ-pQ-pPR"/>
                                         </constraints>
@@ -88,7 +84,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9bK-IX-3fj" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
-                                        <rect key="frame" x="119" y="169" width="82" height="24"/>
+                                        <rect key="frame" x="259" y="169" width="82" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="prh-e4-Sy6"/>
                                         </constraints>
@@ -97,7 +93,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7d%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l0n-IH-jRP" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
-                                        <rect key="frame" x="144" y="140" width="32" height="21"/>
+                                        <rect key="frame" x="284" y="140" width="32" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="IrJ-9t-FU6"/>
                                         </constraints>
@@ -115,7 +111,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume 24h:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s1A-9X-BSo" userLabel="Volume 24h Label">
-                                        <rect key="frame" x="105" y="273" width="110" height="24"/>
+                                        <rect key="frame" x="245" y="273" width="110" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="njz-oV-aae"/>
                                         </constraints>
@@ -124,7 +120,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U8i-R4-yhh">
-                                        <rect key="frame" x="139" y="369" width="42" height="24"/>
+                                        <rect key="frame" x="279" y="369" width="42" height="24"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -193,17 +189,17 @@
             <objects>
                 <tableViewController title="Settings" id="ANM-l6-c3j" customClass="SettingsTabelTabelViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="QKV-8V-nkX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="General" id="xe2-aa-n2D">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pGz-dr-79e">
-                                        <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pGz-dr-79e" id="yU9-44-R0a">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFE-Bz-myU">
@@ -213,7 +209,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocF-aq-4n2">
-                                                    <rect key="frame" x="269" y="11.5" width="35" height="21"/>
+                                                    <rect key="frame" x="549" y="11.5" width="35" height="21"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.67721003290000004" green="0.72206860780000004" blue="0.70564419030000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -233,10 +229,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bo5-VQ-0ad">
-                                        <rect key="frame" x="0.0" y="99.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bo5-VQ-0ad" id="ce9-8W-KF8">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Format" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="le6-aY-fkR">
@@ -246,7 +242,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,000.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAj-3D-YjJ">
-                                                    <rect key="frame" x="237" y="12" width="67" height="20.5"/>
+                                                    <rect key="frame" x="517" y="12" width="67" height="20.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.67721003290000004" green="0.72206860780000004" blue="0.70564419030000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -266,10 +262,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Bn1-Ea-POw">
-                                        <rect key="frame" x="0.0" y="143.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="143.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bn1-Ea-POw" id="ont-Vf-2F2">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gq2-5J-8mC">
@@ -279,7 +275,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WKX-lY-tx3">
-                                                    <rect key="frame" x="255" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="535" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="switchToggled:" destination="ANM-l6-c3j" eventType="valueChanged" id="O5F-Oc-oTt"/>
                                                     </connections>
@@ -296,10 +292,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="5aT-nt-aLy">
-                                        <rect key="frame" x="0.0" y="187.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="187.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5aT-nt-aLy" id="YiH-4X-BCe">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cou-I8-CWT">
@@ -309,7 +305,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWs-Lc-t2s">
-                                                    <rect key="frame" x="282.5" y="12" width="21.5" height="21"/>
+                                                    <rect key="frame" x="562.5" y="12" width="21.5" height="21"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.67721003290000004" green="0.72206860780000004" blue="0.70564419030000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -330,14 +326,14 @@
                             <tableViewSection headerTitle="About" id="BtC-tR-BTN">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Bdo-Or-v7a">
-                                        <rect key="frame" x="0.0" y="287.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="287.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bdo-Or-v7a" id="92c-qh-JGU">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="T3O-og-aAF">
-                                                    <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="568" height="43.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <string key="text">For support, ideas and everything else please visit https://www.reddit.com/r/DogeTracker/. For the source code head to https://github.com/Philipp-p/DogeTracker</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -378,18 +374,18 @@
             <objects>
                 <viewController title="Format" id="fbT-o8-fxe" customClass="FormatSelectViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nng-Pd-ytL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oaC-Qa-Qev">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="formatCell" id="mtf-h3-WXf">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mtf-h3-WXf" id="p1H-mf-xFw">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -418,18 +414,18 @@
             <objects>
                 <viewController title="Currency" id="IXs-lR-woY" customClass="CurrencySelectViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fPb-Cg-PIT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xpJ-NT-lQC">
-                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="currencyCell" id="xAn-m3-U5l">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xAn-m3-U5l" id="yog-Pg-41E">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -456,16 +452,16 @@
         <!--Overview-->
         <scene sceneID="GAH-eo-QVc">
             <objects>
-                <viewController title="Overview" id="ZZV-ym-M7J" customClass="ViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Overview" id="ZZV-ym-M7J" customClass="MainViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PXO-RY-Eaa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jpu-2G-gw5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Coins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jta-Sn-SFL" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
-                                        <rect key="frame" x="98" y="50" width="124" height="24"/>
+                                        <rect key="frame" x="238" y="50" width="124" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="FCp-95-nWz"/>
                                         </constraints>
@@ -474,7 +470,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Accounts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXF-cR-FNe">
-                                        <rect key="frame" x="103" y="114" width="114" height="21"/>
+                                        <rect key="frame" x="243" y="114" width="114" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20.5" id="oe1-Xk-ogR"/>
                                         </constraints>
@@ -483,7 +479,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount FIAT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YwG-a1-Tjk" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
-                                        <rect key="frame" x="104" y="82" width="112" height="24"/>
+                                        <rect key="frame" x="244" y="82" width="112" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="QXM-O2-IKj"/>
                                         </constraints>
@@ -498,7 +494,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIAT Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7h7-ud-TM4" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
-                                        <rect key="frame" x="119" y="217" width="83" height="24"/>
+                                        <rect key="frame" x="259" y="217" width="83" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="9TV-0x-d2l"/>
                                         </constraints>
@@ -507,7 +503,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQW-P5-mRq" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
-                                        <rect key="frame" x="119" y="249" width="82" height="24"/>
+                                        <rect key="frame" x="259" y="249" width="82" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="0x2-31-ROf"/>
                                         </constraints>
@@ -516,7 +512,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Rates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqD-9w-klg">
-                                        <rect key="frame" x="117" y="281" width="86" height="21"/>
+                                        <rect key="frame" x="257" y="281" width="86" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20.5" id="af6-tJ-Cik"/>
                                         </constraints>
@@ -623,18 +619,18 @@
             <objects>
                 <viewController title="Accounts" id="Gby-ZE-lcB" customClass="AccountsViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rV7-Kz-0gE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qys-xS-KQS">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="accountCellTwo" rowHeight="92" id="QY6-tV-RzG" customClass="AccountTableViewCellTwo" customModule="DogeTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="92"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QY6-tV-RzG" id="eFI-FU-FOu">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="91.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="91.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name or address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wwX-na-b9N" userLabel="NameOrAddress">
@@ -697,17 +693,17 @@
             <objects>
                 <viewController title="Calculator" id="dxl-Uu-wk3" customClass="CalculatorViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xtk-bm-s1N">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter amount" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6Fc-YH-Xlz">
-                                <rect key="frame" x="16" y="111" width="288" height="30"/>
+                                <rect key="frame" x="16" y="111" width="568" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQv-2L-hEt">
-                                <rect key="frame" x="16" y="149" width="288" height="20.5"/>
+                                <rect key="frame" x="16" y="149" width="568" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.5" id="7wq-m9-22c"/>
                                 </constraints>
@@ -716,7 +712,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjl-KO-U5d">
-                                <rect key="frame" x="16" y="177" width="288" height="21"/>
+                                <rect key="frame" x="16" y="177" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -795,17 +791,17 @@
             <objects>
                 <viewController title="Account" id="Kad-Pt-wn1" customClass="AccountDetailViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u88-W4-9Ul">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ql-y6-4t8" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
-                                <rect key="frame" x="16" y="112" width="288" height="20.5"/>
+                                <rect key="frame" x="16" y="112" width="568" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance Doge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qKZ-1R-vsj" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
-                                <rect key="frame" x="16" y="173.5" width="288" height="21"/>
+                                <rect key="frame" x="16" y="173.5" width="568" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -817,7 +813,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFT-8r-8De">
-                                <rect key="frame" x="131" y="364" width="58" height="44"/>
+                                <rect key="frame" x="271" y="484" width="58" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="rs6-XH-YhS"/>
                                 </constraints>
@@ -827,13 +823,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name or Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PZK-qZ-X1d" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
-                                <rect key="frame" x="16" y="73" width="288" height="31.5"/>
+                                <rect key="frame" x="16" y="73" width="568" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HyS-Yp-DxK">
-                                <rect key="frame" x="107.5" y="416" width="105" height="44"/>
+                                <rect key="frame" x="247.5" y="536" width="105" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="9YB-VR-U9H"/>
                                 </constraints>
@@ -846,7 +842,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount FIAT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2n5-V5-0ZS" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
-                                <rect key="frame" x="16" y="202" width="288" height="24"/>
+                                <rect key="frame" x="16" y="202" width="568" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Oii-ap-Afe"/>
                                 </constraints>
@@ -898,11 +894,11 @@
             <objects>
                 <viewController title="QRCodeView" id="FZr-uE-Vsg" customClass="QRCodeViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lmw-I0-ETv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nrd-p0-jRF">
-                                <rect key="frame" x="35" y="115" width="250" height="250"/>
+                                <rect key="frame" x="175" y="175" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Nrd-p0-jRF" secondAttribute="height" multiplier="1:1" id="2Oh-fP-4eE"/>
                                     <constraint firstAttribute="height" constant="250" id="qHG-cF-FWP"/>
@@ -931,17 +927,17 @@
             <objects>
                 <viewController title="Edit" id="pLf-bu-mfv" customClass="EditViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VIm-bt-TaM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="7" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dOb-KC-Jws">
-                                <rect key="frame" x="16" y="150" width="288" height="30"/>
+                                <rect key="frame" x="16" y="150" width="568" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name (optional)" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="7" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Nfd-1s-tHI">
-                                <rect key="frame" x="16" y="104" width="288" height="30"/>
+                                <rect key="frame" x="16" y="104" width="568" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -984,17 +980,17 @@
             <objects>
                 <viewController title="Add" id="8pv-2g-ccU" customClass="AddViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jaY-3t-MlG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="7" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZgR-KP-EId">
-                                <rect key="frame" x="16" y="150" width="288" height="30"/>
+                                <rect key="frame" x="16" y="150" width="568" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name (optional)" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="7" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0Uo-Tz-lZi">
-                                <rect key="frame" x="16" y="104" width="288" height="30"/>
+                                <rect key="frame" x="16" y="104" width="568" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1033,11 +1029,11 @@
             <objects>
                 <viewController title="QR Scanner" id="SW8-85-WZy" customClass="QRScannerViewController" customModule="DogeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZrK-eC-dyx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcm-ar-fxt">
-                                <rect key="frame" x="139" y="439" width="42" height="21"/>
+                                <rect key="frame" x="279" y="559" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

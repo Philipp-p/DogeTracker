@@ -207,6 +207,11 @@ class DogeAccount : Equatable {
         return self.name
     }
     
+    struct accountResponse: Decodable {
+        let balance: Double
+        let success: Int
+    }
+    
     func updateBalance() {
         let urlAddress = "https://dogechain.info/api/v1/address/balance/" + self.getAddress()
         // Asynchronous Http call to your api url, using NSURLSession:
@@ -218,16 +223,13 @@ class DogeAccount : Equatable {
             // Check if data was received successfully
             if error == nil && data != nil {
                 do {
-                    // Convert NSData to Dictionary where keys are of type String, and values are of any type
-                    let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String:AnyObject]
-                    print(json)
-                    if json["success"] as! Int != 0 {
-                        self.balance = Double(json["balance"] as! String)!
+                    let json = try JSONDecoder().decode(accountResponse.self, from: data!)
+                    if json.success != 0 {
+                        self.balance = json.balance
                         self.success = true
                     } else {
                         self.success = false
                     }
-                    // let str = json["key"] as! String
                 } catch {
                     print(error)
                     // Something went wrong
