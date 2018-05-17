@@ -8,121 +8,252 @@
 
 import Foundation
 
-// Uses the CoinMarketCap JSON API Documentation Version 1
+// Uses the CoinMarketCap JSON API Documentation Version 2
 class CoinMarketCap {
+    static let shared = CoinMarketCap()
+    
     private var currency: Currency // private because when you change it it needs to be invalidated
     let coin: String
+    let id: uint
+    
+    var responseFiat: CoinMarketCapV2?
+    var quotesBTC: Quotes?
     
     //response mapping
-    var success = false
-    private var price: Double //private as setup for future upate for more currencies
-    var priceBTC: Double
-    var Volume24h: Double
-    var marketCap: Double
-    var availableSupply: Double
-    var totalSupply: Double
-    var maxSupply: Double?
-    var percentChange1h: Float
-    var percentChange24h: Float
-    var percentChange7d: Float
-    var lastUpdate: time_t
+    private var successFiat = false
+    private var successBTC = false
+
+    struct CoinMarketCapV2: Decodable {
+        let data: Data?
+        let metadata: MetaData
+    }
+    
+    struct Data: Decodable {
+        let id: uint
+        let name: String
+        let symbol: String
+        let website_slug: String
+        let rank: uint
+        let circulating_supply: Double
+        let total_supply: Double
+        let max_supply: Double?
+        let quotes: Dictionary<String,Quotes>
+        let last_updated: time_t
+    }
+    
+    struct Quotes: Decodable {
+        let price: Double
+        let volume_24h: Double
+        let market_cap: Double
+        let percent_change_1h: Double
+        let percent_change_24h: Double
+        let percent_change_7d: Double
+        
+    }
+    
+    struct MetaData: Decodable {
+        let timestamp: time_t
+        let error: String?
+    }
     
     
     private init() {
         self.coin = "dogecoin"
+        self.id = 74
         self.currency = Currency.USD
         
-         self.price = 0
-         self.priceBTC = 0
-         self.Volume24h = 0
-         self.marketCap = 0
-         self.availableSupply = 0
-         self.totalSupply = 0
-         self.maxSupply = nil
-         self.percentChange1h = 0
-         self.percentChange24h = 0
-         self.percentChange7d = 0
-         self.lastUpdate = time_t()
+        self.responseFiat = nil
+        self.quotesBTC = nil
     }
     
-    func getPrice() -> Double {
-        return self.price
+    func getSuccess() -> Bool {
+        return successFiat && successBTC
     }
     
-    static let shared = CoinMarketCap()
+    func setSuccess(newValue: Bool) {
+        self.successFiat = newValue
+        self.successBTC = newValue
+    }
+    
+    func getPriceFiat() -> Double {
+        if successFiat {
+            return responseFiat!.data!.quotes[self.currency.rawValue]!.price
+        } else {
+            return -1.0;
+        }
+    }
+    
+    func getPriceBTC() -> Double {
+        if successBTC {
+            return quotesBTC!.price
+        } else {
+            return -1.0;
+        }
+    }
+    
+    func getVolume24hFiat() -> Double {
+        if successBTC {
+            return responseFiat!.data!.quotes[self.currency.rawValue]!.volume_24h
+
+        } else {
+            return -1.0;
+        }
+    }
+    
+    func getMarketCap() -> Double {
+        if successBTC {
+            return responseFiat!.data!.quotes[self.currency.rawValue]!.price * responseFiat!.data!.total_supply
+            
+        } else {
+            return -1.0;
+        }
+    }
+    
+    func getCirculatingSupply() -> Double {
+        if successBTC {
+            return responseFiat!.data!.circulating_supply
+            
+        } else {
+            return -1.0;
+        }
+    }
+    
+    func getTotalSupply() -> Double {
+        if successBTC {
+            return responseFiat!.data!.total_supply
+            
+        } else {
+            return -1.0;
+        }
+    }
+    
+    // nil indicates unlimited supply
+    func getMaxSupply() -> Double? {
+        if successBTC {
+            return responseFiat!.data!.max_supply
+            
+        } else {
+            return -1;
+        }
+    }
+    
+    
+    func getPercentChange1hFiat() -> Double {
+        if successFiat {
+            return responseFiat!.data!.quotes[self.currency.rawValue]!.percent_change_1h
+        } else {
+            return -1.0;
+        }
+    }
+    
+    func getPercentChange24hFiat() -> Double {
+        if successFiat {
+            return responseFiat!.data!.quotes[self.currency.rawValue]!.percent_change_24h
+        } else {
+            return -1.0;
+        }
+    }
+    
+    func getPercentChange7dFiat() -> Double {
+        if successFiat {
+            return responseFiat!.data!.quotes[self.currency.rawValue]!.percent_change_7d
+        } else {
+            return -1.0;
+        }
+    }
+    
     
     func setCurrency(currency: Currency) {
         self.currency = currency
-        self.success = false
+        self.successFiat = false
+        self.successBTC = false
     }
     
-    //TODO get currencies symbol
     func getCurrencySymbol() -> String{
-       return currency.getSymbol()
+        return currency.getSymbol()
     }
     
-    private func getApiUrl () -> String {
-        return "https://api.coinmarketcap.com/v1/ticker/\(self.coin)/?convert=\(currency.rawValue)"
+    private func getApiUrlFiat() -> String {
+        return "https://api.coinmarketcap.com/v2/ticker/\(self.id)/?convert=\(currency.rawValue)"
     }
     
-    // function to udata balance with callback
+    private func getApiUrlBTC() -> String {
+        return "https://api.coinmarketcap.com/v2/ticker/\(self.id)/?convert=BTC"
+    }
+    
+    // function to udata with callback
     func update(completionHandler: @escaping (Bool, String) -> Void) {
-        let urlAddress = self.getApiUrl()
+        let urlAddressFiat = self.getApiUrlFiat()
+        let urlAddressBTC = self.getApiUrlBTC()
+        
+        let group = DispatchGroup()
+        
+        
         // Asynchronous Http call to your api url, using NSURLSession:
-        guard let url = URL(string: urlAddress) else {
+        guard let urlFiat = URL(string: urlAddressFiat) else {
             print("Url conversion issue.")
             return
         }
-        URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) -> Void in
+        group.enter()
+        URLSession.shared.dataTask(with: urlFiat, completionHandler: { (data, response, error) -> Void in
             // Check if data was received successfully
             var out: String = ""
             if error == nil && data != nil {
+                
+                let decoder = JSONDecoder()
+                
                 do {
-                    // Convert NSDArray to [Dictionary] where keys are of type String, and values are of any type
-                    let jsonArray = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [Dictionary<String, AnyObject>]
-                    print(jsonArray)
-                    //get first (and only Dictionary)
-                    let json = jsonArray.first!
-                    
-                    if (json["id"] != nil) {
-                        //self.balance = Double(json["balance"] as! String)!
-                        
-                        self.price = Double(json["price_\(self.currency.rawValue.lowercased())"] as! String)!
-                        self.priceBTC = Double(json["price_btc"] as! String)!
-                        self.Volume24h = Double(json["24h_volume_\(self.currency.rawValue.lowercased())"] as! String)!
-                        self.marketCap = Double(json["market_cap_\(self.currency.rawValue.lowercased())"] as! String)!
-                        self.availableSupply = Double(json["available_supply"] as! String)!
-                        self.totalSupply = Double(json["total_supply"] as! String)!
-                        if (json["max_supply"] is NSNull) {
-                            self.maxSupply = nil
-                        } else {
-                            self.maxSupply = Double(json["max_supply"] as! String)!
-                        }
-                        self.percentChange1h = Float(json["percent_change_1h"] as! String)!
-                        self.percentChange24h = Float(json["percent_change_24h"] as! String)!
-                        self.percentChange7d = Float(json["percent_change_7d"] as! String)!
-                        self.lastUpdate = time_t(json["last_updated"] as! String)!
-                        
-                        
-                        self.success = true
-                    } else {
-                        self.success = false
-                        out = json["error"] as! String
-                    }
-                    // let str = json["key"] as! String
-                } catch {
-                    print(error)
-                    // Something went wrong
+                    self.responseFiat =  try decoder.decode(CoinMarketCapV2.self, from: data!)
+                    self.successFiat = true
+                    print(self.responseFiat!)
+                } catch let jsonErr {
+                    out = "error in json decoding: \(jsonErr)"
+                    self.successFiat = false
+                    print(out)
                 }
-            }
-            else if error != nil {
+                
+            } else if error != nil {
+                self.successFiat = false
                 print(error!)
             }
             
-            let success = (error == nil) && self.success
-            completionHandler(success, out)
+            group.leave()
             
         }).resume()
+        
+        guard let urlBTC = URL(string: urlAddressBTC) else {
+            print("Url conversion issue.")
+            return
+        }
+        group.enter()
+        URLSession.shared.dataTask(with: urlBTC, completionHandler: { (data, response, error) -> Void in
+            // Check if data was received successfully
+            var out: String = ""
+            if error == nil && data != nil {
+                
+                let decoder = JSONDecoder()
+                
+                do {
+                    self.quotesBTC =  try decoder.decode(CoinMarketCapV2.self, from: data!).data?.quotes["BTC"]
+                    self.successBTC = true
+                    print(self.quotesBTC!)
+                } catch let jsonErr {
+                    out = "error in json decoding: \(jsonErr)"
+                    self.successBTC = false
+                    print(out)
+                }
+                
+            } else if error != nil {
+                self.successBTC = false
+                print(error!)
+            }
+            
+            group.leave()
+            
+        }).resume()
+        
+        group.wait()
+        completionHandler(self.getSuccess(), "This is never used")
     }
     
     

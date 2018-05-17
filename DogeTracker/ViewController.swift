@@ -59,17 +59,17 @@ class ViewController: SameBackgroundWithCheckViewController {
     fileprivate func updateMarketLabel(_ success: Bool) {
         DispatchQueue.main.async {
             if success {
-                self.rateFIATLabel.text = "\(self.market.getPrice()) \(self.market.getCurrencySymbol())"
+                self.rateFIATLabel.text = "\(self.market.getPriceFiat()) \(self.market.getCurrencySymbol())"
                 if #available(iOS 10.0, *) {
-                    self.rateBTCLabel.text = String(format: "%.8f ₿", self.market.priceBTC)
+                    self.rateBTCLabel.text = String(format: "%.8f ₿", self.market.getPriceBTC())
                 } else {
-                    self.rateBTCLabel.text = String(format: "%.8f BTC", self.market.priceBTC)
+                    self.rateBTCLabel.text = String(format: "%.8f BTC", self.market.getPriceBTC())
                 }
                 
             } else {
                 self.errorRatesLabel.text = "Failed to get rates"
                 self.errorRatesLabel.isHidden = false
-                self.market.success = false //just to be sure
+                self.market.setSuccess(newValue: false) //just to be sure
             }
         }
     }
@@ -110,7 +110,7 @@ class ViewController: SameBackgroundWithCheckViewController {
         
         group.enter()
         market.update() { success, error in
-            DispatchQueue.main.sync {
+            DispatchQueue.main.async {
                 self.updateMarketLabel(success)
                 group.leave()
             }
@@ -145,8 +145,8 @@ class ViewController: SameBackgroundWithCheckViewController {
         //Final stuff
         group.notify(queue: DispatchQueue.main) {
             DispatchQueue.main.async {
-                if self.market.success {
-                    self.amountFIATLabel.text = "\(self.util.format(toFormat: totalBalance * self.market.getPrice())) \(self.market.getCurrencySymbol())"
+                if self.market.getSuccess() {
+                    self.amountFIATLabel.text = "\(self.util.format(toFormat: totalBalance * self.market.getPriceFiat())) \(self.market.getCurrencySymbol())"
                 }
                 self.reloadButton.isEnabled = true
             }

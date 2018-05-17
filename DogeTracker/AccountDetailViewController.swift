@@ -44,20 +44,22 @@ class AccountDetailViewController: SameBackgroundViewController {
     fileprivate func setFiatWithDispatch() { //set amout of fiat
         DispatchQueue.main.async {
             let util = FormatUtil.shared
-            self.fiatBalanceLabel.text = "\(util.format(toFormat: ((self.account?.getBalance() ?? 0)  * self.market.getPrice()))) \(self.market.getCurrencySymbol())"
+            self.fiatBalanceLabel.text = "\(util.format(toFormat: ((self.account?.getBalance() ?? 0)  * self.market.getPriceFiat()))) \(self.market.getCurrencySymbol())"
             self.refreshButton.isEnabled = true
         }
     }
     
     fileprivate func checkForMarket() {
-        if !self.market.success { //check for market
+        if !self.market.getSuccess() { //check for market
             self.market.update() { success, error in
-                if success {
-                    self.setFiatWithDispatch()
-                } else {
-                    DispatchQueue.main.async {
-                        self.fiatBalanceLabel.text = "Error retrieving rates, but 1 Ð = 1 Ð"
-                        self.refreshButton.isEnabled = true
+                DispatchQueue.main.async{
+                    if success {
+                        self.setFiatWithDispatch()
+                    } else {
+                        DispatchQueue.main.async {
+                            self.fiatBalanceLabel.text = "Error retrieving rates, but 1 Ð = 1 Ð"
+                            self.refreshButton.isEnabled = true
+                        }
                     }
                 }
             }
@@ -137,7 +139,7 @@ class AccountDetailViewController: SameBackgroundViewController {
         self.fiatBalanceLabel.text = ""
         if self.account != nil {
             self.balanceLabel.text = "Pending balance"
-            self.market.success = false
+            self.market.setSuccess(newValue: false)
             account!.updateBalance() { success, error in
                 DispatchQueue.main.async {
                     if success {

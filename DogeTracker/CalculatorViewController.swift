@@ -77,10 +77,10 @@ class CalculatorViewController: SameBackgroundWithCheckViewController, UITextFie
         }
         
         if fiatToDoge {
-            let amountDoge = amount / market.getPrice()
+            let amountDoge = amount / market.getPriceFiat()
             self.resultLabel.text = "\(FormatUtil.shared.formatDoubleWithMinPrecision(toFormat: amountDoge)) Ð"
         } else {
-            let amountFiat = amount * market.getPrice()
+            let amountFiat = amount * market.getPriceFiat()
             self.resultLabel.text = "\(FormatUtil.shared.format(toFormat: amountFiat)) \(market.getCurrencySymbol())"
         }
     }
@@ -90,7 +90,7 @@ class CalculatorViewController: SameBackgroundWithCheckViewController, UITextFie
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         self.view.endEditing(true)
-        if market.success {
+        if market.getSuccess() {
             updateResult()
         } else {
             self.refreshMarket()
