@@ -149,15 +149,15 @@ class MainViewController: SameBackgroundWithCheckViewController {
         
     }
     
-    
-    
-    @IBAction func showAccounts(sender: UIButton) {
-        performSegue(withIdentifier: "accounts", sender: self)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Navigation
+    
+    @IBAction func showAccounts(sender: UIButton) {
+        performSegue(withIdentifier: "accounts", sender: self)
     }
 
 }
