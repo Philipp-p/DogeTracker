@@ -198,11 +198,9 @@ class CoinMarketCap {
         URLSession.shared.dataTask(with: urlFiat, completionHandler: { (data, response, error) -> Void in
             // Check if data was received successfully
             var out: String = ""
-            if error == nil && data != nil {
-                
-                let decoder = JSONDecoder()
-                
+            if error == nil && data != nil {                
                 do {
+                    let decoder = JSONDecoder()
                     self.responseFiat =  try decoder.decode(CoinMarketCapV2.self, from: data!)
                     self.successFiat = true
                     print(self.responseFiat!)
@@ -230,10 +228,8 @@ class CoinMarketCap {
             // Check if data was received successfully
             var out: String = ""
             if error == nil && data != nil {
-                
-                let decoder = JSONDecoder()
-                
                 do {
+                    let decoder = JSONDecoder()
                     self.quotesBTC =  try decoder.decode(CoinMarketCapV2.self, from: data!).data?.quotes["BTC"]
                     self.successBTC = true
                     print(self.quotesBTC!)

@@ -208,8 +208,9 @@ class DogeAccount : Equatable {
     }
     
     struct accountResponse: Decodable {
-        let balance: Double
+        let balance: String?
         let success: Int
+        let error: String?
     }
     
     func updateBalance() {
@@ -225,7 +226,7 @@ class DogeAccount : Equatable {
                 do {
                     let json = try JSONDecoder().decode(accountResponse.self, from: data!)
                     if json.success != 0 {
-                        self.balance = json.balance
+                        self.balance = Double(json.balance!)!
                         self.success = true
                     } else {
                         self.success = false
@@ -254,19 +255,14 @@ class DogeAccount : Equatable {
             var out: String = ""
             if error == nil && data != nil {
                 do {
-                    // Convert NSData to Dictionary where keys are of type String, and values are of any type
-                    let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String:AnyObject]
+                    let json = try JSONDecoder().decode(accountResponse.self, from: data!)
                     print(json)
-                    
-                    
-                    if json["success"] as! Int != 0 {
-                        self.balance = Double(json["balance"] as! String)!
+                    if json.success != 0 {
+                        self.balance = Double(json.balance!)!
                         self.success = true
                     } else {
                         self.success = false
-                        out = json["error"] as! String
                     }
-                    // let str = json["key"] as! String
                 } catch {
                     print(error)
                     // Something went wrong
