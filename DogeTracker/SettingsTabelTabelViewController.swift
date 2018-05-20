@@ -9,7 +9,7 @@
 import UIKit
 
 class SettingsTabelTabelViewController: UITableViewController {
-
+    
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var formatLabel: UILabel!
     @IBOutlet weak var logoSwitch: UISwitch!
@@ -17,10 +17,10 @@ class SettingsTabelTabelViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,7 +28,7 @@ class SettingsTabelTabelViewController: UITableViewController {
         displayCurrentSettings()
         versionLabel.text = version()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -67,5 +67,5 @@ class SettingsTabelTabelViewController: UITableViewController {
             defaults.set(1, forKey: "logo")
         }
     }
-
+    
 }

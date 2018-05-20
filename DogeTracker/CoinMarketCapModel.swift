@@ -22,7 +22,7 @@ class CoinMarketCap {
     //response mapping
     private var successFiat = false
     private var successBTC = false
-
+    
     struct CoinMarketCapV2: Decodable {
         let data: Data?
         let metadata: MetaData
@@ -94,7 +94,7 @@ class CoinMarketCap {
     func getVolume24hFiat() -> Double {
         if successBTC {
             return responseFiat!.data!.quotes[self.currency.rawValue]!.volume_24h
-
+            
         } else {
             return -1.0;
         }

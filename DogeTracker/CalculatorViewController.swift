@@ -9,7 +9,7 @@
 import UIKit
 
 class CalculatorViewController: SameBackgroundWithCheckViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var errorLabel: UILabel!
@@ -28,9 +28,9 @@ class CalculatorViewController: SameBackgroundWithCheckViewController, UITextFie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.switchButton.setTitle("\(market.getCurrencySymbol()) -> Ð", for: .normal)
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -106,5 +106,5 @@ class CalculatorViewController: SameBackgroundWithCheckViewController, UITextFie
         }
         return false
     }
-
+    
 }

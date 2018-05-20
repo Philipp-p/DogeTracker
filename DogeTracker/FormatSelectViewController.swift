@@ -10,13 +10,13 @@ import UIKit
 
 class FormatSelectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-
+    
     @IBOutlet weak var formatTable: UITableView!
     let allFormats = FormatUtil.shared.getAllFormats()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.formatTable.delegate = self
         self.formatTable.dataSource = self
         // Do any additional setup after loading the view.
@@ -35,8 +35,8 @@ class FormatSelectViewController: UIViewController, UITableViewDelegate, UITable
         return cell ?? UITableViewCell()
     }
     
-
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -54,5 +54,5 @@ class FormatSelectViewController: UIViewController, UITableViewDelegate, UITable
         
         navigationController?.popViewController(animated: true)
     }
-
+    
 }

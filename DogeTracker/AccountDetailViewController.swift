@@ -158,7 +158,6 @@ class AccountDetailViewController: SameBackgroundViewController {
         }
     }
     
-
     // MARK: - Navigation
     
     @objc func edit () {

@@ -34,7 +34,7 @@ class CoinMarketViewController: SameBackgroundViewController {
         } else {
             updateLabels()
         }
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -84,7 +84,7 @@ class CoinMarketViewController: SameBackgroundViewController {
         }
         self.maxSupplyLabel.text = "Max supply: \(maxSupply)"
     }
-
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

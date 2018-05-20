@@ -16,7 +16,7 @@ class CurrencySelectViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         self.currencyTableView.delegate = self
@@ -44,7 +44,7 @@ class CurrencySelectViewController: UIViewController, UITableViewDelegate, UITab
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     // MARK: - Navigation
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -58,6 +58,6 @@ class CurrencySelectViewController: UIViewController, UITableViewDelegate, UITab
         
         navigationController?.popViewController(animated: true)
     }
-
-
+    
+    
 }

@@ -11,7 +11,7 @@ import UIKit
 //Global to disable print if not in DEBUG
 func print(_ item: @autoclosure () -> Any, separator: String = " ", terminator: String = "\n") {
     #if DEBUG
-        Swift.print(item(), separator:separator, terminator: terminator)
+    Swift.print(item(), separator:separator, terminator: terminator)
     #endif
 }
 
@@ -159,6 +159,6 @@ class MainViewController: SameBackgroundWithCheckViewController {
     @IBAction func showAccounts(sender: UIButton) {
         performSegue(withIdentifier: "accounts", sender: self)
     }
-
+    
 }
 
