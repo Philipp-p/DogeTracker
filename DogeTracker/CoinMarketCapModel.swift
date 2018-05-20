@@ -181,12 +181,12 @@ class CoinMarketCap {
         return "https://api.coinmarketcap.com/v2/ticker/\(self.id)/?convert=BTC"
     }
     
-    // function to udata with callback
+    // function to update with callback
     func update(completionHandler: @escaping (Bool, String) -> Void) {
         let urlAddressFiat = self.getApiUrlFiat()
         let urlAddressBTC = self.getApiUrlBTC()
         
-        let group = DispatchGroup()
+        let group = DispatchGroup.init()
         
         
         // Asynchronous Http call to your api url, using NSURLSession:
@@ -248,8 +248,9 @@ class CoinMarketCap {
             
         }).resume()
         
-        group.wait()
-        completionHandler(self.getSuccess(), "This is never used")
+        group.notify(queue: DispatchQueue.main) {
+            completionHandler(self.getSuccess(), "This is never used")
+        }
     }
     
     

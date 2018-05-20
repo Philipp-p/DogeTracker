@@ -52,14 +52,12 @@ class AccountDetailViewController: SameBackgroundViewController {
     fileprivate func checkForMarket() {
         if !self.market.getSuccess() { //check for market
             self.market.update() { success, error in
-                DispatchQueue.main.async{
-                    if success {
-                        self.setFiatWithDispatch()
-                    } else {
-                        DispatchQueue.main.async {
-                            self.fiatBalanceLabel.text = "Error retrieving rates, but 1 Ð = 1 Ð"
-                            self.refreshButton.isEnabled = true
-                        }
+                if success {
+                    self.setFiatWithDispatch()
+                } else {
+                    DispatchQueue.main.async {
+                        self.fiatBalanceLabel.text = "Error retrieving rates, but 1 Ð = 1 Ð"
+                        self.refreshButton.isEnabled = true
                     }
                 }
             }

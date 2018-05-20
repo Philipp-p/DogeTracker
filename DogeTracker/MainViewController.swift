@@ -96,24 +96,19 @@ class MainViewController: SameBackgroundWithCheckViewController {
                 DispatchQueue.main.async {
                     self.reloadButton.isEnabled = true
                 }
-
             }
             return
         }
         
-        let group = DispatchGroup()
-        
-
+        let group = DispatchGroup.init()
         self.rateFIATLabel.text = "Pending rates"
         
         //market
-        
         group.enter()
-        market.update() { success, error in
-            DispatchQueue.main.async {
-                self.updateMarketLabel(success)
-                group.leave()
-            }
+        self.market.update() { success, error in
+            self.updateMarketLabel(success)
+            group.leave()
+            
         }
         
         //accounts
