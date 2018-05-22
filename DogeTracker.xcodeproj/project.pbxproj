@@ -24,7 +24,7 @@
 		17BD010A20129AF400AEF626 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BD010920129AF400AEF626 /* CalculatorViewController.swift */; };
 		17BD010C2012D4A300AEF626 /* StoreReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BD010B2012D4A300AEF626 /* StoreReviewHelper.swift */; };
 		17C1DAF91FF850BF003E0035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1DAF81FF850BF003E0035 /* AppDelegate.swift */; };
-		17C1DAFB1FF850BF003E0035 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1DAFA1FF850BF003E0035 /* ViewController.swift */; };
+		17C1DAFB1FF850BF003E0035 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1DAFA1FF850BF003E0035 /* MainViewController.swift */; };
 		17C1DAFE1FF850BF003E0035 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C1DAFC1FF850BF003E0035 /* Main.storyboard */; };
 		17C1DB011FF850BF003E0035 /* DogeTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17C1DAFF1FF850BF003E0035 /* DogeTracker.xcdatamodeld */; };
 		17C1DB031FF850BF003E0035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17C1DB021FF850BF003E0035 /* Assets.xcassets */; };
@@ -52,7 +52,7 @@
 		17BD010B2012D4A300AEF626 /* StoreReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewHelper.swift; sourceTree = "<group>"; };
 		17C1DAF51FF850BF003E0035 /* DogeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C1DAF81FF850BF003E0035 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		17C1DAFA1FF850BF003E0035 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		17C1DAFA1FF850BF003E0035 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		17C1DAFD1FF850BF003E0035 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17C1DB001FF850BF003E0035 /* test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = test.xcdatamodel; sourceTree = "<group>"; };
 		17C1DB021FF850BF003E0035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 			children = (
 				17862CCC1FF99D6700EC6CA4 /* DogeTracker.entitlements */,
 				17C1DAF81FF850BF003E0035 /* AppDelegate.swift */,
-				17C1DAFA1FF850BF003E0035 /* ViewController.swift */,
+				17C1DAFA1FF850BF003E0035 /* MainViewController.swift */,
 				17BD010920129AF400AEF626 /* CalculatorViewController.swift */,
 				17BD0107201285A500AEF626 /* SettingsTabelTabelViewController.swift */,
 				177E718E1FFC45FB003A3103 /* CurrencySelectViewController.swift */,
@@ -147,7 +147,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Philipp Pobitzer";
 				TargetAttributes = {
 					17C1DAF41FF850BF003E0035 = {
@@ -205,7 +205,7 @@
 				173EEADF1FF945FD0020855A /* AddViewController.swift in Sources */,
 				17BD010C2012D4A300AEF626 /* StoreReviewHelper.swift in Sources */,
 				173EEAD31FF9202C0020855A /* CopyableLabel.swift in Sources */,
-				17C1DAFB1FF850BF003E0035 /* ViewController.swift in Sources */,
+				17C1DAFB1FF850BF003E0035 /* MainViewController.swift in Sources */,
 				173EEAD11FF91E130020855A /* AccountModel.swift in Sources */,
 				17C1DAF91FF850BF003E0035 /* AppDelegate.swift in Sources */,
 				173EEAE11FF947AB0020855A /* QRScannerViewController.swift in Sources */,
@@ -256,6 +256,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -263,6 +264,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -290,7 +292,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -313,6 +315,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -320,6 +323,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -341,7 +345,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

@@ -29,27 +29,27 @@ class CoinMarketViewController: SameBackgroundViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if !self.market.success {
+        if !self.market.getSuccess() {
             reload()
         } else {
             updateLabels()
         }
-
+        
         // Do any additional setup after loading the view.
     }
     
     fileprivate func updateLabels () {
-        self.fiatRateLabel.text = "\(self.market.getPrice()) \(self.market.getCurrencySymbol())"
+        self.fiatRateLabel.text = "\(self.market.getPriceFiat()) \(self.market.getCurrencySymbol())"
         if #available(iOS 10.0, *) {
-            self.btcRateLabel.text = String(format: "%.8f ₿", self.market.priceBTC)
+            self.btcRateLabel.text = String(format: "%.8f ₿", self.market.getPriceBTC())
         } else {
-            self.btcRateLabel.text = String(format: "%.8f BTC", self.market.priceBTC)
+            self.btcRateLabel.text = String(format: "%.8f BTC", self.market.getPriceBTC())
         }
         
         let red = UIColor(red: 215/255, green: 25/255, blue: 28/255, alpha: 1)
         let green = UIColor(red: 26/255, green: 150/255, blue: 65/255, alpha: 1)
         
-        let oneHourPer = self.market.percentChange1h
+        let oneHourPer = self.market.getPercentChange1hFiat()
         if oneHourPer > 0 {
             self.oneHourPerLabel.textColor = green
         } else {
@@ -57,7 +57,7 @@ class CoinMarketViewController: SameBackgroundViewController {
         }
         oneHourPerLabel.text = "1 Hour: \(oneHourPer) %"
         
-        let oneDayPer = self.market.percentChange24h
+        let oneDayPer = self.market.getPercentChange24hFiat()
         if oneDayPer > 0 {
             self.oneDayPerLabel.textColor = green
         } else {
@@ -65,7 +65,7 @@ class CoinMarketViewController: SameBackgroundViewController {
         }
         oneDayPerLabel.text = "1 Day: \(oneDayPer) %"
         
-        let sevenDayPer = self.market.percentChange7d
+        let sevenDayPer = self.market.getPercentChange7dFiat()
         if sevenDayPer > 0 {
             self.sevenDayPerLabel.textColor = green
         } else {
@@ -73,18 +73,18 @@ class CoinMarketViewController: SameBackgroundViewController {
         }
         sevenDayPerLabel.text = "7 Days: \(sevenDayPer) %"
         
-        self.marketCapLabel.text = "Market cap: \(self.util.formatToInt(toFormat: self.market.marketCap)) \(self.market.getCurrencySymbol())"
-        self.volume24hLabel.text = "Volume 24h: \(self.util.formatToInt(toFormat: self.market.Volume24h)) \(self.market.getCurrencySymbol())"
-        self.totalSupplyLabel.text = "Total supply: \(self.util.formatToInt(toFormat: self.market.totalSupply))"
+        self.marketCapLabel.text = "Market cap: \(self.util.formatToInt(toFormat: self.market.getMarketCap())) \(self.market.getCurrencySymbol())"
+        self.volume24hLabel.text = "Volume 24h: \(self.util.formatToInt(toFormat: self.market.getVolume24hFiat())) \(self.market.getCurrencySymbol())"
+        self.totalSupplyLabel.text = "Total supply: \(self.util.formatToInt(toFormat: self.market.getTotalSupply()))"
         let maxSupply: String
-        if self.market.maxSupply != nil {
-            maxSupply = String(self.market.maxSupply!)
+        if self.market.getMaxSupply() != nil {
+            maxSupply = String(self.market.getMaxSupply()!)
         } else {
             maxSupply = "Unlimited"
         }
         self.maxSupplyLabel.text = "Max supply: \(maxSupply)"
     }
-
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -130,22 +130,8 @@ class CoinMarketViewController: SameBackgroundViewController {
         
     }
     
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

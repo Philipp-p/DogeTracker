@@ -84,24 +84,6 @@ class AccountsViewController: SameBackgroundViewController, UITableViewDelegate,
         return cell
     }
     
-    var valueToPass: DogeAccount!
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Get Cell row
-        let indexPath = tableView.indexPathForSelectedRow!
-        valueToPass = AccountModel.shared.getAllAccount()[indexPath.row]
-        
-        performSegue(withIdentifier: "accountDetail", sender: self)
-    }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "accountDetail") {
-            let viewController = segue.destination as! AccountDetailViewController
-            viewController.account = valueToPass
-        }
-    }
-    
     @objc fileprivate func reloadTable() {
         for account in AccountModel.shared.getAllAccount() {
             account.setSuccess(success: false)
@@ -128,15 +110,25 @@ class AccountsViewController: SameBackgroundViewController, UITableViewDelegate,
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // MARK: - Navigation
+    
+    var valueToPass: DogeAccount!
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Get Cell row
+        let indexPath = tableView.indexPathForSelectedRow!
+        valueToPass = AccountModel.shared.getAllAccount()[indexPath.row]
+        
+        performSegue(withIdentifier: "accountDetail", sender: self)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "accountDetail") {
+            let viewController = segue.destination as! AccountDetailViewController
+            viewController.account = valueToPass
+        }
+    }
     
 }
 

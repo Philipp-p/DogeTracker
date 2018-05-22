@@ -44,13 +44,13 @@ class AccountDetailViewController: SameBackgroundViewController {
     fileprivate func setFiatWithDispatch() { //set amout of fiat
         DispatchQueue.main.async {
             let util = FormatUtil.shared
-            self.fiatBalanceLabel.text = "\(util.format(toFormat: ((self.account?.getBalance() ?? 0)  * self.market.getPrice()))) \(self.market.getCurrencySymbol())"
+            self.fiatBalanceLabel.text = "\(util.format(toFormat: ((self.account?.getBalance() ?? 0)  * self.market.getPriceFiat()))) \(self.market.getCurrencySymbol())"
             self.refreshButton.isEnabled = true
         }
     }
     
     fileprivate func checkForMarket() {
-        if !self.market.success { //check for market
+        if !self.market.getSuccess() { //check for market
             self.market.update() { success, error in
                 if success {
                     self.setFiatWithDispatch()
@@ -137,7 +137,7 @@ class AccountDetailViewController: SameBackgroundViewController {
         self.fiatBalanceLabel.text = ""
         if self.account != nil {
             self.balanceLabel.text = "Pending balance"
-            self.market.success = false
+            self.market.setSuccess(newValue: false)
             account!.updateBalance() { success, error in
                 DispatchQueue.main.async {
                     if success {
@@ -158,6 +158,8 @@ class AccountDetailViewController: SameBackgroundViewController {
         }
     }
     
+    // MARK: - Navigation
+    
     @objc func edit () {
         if self.account != nil {
             performSegue(withIdentifier: "edit", sender: self)
@@ -173,17 +175,6 @@ class AccountDetailViewController: SameBackgroundViewController {
             targetController.address = account!.getAddress()
         }
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
 

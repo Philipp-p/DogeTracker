@@ -9,7 +9,7 @@
 import UIKit
 
 class CalculatorViewController: SameBackgroundWithCheckViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var errorLabel: UILabel!
@@ -28,9 +28,9 @@ class CalculatorViewController: SameBackgroundWithCheckViewController, UITextFie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.switchButton.setTitle("\(market.getCurrencySymbol()) -> Ð", for: .normal)
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -77,10 +77,10 @@ class CalculatorViewController: SameBackgroundWithCheckViewController, UITextFie
         }
         
         if fiatToDoge {
-            let amountDoge = amount / market.getPrice()
+            let amountDoge = amount / market.getPriceFiat()
             self.resultLabel.text = "\(FormatUtil.shared.formatDoubleWithMinPrecision(toFormat: amountDoge)) Ð"
         } else {
-            let amountFiat = amount * market.getPrice()
+            let amountFiat = amount * market.getPriceFiat()
             self.resultLabel.text = "\(FormatUtil.shared.format(toFormat: amountFiat)) \(market.getCurrencySymbol())"
         }
     }
@@ -90,7 +90,7 @@ class CalculatorViewController: SameBackgroundWithCheckViewController, UITextFie
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         self.view.endEditing(true)
-        if market.success {
+        if market.getSuccess() {
             updateResult()
         } else {
             self.refreshMarket()
@@ -106,15 +106,5 @@ class CalculatorViewController: SameBackgroundWithCheckViewController, UITextFie
         }
         return false
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

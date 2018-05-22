@@ -11,12 +11,12 @@ import UIKit
 //Global to disable print if not in DEBUG
 func print(_ item: @autoclosure () -> Any, separator: String = " ", terminator: String = "\n") {
     #if DEBUG
-        Swift.print(item(), separator:separator, terminator: terminator)
+    Swift.print(item(), separator:separator, terminator: terminator)
     #endif
 }
 
 
-class ViewController: SameBackgroundWithCheckViewController {
+class MainViewController: SameBackgroundWithCheckViewController {
     
     @IBOutlet weak var amountCoinsLabel: UILabel!
     @IBOutlet weak var errorAccountsLabel: UILabel!
@@ -59,17 +59,17 @@ class ViewController: SameBackgroundWithCheckViewController {
     fileprivate func updateMarketLabel(_ success: Bool) {
         DispatchQueue.main.async {
             if success {
-                self.rateFIATLabel.text = "\(self.market.getPrice()) \(self.market.getCurrencySymbol())"
+                self.rateFIATLabel.text = "\(self.market.getPriceFiat()) \(self.market.getCurrencySymbol())"
                 if #available(iOS 10.0, *) {
-                    self.rateBTCLabel.text = String(format: "%.8f ₿", self.market.priceBTC)
+                    self.rateBTCLabel.text = String(format: "%.8f ₿", self.market.getPriceBTC())
                 } else {
-                    self.rateBTCLabel.text = String(format: "%.8f BTC", self.market.priceBTC)
+                    self.rateBTCLabel.text = String(format: "%.8f BTC", self.market.getPriceBTC())
                 }
                 
             } else {
                 self.errorRatesLabel.text = "Failed to get rates"
                 self.errorRatesLabel.isHidden = false
-                self.market.success = false //just to be sure
+                self.market.setSuccess(newValue: false) //just to be sure
             }
         }
     }
@@ -96,24 +96,19 @@ class ViewController: SameBackgroundWithCheckViewController {
                 DispatchQueue.main.async {
                     self.reloadButton.isEnabled = true
                 }
-
             }
             return
         }
         
-        let group = DispatchGroup()
-        
-
+        let group = DispatchGroup.init()
         self.rateFIATLabel.text = "Pending rates"
         
         //market
-        
         group.enter()
-        market.update() { success, error in
-            DispatchQueue.main.sync {
-                self.updateMarketLabel(success)
-                group.leave()
-            }
+        self.market.update() { success, error in
+            self.updateMarketLabel(success)
+            group.leave()
+            
         }
         
         //accounts
@@ -145,8 +140,8 @@ class ViewController: SameBackgroundWithCheckViewController {
         //Final stuff
         group.notify(queue: DispatchQueue.main) {
             DispatchQueue.main.async {
-                if self.market.success {
-                    self.amountFIATLabel.text = "\(self.util.format(toFormat: totalBalance * self.market.getPrice())) \(self.market.getCurrencySymbol())"
+                if self.market.getSuccess() {
+                    self.amountFIATLabel.text = "\(self.util.format(toFormat: totalBalance * self.market.getPriceFiat())) \(self.market.getCurrencySymbol())"
                 }
                 self.reloadButton.isEnabled = true
             }
@@ -154,16 +149,16 @@ class ViewController: SameBackgroundWithCheckViewController {
         
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
+    // MARK: - Navigation
     
     @IBAction func showAccounts(sender: UIButton) {
         performSegue(withIdentifier: "accounts", sender: self)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
 

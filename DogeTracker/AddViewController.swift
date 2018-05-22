@@ -138,8 +138,6 @@ class AddViewController: SameBackgroundViewController, UITextFieldDelegate, QRSc
             destination.delegate = self
         }
     }
-     
-
     
 }
 
