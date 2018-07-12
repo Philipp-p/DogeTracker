@@ -15,10 +15,6 @@ class AccountDetailViewController: SameBackgroundViewController {
     @IBOutlet weak var balanceLabel: CopyableLabel!
     @IBOutlet weak var fiatBalanceLabel: CopyableLabel!
     
-    
-    
-    @IBOutlet weak var qrButton: UIButton!
-    
     weak var account: DogeAccount?
     
     weak var refreshButton: UIBarButtonItem!
@@ -35,8 +31,7 @@ class AccountDetailViewController: SameBackgroundViewController {
         
         let refreshButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(reload))
         self.refreshButton = refreshButton
-        let editButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.edit, target: self, action: #selector(edit))
-        self.navigationItem.setRightBarButtonItems([refreshButton, editButton], animated: true)
+        self.navigationItem.setRightBarButtonItems([refreshButton], animated: true)
         
         prepareView()
     }
@@ -103,7 +98,8 @@ class AccountDetailViewController: SameBackgroundViewController {
         }
     }
     
-    @IBAction func delete (sender: UIButton) { //delete current account
+
+    @IBAction func deleteAccount (sender: UIButton) { //delete current account
         if self.account != nil {
             let deleteAlert = UIAlertController(
                 title: "Delete",
@@ -152,15 +148,15 @@ class AccountDetailViewController: SameBackgroundViewController {
         }
     }
     
-    @IBAction func viewQR (sender: UIButton) {
+    // MARK: - Navigation
+    
+    @IBAction func showQR (sender: UIButton) {
         if self.account != nil {
             performSegue(withIdentifier: "viewQRCode", sender: self)
         }
     }
     
-    // MARK: - Navigation
-    
-    @objc func edit () {
+    @IBAction func editAccount (sender: UIButton) {
         if self.account != nil {
             performSegue(withIdentifier: "edit", sender: self)
         }
