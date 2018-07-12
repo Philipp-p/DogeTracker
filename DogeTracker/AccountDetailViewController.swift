@@ -86,6 +86,7 @@ class AccountDetailViewController: SameBackgroundViewController {
                         
                     } else {
                         self.balanceLabel.text = "Failed to get balance"
+                        self.balanceLabel.textColor = UIColor.red
                         self.refreshButton.isEnabled = true
                     }
                 }
@@ -132,6 +133,7 @@ class AccountDetailViewController: SameBackgroundViewController {
         self.refreshButton.isEnabled = false
         self.fiatBalanceLabel.text = ""
         if self.account != nil {
+            self.balanceLabel.textColor = UIColor.black
             self.balanceLabel.text = "Pending balance"
             self.market.setSuccess(newValue: false)
             account!.updateBalance() { success, error in
@@ -141,6 +143,7 @@ class AccountDetailViewController: SameBackgroundViewController {
                         self.checkForMarket()
                     } else {
                         self.balanceLabel.text = "Failed to get balance"
+                        self.balanceLabel.textColor = UIColor.red
                         self.refreshButton.isEnabled = true
                     }
                 }

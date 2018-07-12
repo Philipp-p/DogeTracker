@@ -65,6 +65,7 @@ class AccountsViewController: SameBackgroundViewController, UITableViewDelegate,
             cell.nameOrAddressLabel.text = allAccounts[indexPath.row].getAddress()
         }
         
+        cell.balanceLabel.textColor = UIColor.black
         cell.balanceLabel.text = "Pending balance"
         
         if (account.getBalance() == -1 || account.getSuccess() != true) {
@@ -74,6 +75,7 @@ class AccountsViewController: SameBackgroundViewController, UITableViewDelegate,
                         cell.balanceLabel.text = "\(FormatUtil.shared.formatDoubleWithMinPrecision(toFormat: account.getBalance())) Ð"
                     } else {
                         cell.balanceLabel.text = "Failed to get balance"
+                        cell.balanceLabel.textColor = UIColor.red
                     }
                 }
             }
