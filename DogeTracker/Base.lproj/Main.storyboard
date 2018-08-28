@@ -722,8 +722,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01U-EK-pY2" userLabel="Switch">
-                                <rect key="frame" x="16" y="73" width="45" height="30"/>
-                                <state key="normal" title="$ -&gt; Ð"/>
+                                <rect key="frame" x="16" y="73" width="42" height="30"/>
+                                <state key="normal" title="$ → Ð"/>
                                 <connections>
                                     <action selector="switchMode" destination="dxl-Uu-wk3" eventType="touchUpInside" id="EGj-xv-Nus"/>
                                 </connections>
@@ -736,7 +736,6 @@
                             <constraint firstItem="6Fc-YH-Xlz" firstAttribute="leading" secondItem="L7L-c6-dFR" secondAttribute="leading" constant="16" id="BOz-l5-VJ5"/>
                             <constraint firstItem="FQv-2L-hEt" firstAttribute="leading" secondItem="L7L-c6-dFR" secondAttribute="leading" constant="16" id="GHt-8z-J3F"/>
                             <constraint firstItem="01U-EK-pY2" firstAttribute="leading" secondItem="L7L-c6-dFR" secondAttribute="leading" constant="16" id="HFn-Gx-s1d"/>
-                            <constraint firstItem="L7L-c6-dFR" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="01U-EK-pY2" secondAttribute="trailing" constant="100" id="LMn-CL-nVM"/>
                             <constraint firstItem="01U-EK-pY2" firstAttribute="top" secondItem="L7L-c6-dFR" secondAttribute="top" constant="9" id="dov-8H-7I8"/>
                             <constraint firstItem="Cjl-KO-U5d" firstAttribute="top" secondItem="FQv-2L-hEt" secondAttribute="bottom" constant="8" id="eBI-CW-ib5"/>
                             <constraint firstItem="L7L-c6-dFR" firstAttribute="trailing" secondItem="6Fc-YH-Xlz" secondAttribute="trailing" constant="16" id="gYm-1W-FUY"/>

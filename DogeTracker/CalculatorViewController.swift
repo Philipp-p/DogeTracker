@@ -27,7 +27,8 @@ class CalculatorViewController: SameBackgroundWithCheckViewController, UITextFie
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.switchButton.setTitle("\(market.getCurrencySymbol()) -> Ð", for: .normal)
+        self.switchButton.setTitle("\(market.getCurrencySymbol()) → Ð", for: .normal)
+        self.inputTextField.becomeFirstResponder() // sets texfield as responder (this enables the keyboard)
         
     }
     
@@ -41,9 +42,9 @@ class CalculatorViewController: SameBackgroundWithCheckViewController, UITextFie
         fiatToDoge = !fiatToDoge
         
         if fiatToDoge {
-            self.switchButton.setTitle("\(market.getCurrencySymbol()) -> Ð", for: .normal)
+            self.switchButton.setTitle("\(market.getCurrencySymbol()) → Ð", for: .normal)
         } else {
-            self.switchButton.setTitle("Ð -> \(market.getCurrencySymbol())", for: .normal)
+            self.switchButton.setTitle("Ð → \(market.getCurrencySymbol())", for: .normal)
         }
     }
     
@@ -70,26 +71,30 @@ class CalculatorViewController: SameBackgroundWithCheckViewController, UITextFie
     
     func updateResult() {
         self.errorLabel.isHidden = true
-        guard let amount = Double(self.inputTextField.text!.replacingOccurrences(of: ",", with: ".")) else {
+        guard let amount : Double = Double(self.inputTextField.text!.replacingOccurrences(of: ",", with: ".")) else {
             self.errorLabel.text = "Invalid input"
             self.errorLabel.isHidden = false
             return
         }
         
         if fiatToDoge {
-            let amountDoge = amount / market.getPriceFiat()
+            let amountDoge : Double = amount / market.getPriceFiat()
             self.resultLabel.text = "\(FormatUtil.shared.formatDoubleWithMinPrecision(toFormat: amountDoge)) Ð"
         } else {
-            let amountFiat = amount * market.getPriceFiat()
-            self.resultLabel.text = "\(FormatUtil.shared.format(toFormat: amountFiat)) \(market.getCurrencySymbol())"
+            let amountFiat : Double = amount * market.getPriceFiat()
+            if (amountFiat >= 10) { //Show mor than 3 digits when below threshold
+                self.resultLabel.text = "\(FormatUtil.shared.format(toFormat: amountFiat)) \(market.getCurrencySymbol())"
+            } else {
+                self.resultLabel.text = "\(FormatUtil.shared.formatDoubleWithMinPrecision(toFormat: amountFiat)) \(market.getCurrencySymbol())"
+            }
         }
     }
     
     
-    //touch to close keyboard
+    // calcutate result
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        self.view.endEditing(true)
+        //self.view.endEditing(true) closes keyboard
         if market.getSuccess() {
             updateResult()
         } else {
