@@ -706,7 +706,7 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQv-2L-hEt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQv-2L-hEt">
                                 <rect key="frame" x="16" y="149" width="288" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.5" id="7wq-m9-22c"/>
@@ -722,8 +722,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01U-EK-pY2" userLabel="Switch">
-                                <rect key="frame" x="16" y="73" width="45" height="30"/>
-                                <state key="normal" title="$ -&gt; Ð"/>
+                                <rect key="frame" x="16" y="73" width="42" height="30"/>
+                                <state key="normal" title="$ → Ð"/>
                                 <connections>
                                     <action selector="switchMode" destination="dxl-Uu-wk3" eventType="touchUpInside" id="EGj-xv-Nus"/>
                                 </connections>
