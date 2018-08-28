@@ -88,7 +88,7 @@ class AddViewController: SameBackgroundViewController, UITextFieldDelegate, QRSc
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!, options: [:], completionHandler: nil)
             } else {
-                UIApplication.shared.openURL(NSURL(string: "prefs:root=Settings")! as URL)
+                UIApplication.shared.openURL(URL(string: UIApplicationOpenSettingsURLString)!)
             }
         }))
         present(alert, animated: true, completion: nil)
