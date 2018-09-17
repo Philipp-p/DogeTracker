@@ -60,8 +60,8 @@ class EditViewController: SameBackgroundViewController, UITextFieldDelegate {
             navigationController?.popViewController(animated: true)
             
         } else {
-            let alertController = UIAlertController(title: "Error", message: "Invalid address or address duplicate", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            let alertController = UIAlertController(title: "Error", message: "Invalid address or address duplicate", preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             present(alertController, animated: true, completion: nil)
         }
         

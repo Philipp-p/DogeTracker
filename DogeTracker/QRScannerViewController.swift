@@ -69,7 +69,7 @@ class QRScannerViewController: UIViewController {
         captureSession.startRunning()
         
         // Move the message label
-        view.bringSubview(toFront: messageLabel)
+        view.bringSubviewToFront(messageLabel)
         
         // Initialize QR Code Frame to highlight the QR code
         qrCodeFrameView = UIView()
@@ -78,7 +78,7 @@ class QRScannerViewController: UIViewController {
             qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
             qrCodeFrameView.layer.borderWidth = 2
             view.addSubview(qrCodeFrameView)
-            view.bringSubview(toFront: qrCodeFrameView)
+            view.bringSubviewToFront(qrCodeFrameView)
         }
     }
     

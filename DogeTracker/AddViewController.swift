@@ -30,8 +30,8 @@ class AddViewController: SameBackgroundViewController, UITextFieldDelegate, QRSc
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let cameraButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.camera, target: self, action: #selector(cameraView))
-        let safeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: #selector(saveButton))
+        let cameraButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.camera, target: self, action: #selector(cameraView))
+        let safeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: self, action: #selector(saveButton))
         self.navigationItem.setRightBarButtonItems([safeButton, cameraButton], animated: true)
     }
     
@@ -66,7 +66,7 @@ class AddViewController: SameBackgroundViewController, UITextFieldDelegate, QRSc
             let alert = UIAlertController(
                 title: "Sorry",
                 message: "Your user is restriced from the camera",
-                preferredStyle: UIAlertControllerStyle.alert
+                preferredStyle: UIAlertController.Style.alert
             )
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             present(alert, animated: true, completion: nil)
@@ -81,14 +81,14 @@ class AddViewController: SameBackgroundViewController, UITextFieldDelegate, QRSc
         let alert = UIAlertController(
             title: nil,
             message: "Camera access required for QR scanner!",
-            preferredStyle: UIAlertControllerStyle.alert
+            preferredStyle: UIAlertController.Style.alert
         )
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Allow Camera", style: .default, handler: { (alert) -> Void in
             if #available(iOS 10.0, *) {
-                UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!, options: [:], completionHandler: nil)
+                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
             } else {
-                UIApplication.shared.openURL(URL(string: UIApplicationOpenSettingsURLString)!)
+                UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
             }
         }))
         present(alert, animated: true, completion: nil)
@@ -111,8 +111,8 @@ class AddViewController: SameBackgroundViewController, UITextFieldDelegate, QRSc
             
             navigationController?.popViewController(animated: true)
         } else {
-            let alertController = UIAlertController(title: "Error", message: "Invalid address or address duplicate", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            let alertController = UIAlertController(title: "Error", message: "Invalid address or address duplicate", preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             present(alertController, animated: true, completion: nil)
         }
         
@@ -141,3 +141,8 @@ class AddViewController: SameBackgroundViewController, UITextFieldDelegate, QRSc
     
 }
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+}

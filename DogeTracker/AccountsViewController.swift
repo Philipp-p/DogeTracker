@@ -14,8 +14,8 @@ class AccountsViewController: SameBackgroundViewController, UITableViewDelegate,
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let addButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(add))
-        let refreshButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(reloadTable))
+        let addButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(add))
+        let refreshButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(reloadTable))
         self.navigationItem.setRightBarButtonItems([refreshButton, addButton], animated: true)
         loadList()
     }
@@ -38,7 +38,7 @@ class AccountsViewController: SameBackgroundViewController, UITableViewDelegate,
         
         if #available(iOS 10.0, *) {
             let refreshControl = UIRefreshControl()
-            refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
+            refreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
             accountsTable.refreshControl = refreshControl
         } // Sorry this feature is minor, so it will be left out prior to iOS 10.0
     }

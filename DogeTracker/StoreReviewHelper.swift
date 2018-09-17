@@ -62,7 +62,7 @@ class StoreReviewHelper {
             let deleteAlert = UIAlertController(
                 title: nil,
                 message: "If you like the app, do you want to rate it?",
-                preferredStyle: UIAlertControllerStyle.alert
+                preferredStyle: UIAlertController.Style.alert
             )
             
             deleteAlert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
@@ -83,9 +83,14 @@ class StoreReviewHelper {
     fileprivate static func openUrl(_ urlString:String) {
         let url = URL(string: urlString)!
         if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         } else {
             UIApplication.shared.openURL(url)
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

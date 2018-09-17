@@ -89,7 +89,7 @@ class CoinMarketViewController: SameBackgroundViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let refreshButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(reload))
+        let refreshButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(reload))
         self.navigationItem.setRightBarButton(refreshButton, animated: true)
         
     }
