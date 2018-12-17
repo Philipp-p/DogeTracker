@@ -1,7 +1,7 @@
 #  DogeTracker
 ![DogeTracker Logo](./DogeTracker/Assets.xcassets/AppIcon.appiconset/Icon-60@2x.png)
 
-App store link: https://itunes.apple.com/us/app/dogetracker/id1331221523?mt=8
+App store link: [click here](https://itunes.apple.com/us/app/dogetracker/id1331221523?mt=8)
 
 ## Keep track of your Dogecoin
 
@@ -25,13 +25,13 @@ A simplistic approach to keep track of your Dogecoins and Dogecoin in general. J
 
 ## Support, ideas, pull request and more
 
-Head over to https://www.reddit.com/r/DogeTracker/ for if you seek support or have an idea. Here on Github you can also create an issue or make a pull request
+Head over to [reddit](https://www.reddit.com/r/DogeTracker/) for if you seek support or have an idea. Here on Github you can also create an issue or make a pull request
 
 ## Android
 
 DogeTracker was ported to Android!
 
-https://github.com/avrland/DogeTracker_Android
+[Android repo](https://github.com/avrland/DogeTracker_Android)
 
 ## Hey, you have been a good boy!
 
