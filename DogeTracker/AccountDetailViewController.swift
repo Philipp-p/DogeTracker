@@ -29,7 +29,7 @@ class AccountDetailViewController: SameBackgroundViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let refreshButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(reload))
+        let refreshButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(reload))
         self.refreshButton = refreshButton
         self.navigationItem.setRightBarButtonItems([refreshButton], animated: true)
         
@@ -105,7 +105,7 @@ class AccountDetailViewController: SameBackgroundViewController {
             let deleteAlert = UIAlertController(
                 title: "Delete",
                 message: "Are you sure you want to delete this account?",
-                preferredStyle: UIAlertControllerStyle.alert
+                preferredStyle: UIAlertController.Style.alert
             )
             
             deleteAlert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (action: UIAlertAction!) in

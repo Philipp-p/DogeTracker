@@ -62,7 +62,7 @@ class StoreReviewHelper {
             let deleteAlert = UIAlertController(
                 title: nil,
                 message: "If you like the app, do you want to rate it?",
-                preferredStyle: UIAlertControllerStyle.alert
+                preferredStyle: UIAlertController.Style.alert
             )
             
             deleteAlert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
