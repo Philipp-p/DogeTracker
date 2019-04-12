@@ -57,11 +57,11 @@ class SameBackgroundWithCheckViewController: UIViewController {
             
             self.view.addSubview(background)
             
-            let aspectRatioConstraint = NSLayoutConstraint(item: background, attribute: .height,relatedBy: .equal, toItem: background, attribute: .width, multiplier: 1, constant: 0)
+            let aspectRatioConstraint = NSLayoutConstraint(item: background!, attribute: .height,relatedBy: .equal, toItem: background, attribute: .width, multiplier: 1, constant: 0)
             background.addConstraint(aspectRatioConstraint)
             
             //view.addConstraint(NSLayoutConstraint(item: someImageView, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: 16))
-            view.addConstraint(NSLayoutConstraint(item: background, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 16))
+            view.addConstraint(NSLayoutConstraint(item: background!, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 16))
             
             background.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             background.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true

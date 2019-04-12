@@ -71,6 +71,14 @@ class AddViewController: SameBackgroundViewController, UITextFieldDelegate, QRSc
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             present(alert, animated: true, completion: nil)
             
+        @unknown default:
+            let alert = UIAlertController(
+                title: "Sorry",
+                message: "This should not happen, please report this",
+                preferredStyle: UIAlertController.Style.alert
+            )
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
         }
         
         
