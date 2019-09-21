@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sEf-3z-Ipj">
-    <device id="retina4_0" orientation="portrait" appearance="dark"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -574,7 +574,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Overview" id="szc-cQ-BhH">
                         <leftBarButtonItems>
-                            <barButtonItem style="done" systemItem="organize" id="JH1-0p-JB4">
+                            <barButtonItem systemItem="organize" id="JH1-0p-JB4">
                                 <connections>
                                     <segue destination="Gby-ZE-lcB" kind="show" id="A7Z-eH-aPI"/>
                                 </connections>
@@ -591,7 +591,7 @@
                                     <action selector="loadTotal" destination="ZZV-ym-M7J" id="VLM-Qv-2c1"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="settings" style="done" id="WdR-Ul-Ni7" userLabel="Settings">
+                            <barButtonItem image="settings" id="WdR-Ul-Ni7" userLabel="Settings">
                                 <connections>
                                     <segue destination="ANM-l6-c3j" kind="show" id="ewb-RA-LtQ"/>
                                 </connections>
@@ -632,14 +632,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name or address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wwX-na-b9N" userLabel="NameOrAddress">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name or address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wwX-na-b9N" userLabel="NameOrAddress">
                                                     <rect key="frame" x="16" y="11" width="288" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="fDh-eW-0cr"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Amount" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwt-Or-c6U" userLabel="Balance">
-                                                    <rect key="frame" x="16" y="60" width="288" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwt-Or-c6U" userLabel="Balance">
+                                                    <rect key="frame" x="16" y="60.5" width="288" height="20.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
