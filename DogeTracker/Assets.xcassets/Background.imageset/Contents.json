@@ -3,6 +3,25 @@
     {
       "idiom" : "universal",
       "filename" : "DT4.pdf"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "DT4-1.pdf",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ]
+    },
+    {
+      "idiom" : "universal",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ]
     }
   ],
   "info" : {

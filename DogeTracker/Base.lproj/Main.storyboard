@@ -333,8 +333,8 @@
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="T3O-og-aAF">
                                                     <rect key="frame" x="16" y="0.0" width="288" height="44"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <string key="text">For support, ideas and everything else please visit https://www.reddit.com/r/DogeTracker/. For the source code head to https://github.com/Philipp-p/DogeTracker</string>
+                                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -378,7 +378,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oaC-Qa-Qev">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="formatCell" id="mtf-h3-WXf">
                                         <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
@@ -391,7 +391,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="oaC-Qa-Qev" firstAttribute="bottom" secondItem="J6l-YG-VzT" secondAttribute="bottom" id="OUT-lE-Uxs"/>
                             <constraint firstItem="oaC-Qa-Qev" firstAttribute="leading" secondItem="J6l-YG-VzT" secondAttribute="leading" id="XfN-Xv-4aD"/>
@@ -418,7 +418,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xpJ-NT-lQC">
                                 <rect key="frame" x="0.0" y="44" width="320" height="524"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="currencyCell" id="xAn-m3-U5l">
                                         <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
@@ -431,7 +431,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="xpJ-NT-lQC" firstAttribute="top" secondItem="fPb-Cg-PIT" secondAttribute="topMargin" id="2T8-4C-9Nc"/>
                             <constraint firstItem="Bi2-Vv-nX7" firstAttribute="bottom" secondItem="xpJ-NT-lQC" secondAttribute="bottom" id="Qgq-oq-fAo"/>
@@ -474,7 +474,7 @@
                                             <constraint firstAttribute="height" constant="20.5" id="oe1-Xk-ogR"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount FIAT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YwG-a1-Tjk" customClass="CopyableLabel" customModule="DogeTracker" customModuleProvider="target">
@@ -516,7 +516,7 @@
                                             <constraint firstAttribute="height" constant="20.5" id="af6-tJ-Cik"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSH-k4-XdQ">
@@ -591,7 +591,7 @@
                                     <action selector="loadTotal" destination="ZZV-ym-M7J" id="VLM-Qv-2c1"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="settings" id="WdR-Ul-Ni7" userLabel="Settings">
+                            <barButtonItem image="Settings" id="WdR-Ul-Ni7" userLabel="Settings">
                                 <connections>
                                     <segue destination="ANM-l6-c3j" kind="show" id="ewb-RA-LtQ"/>
                                 </connections>
@@ -623,7 +623,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qys-xS-KQS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="accountCellTwo" rowHeight="92" id="QY6-tV-RzG" customClass="AccountTableViewCellTwo" customModule="DogeTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="92"/>
@@ -670,7 +670,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Qys-xS-KQS" firstAttribute="leading" secondItem="a9A-bp-RSe" secondAttribute="leading" id="FRQ-40-T02"/>
                             <constraint firstItem="Qys-xS-KQS" firstAttribute="trailing" secondItem="a9A-bp-RSe" secondAttribute="trailing" id="Uog-xN-pdu"/>
@@ -715,7 +715,7 @@
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjl-KO-U5d">
                                 <rect key="frame" x="16" y="161.5" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01U-EK-pY2" userLabel="Switch">
@@ -750,7 +750,7 @@
                                     <action selector="refreshMarket" destination="dxl-Uu-wk3" id="Pqe-Uu-mvC"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="settings" id="Lev-dc-zHL" userLabel="Settings">
+                            <barButtonItem image="Settings" id="Lev-dc-zHL" userLabel="Settings">
                                 <connections>
                                     <segue destination="ANM-l6-c3j" kind="show" id="rK1-bC-SFn"/>
                                 </connections>
@@ -1050,8 +1050,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Settings" width="22" height="22"/>
         <image name="calculator" width="22" height="22"/>
-        <image name="settings" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ewb-RA-LtQ"/>
